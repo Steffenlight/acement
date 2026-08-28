@@ -1,0 +1,2 @@
+.science-page .css-zegf1s { position: relative; border-radius: var(--timeline-radii-base); overflow: hidden; background: var(--timeline-colors-transparent); min-height: 320px; width: 100%; grid-column: span 1; aspect-ratio: 4 / 5; }
+@media screen and (min-width: 768px) {.science-page .css-zegf1s { aspect-ratio: 4 / 5; }}

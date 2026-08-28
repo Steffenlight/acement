@@ -1,0 +1,2 @@
+.science-page .css-16nkz8l { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; flex-direction: column; gap: 0px; height: 100%; text-align: center; padding-top: var(--timeline-space-m); padding-bottom: var(--timeline-space-lg); }
+@media screen and (min-width: 960px) {.science-page .css-16nkz8l { -webkit-box-align: start; align-items: start; text-align: left; padding-top: var(--timeline-space-xl); padding-bottom: var(--timeline-space-xl); }}

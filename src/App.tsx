@@ -10,7 +10,7 @@ import SiteFooter from './components/SiteFooter.tsx'
 import { AboutPage, BenefitsPage, ContactPage, FaqPage, ProductPage, SciencePage, ShopPage } from './components/AcementSite.tsx'
 import { BlogPage, DetailedFaqPage, LegalPage, ReviewsPage, TestimonialsPage } from './components/AcementContentPages.tsx'
 import { BlogIndexPage, BlogPostPage } from './components/AcementBlog.tsx'
-import FullSciencePage from './components/FullSciencePage.tsx'
+import FullSciencePage from './science/FullSciencePage.tsx'
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 

@@ -1,0 +1,2 @@
+.science-page .css-dlkvq0 { gap: var(--timeline-space-sm); display: none; grid-auto-flow: column; -webkit-box-align: center; align-items: center; }
+@media screen and (min-width: 960px) {.science-page .css-dlkvq0 { gap: var(--timeline-space-sm); display: grid; }}

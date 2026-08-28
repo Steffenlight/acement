@@ -1,0 +1,3 @@
+.science-page .css-n9xq4b { padding-left: 0px; padding-right: 0px; display: flex; flex-direction: column; grid-area: 3 / span 12; direction: ltr; }
+@media screen and (min-width: 768px) {.science-page .css-n9xq4b { grid-column: span 12; }}
+@media screen and (min-width: 960px) {.science-page .css-n9xq4b { padding-left: var(--timeline-space-lg); padding-right: 0px; grid-area: 2 / span 5; align-self: end; }}

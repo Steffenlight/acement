@@ -1,0 +1,2 @@
+.science-page .css-15mcfy2 { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: absolute; z-index: 1; pointer-events: none; color: var(--timeline-colors-gray-50); top: var(--timeline-space-lg); left: var(--timeline-space-sm); right: var(--timeline-space-sm); max-width: 540px; margin-inline: auto; text-align: center; }
+@media screen and (min-width: 960px) {.science-page .css-15mcfy2 { top: var(--timeline-space-3xl); }}

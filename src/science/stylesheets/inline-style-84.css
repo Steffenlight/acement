@@ -1,0 +1,2 @@
+.science-page .css-1bfc1fh { position: relative; width: var(--timeline-sizes-full); display: flex; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; overflow: hidden; height: var(--timeline-sizes-full); border-radius: var(--timeline-radii-lg); }
+@media screen and (min-width: 768px) {.science-page .css-1bfc1fh { border-radius: var(--timeline-radii-xl); }}

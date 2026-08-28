@@ -1,0 +1,2 @@
+.science-page .css-1i1lm9a { display: grid; grid-template-columns: [full-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[full-end]; grid-column: bordered; border-radius: var(--timeline-radii-lg); overflow: hidden; --grid-width: 1440px; }
+@media screen and (min-width: 768px) {.science-page .css-1i1lm9a { border-radius: var(--timeline-radii-xl); }}

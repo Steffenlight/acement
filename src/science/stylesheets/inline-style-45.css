@@ -1,0 +1,3 @@
+.science-page .css-mdthky { position: relative; }
+.science-page .css-mdthky > :not(style) { overflow: hidden; position: absolute; inset: 0px; display: flex; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; width: 100%; height: 100%; }
+.science-page .css-mdthky::before { height: 0px; content: ""; display: block; padding-bottom: 125%; }

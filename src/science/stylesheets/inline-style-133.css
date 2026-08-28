@@ -1,0 +1,2 @@
+.science-page .css-1k363yx { display: flex; -webkit-box-pack: justify; justify-content: space-between; flex-direction: column; gap: 0.5rem; position: relative; z-index: 1; color: var(--timeline-colors-gray-900); height: var(--timeline-sizes-full); padding: var(--timeline-space-sm); }
+@media screen and (min-width: 960px) {.science-page .css-1k363yx { padding: var(--timeline-space-m); }}

@@ -1,0 +1,2 @@
+.science-page .css-1vj8bwm { grid-column: span 12; margin-inline: auto; max-width: 920px; min-height: 65vh; display: flex; flex-direction: column; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; text-align: center; padding-top: var(--timeline-space-2xl); padding-bottom: var(--timeline-space-2xl); }
+@media screen and (min-width: 768px) {.science-page .css-1vj8bwm { padding-top: var(--timeline-space-3xl); padding-bottom: var(--timeline-space-3xl); }}

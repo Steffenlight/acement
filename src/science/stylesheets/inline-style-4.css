@@ -1,0 +1,11 @@
+.science-page { font-family: var(--timeline-fonts-body); color: var(--timeline-colors-gray-600); background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: ; transition-property: background-color; transition-duration: var(--timeline-transition-duration-normal); line-height: var(--timeline-lineHeights-base); background-color: var(--timeline-colors-gray-50); }
+.science-page ::-webkit-input-placeholder { color: var(--timeline-colors-chakra-placeholder-color); }
+.science-page ::placeholder { color: var(--timeline-colors-chakra-placeholder-color); }
+.science-page, .science-page ::before, .science-page ::after { border-color: var(--timeline-colors-chakra-border-color); }
+:root { --header-height: 0px; --header-offset: var(--header-height); --header-transition: .2s ease-in-out; }
+.science-page .js-focus-visible :focus:not([data-focus-visible-added]) { outline: transparent solid 2px; outline-offset: 2px; box-shadow: var(--timeline-shadows-none); }
+.science-page .round { border-radius: var(--timeline-radii-base); }
+.science-page #chakra-toast-manager-bottom { bottom: 0px !important; }
+@media screen and (min-width: 480px) {.science-page #chakra-toast-manager-bottom { bottom: var(--timeline-space-m) !important; }}
+@media screen and (min-width: 480px) {}
+@media screen and (min-width: 480px) {}

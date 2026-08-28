@@ -1,0 +1,2 @@
+.science-page .css-1h5j0j8 { display: flex; flex-direction: row; align-items: flex-start; -webkit-box-pack: center; justify-content: center; list-style-type: none; grid-area: 3 / 1; gap: var(--timeline-space-2xs); width: 100%; max-width: 420px; padding-inline: var(--timeline-space-sm); }
+@media screen and (min-width: 1200px) {.science-page .css-1h5j0j8 { flex-direction: column; align-items: flex-start; -webkit-box-pack: center; justify-content: center; grid-area: 2 / 3; width: auto; max-width: initial; padding-inline: initial; left: -50%; }}

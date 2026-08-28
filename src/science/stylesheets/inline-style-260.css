@@ -1,0 +1,2 @@
+.science-page .css-1ook4gn { display: flex; grid-column: span 12; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; padding-top: var(--timeline-space-m); padding-bottom: var(--timeline-space-m); }
+@media screen and (min-width: 960px) {.science-page .css-1ook4gn { height: 30vh; min-height: 240px; max-height: 360px; padding-top: 0px; padding-bottom: 0px; }}

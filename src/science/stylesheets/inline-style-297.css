@@ -1,0 +1,2 @@
+.science-page .css-1r461g2 { display: flex; flex-direction: row; gap: var(--timeline-space-3xs); grid-column: span 12; }
+@media screen and (min-width: 960px) {.science-page .css-1r461g2 { -webkit-box-pack: end; justify-content: flex-end; grid-column: span 6; }}

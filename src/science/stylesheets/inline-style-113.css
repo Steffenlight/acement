@@ -1,0 +1,11 @@
+.science-page .css-p5i8oo { position: absolute; inset: 0px; border-radius: var(--timeline-radii-full); border-width: 1px; border-style: solid; opacity: 0; animation: 2.4s linear -0.8s infinite normal none running animation-1xbhfru; }
+@-webkit-keyframes animation-1xbhfru { 
+  0% { transform: scale(0.7); opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes animation-1xbhfru { 
+  0% { transform: scale(0.7); opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}

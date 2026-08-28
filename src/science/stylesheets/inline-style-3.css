@@ -1,0 +1,29 @@
+.science-page { line-height: 1.5; text-size-adjust: 100%; font-family: system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; touch-action: manipulation; }
+.science-page { position: relative; min-height: 100%; margin: 0px; font-feature-settings: "kern"; }
+.science-page :where(*) { border-width: 0px; border-style: solid; box-sizing: border-box; overflow-wrap: break-word; }
+.science-page main { display: block; }
+.science-page :where(pre, .science-page code, .science-page kbd, .science-page samp) { font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 1em; }
+.science-page a { background-color: transparent; color: inherit; text-decoration: inherit; }
+.science-page :where(b, .science-page strong) { font-weight: bold; }
+.science-page :where(sub, .science-page sup) { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+.science-page img { border-style: none; }
+.science-page :where(button, .science-page input, .science-page optgroup, .science-page select, .science-page textarea) { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0px; }
+.science-page :where(button, .science-page input) { overflow: visible; }
+.science-page :where(button, .science-page select) { text-transform: none; }
+.science-page :where() { border-style: none; padding: 0px; }
+.science-page :where([type="checkbox"], .science-page [type="radio"]) { box-sizing: border-box; padding: 0px; }
+.science-page ::-webkit-file-upload-button { appearance: button; font: inherit; }
+.science-page :where(blockquote, .science-page dl, .science-page dd, .science-page h1, .science-page h2, .science-page h3, .science-page h4, .science-page h5, .science-page h6, .science-page hr, .science-page figure, .science-page p, .science-page pre) { margin: 0px; }
+.science-page button { background: transparent; padding: 0px; }
+.science-page :where(ol, .science-page ul) { margin: 0px; padding: 0px; }
+.science-page :where(button, .science-page [role="button"]) { cursor: pointer; }
+.science-page table { border-collapse: collapse; }
+.science-page :where(h1, .science-page h2, .science-page h3, .science-page h4, .science-page h5, .science-page h6) { font-size: inherit; font-weight: inherit; }
+.science-page :where(button, .science-page input, .science-page optgroup, .science-page select, .science-page textarea) { padding: 0px; line-height: inherit; color: inherit; }
+.science-page :where(img, .science-page svg, .science-page video, .science-page canvas, .science-page audio, .science-page iframe, .science-page embed, .science-page object) { display: block; }
+.science-page :where(img, .science-page video) { max-width: 100%; height: auto; }
+.science-page [data-js-focus-visible] :focus:not([data-focus-visible-added]):not([data-focus-visible-disabled]) { outline: none; box-shadow: none; }
+:root, :host { --chakra-vh: 100vh; }
+@supports (height:-webkit-fill-available) {:root, :host { --chakra-vh: -webkit-fill-available; }}
+@supports (height:-moz-fill-available) {:root, :host { --chakra-vh: -moz-fill-available; }}
+@supports (height:100dvh) {:root, :host { --chakra-vh: 100dvh; }}

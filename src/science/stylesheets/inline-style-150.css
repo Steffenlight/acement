@@ -1,0 +1,2 @@
+.science-page .css-gfg2ed { position: absolute; z-index: -1; top: calc(var(--timeline-space-sm)*-1); left: calc(var(--timeline-space-sm)*-1); right: calc(var(--timeline-space-sm)*-1); bottom: calc(var(--timeline-space-sm)*-1); }
+@media screen and (min-width: 960px) {.science-page .css-gfg2ed { top: calc(var(--timeline-space-m)*-1); left: calc(var(--timeline-space-m)*-1); right: calc(var(--timeline-space-m)*-1); bottom: calc(var(--timeline-space-m)*-1); }}

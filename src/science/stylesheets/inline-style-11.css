@@ -1,0 +1,2 @@
+.science-page .css-19kxgsd { display: grid; grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: var(--timeline-space-5xs); z-index: 1; padding: var(--timeline-space-5xs); width: var(--timeline-sizes-full); position: relative; border-radius: var(--timeline-radii-md); background: var(--timeline-colors-blackAlpha-200); }
+@media screen and (min-width: 960px) {.science-page .css-19kxgsd { grid-template-columns: repeat(2, auto); }}

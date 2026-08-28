@@ -1,0 +1,2 @@
+.science-page .css-z20a12 { display: grid; grid-template-columns: repeat(12, 1fr); grid-column: main; column-gap: clamp(12px, 7.77px + 1.13vw, 24px); row-gap: var(--timeline-space-m); direction: rtl; }
+@media screen and (min-width: 960px) {.science-page .css-z20a12 { grid-column: main; grid-template-rows: auto 1fr; }}

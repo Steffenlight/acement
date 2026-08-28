@@ -1,0 +1,2 @@
+.science-page .css-19v0ldf { display: grid; grid-template-columns: repeat(2, minmax(0px, 1fr)); }
+@media screen and (min-width: 768px) {.science-page .css-19v0ldf { gap: var(--timeline-space-sm); }}

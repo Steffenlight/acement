@@ -1,0 +1,2 @@
+.science-page .css-1ggde01 { position: relative; border-radius: var(--timeline-radii-base); overflow: hidden; background: var(--timeline-colors-gray-100); min-height: 320px; width: 100%; grid-column: span 2; aspect-ratio: 4 / 5; }
+@media screen and (min-width: 768px) {.science-page .css-1ggde01 { aspect-ratio: 3 / 1; }}

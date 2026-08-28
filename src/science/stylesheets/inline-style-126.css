@@ -1,0 +1,3 @@
+.science-page .css-133rmja { display: flex; -webkit-box-align: center; align-items: center; flex-direction: column; gap: 0px; grid-column: 1 / -1; text-align: center; top: var(--timeline-space-m); }
+@media screen and (min-width: 768px) {.science-page .css-133rmja { grid-column: 3 / -3; margin-bottom: var(--timeline-space-m); }}
+@media screen and (min-width: 1200px) {.science-page .css-133rmja { -webkit-box-align: start; align-items: start; grid-column: 1 / 6; text-align: left; position: sticky; margin-bottom: 0px; }}

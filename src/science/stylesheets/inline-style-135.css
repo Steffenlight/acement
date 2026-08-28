@@ -1,0 +1,2 @@
+.science-page .css-cepcuc { display: flex; flex-direction: column; gap: 0.5rem; width: var(--timeline-sizes-full); }
+@media screen and (min-width: 768px) {.science-page .css-cepcuc { flex: 1 1 0%; }}

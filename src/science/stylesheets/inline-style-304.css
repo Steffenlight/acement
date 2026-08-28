@@ -1,0 +1,15 @@
+.science-page ._sf-storefront._sf-x._sf-x._sf-x._sf-x._sf-x { --sf-success-color: 18,183,106; --sf-success-content-color: 255,255,255; --sf-danger-color: 240,68,56; --sf-danger-content-color: 255,255,255; --sf-base-swappable: var(--base-color); --sf-base-content-swappable: var(--base-content-color); --sf-primary-swappable: var(--primary-color); --sf-primary-content-swappable: var(--primary-content-color); --sf-secondary-swappable: var(--secondary-color); --sf-secondary-content-swappable: var(--secondary-content-color); --sf-accent-swappable: var(--accent-color); --sf-accent-content-swappable: var(--accent-content-color); }
+@keyframes sf-pulse { 
+  50% { opacity: 0.5; }
+}
+@keyframes sf-spin { 
+  100% { transform: rotate(360deg); }
+}
+@keyframes enter { 
+  0% { opacity: var(--tw-enter-opacity,1); transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1)) rotate(var(--tw-enter-rotate,0)); }
+}
+@keyframes exit { 
+  100% { opacity: var(--tw-exit-opacity,1); transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1)) rotate(var(--tw-exit-rotate,0)); }
+}
+:root { --sf-z-index-program-widget-modal: 2147483000; }
+@media (min-width: 480px) {}

@@ -1,0 +1,2 @@
+.science-page .css-u1cfch { display: flex; margin-top: var(--timeline-space-2xs); -webkit-box-pack: justify; justify-content: space-between; -webkit-box-align: start; align-items: start; flex-direction: column; gap: var(--timeline-space-4xs); }
+@container (min-width: 250px) {.science-page .css-u1cfch { flex-direction: row; }}

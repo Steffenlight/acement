@@ -1,0 +1,16 @@
+/* Alloy captured this page while its GSAP scroll-reveal animations were still
+   in their initial state, baking `opacity: 0` and an offset transform into the
+   components' inline styles. The capture ships no JavaScript to animate them
+   in, so that content would stay permanently invisible.
+
+   These rules settle those elements at their intended end state. The selector
+   deliberately matches `opacity: 0;` exactly so it does not catch legitimate
+   partial opacities such as `opacity: 0.5`. */
+
+.science-page [style*="opacity: 0;"],
+.science-page [style*="opacity:0;"] {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+}

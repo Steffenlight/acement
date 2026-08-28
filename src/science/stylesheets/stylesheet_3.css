@@ -1,0 +1,6 @@
+:root { --swiper-theme-color: #007aff; }
+.science-page :host { z-index: 1; margin-left: auto; margin-right: auto; display: block; position: relative; }
+@keyframes swiper-preloader-spin { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

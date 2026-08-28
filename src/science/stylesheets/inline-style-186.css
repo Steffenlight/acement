@@ -1,0 +1,4 @@
+.science-page .css-1nten1k { display: flex; grid-column: span 12; -webkit-box-align: center; align-items: center; margin-left: clamp(20px, 13.2px + 1.81vw, 48px); margin-right: clamp(20px, 13.2px + 1.81vw, 48px); }
+@media screen and (min-width: 960px) {.science-page .css-1nten1k { margin-left: clamp(20px, 13.2px + 1.81vw, 48px); }}
+@media screen and (min-width: 1200px) {.science-page .css-1nten1k { grid-column: span 12; padding-right: var(--timeline-space-m); margin-right: 0px; }}
+@media screen and (min-width: 1440px) {.science-page .css-1nten1k { margin-left: 0px; }}
