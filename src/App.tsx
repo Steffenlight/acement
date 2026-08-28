@@ -7,7 +7,10 @@ import Footer from './components/Footer.tsx'
 import SiteHeader from './components/SiteHeader.tsx'
 import MitopurePage from './components/MitopurePage.tsx'
 import SiteFooter from './components/SiteFooter.tsx'
-import { AboutPage, ContactPage, FaqPage, ProductPage, SciencePage, ShopPage } from './components/AcementSite.tsx'
+import { AboutPage, BenefitsPage, ContactPage, FaqPage, ProductPage, SciencePage, ShopPage } from './components/AcementSite.tsx'
+import { BlogPage, DetailedFaqPage, LegalPage, ReviewsPage, TestimonialsPage } from './components/AcementContentPages.tsx'
+import { BlogIndexPage, BlogPostPage } from './components/AcementBlog.tsx'
+import FullSciencePage from './components/FullSciencePage.tsx'
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
@@ -66,10 +69,17 @@ function App() {
                 <Route path="/" element={<AppContent />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/products/mitopure-softgels-vegan" element={<ProductPage />} />
-                <Route path="/science" element={<SciencePage />} />
+                <Route path="/science" element={<FullSciencePage />} />
+                <Route path="/benefits" element={<BenefitsPage />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/faq" element={<FaqPage />} />
+                <Route path="/faq" element={<DetailedFaqPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/reviews" element={<ReviewsPage />} />
+                <Route path="/testimonials" element={<TestimonialsPage />} />
+                <Route path="/blog" element={<BlogIndexPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/terms-and-conditions" element={<LegalPage />} />
+                <Route path="/privacy-policy" element={<LegalPage privacy />} />
                 <Route path="*" element={<AppContent />} />
             </Routes>
         </Router>

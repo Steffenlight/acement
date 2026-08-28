@@ -15,18 +15,28 @@ const ROUTES: Record<string, string> = {
     // Science
     'science of mitopure®': '/science',
     'how mitopure® works': '/science',
-    'benefits': '/science',
+    'benefits': '/benefits',
     'studies': '/science',
     'patents': '/science',
 
     // About
     'about us': '/about',
-    'reviews': '/about',
-    'testimonials': '/about',
+    'reviews': '/reviews',
+    'testimonials': '/testimonials',
+
+    // Content
+    'blog': '/blog',
 
     // Support
     'faqs': '/faq',
     'help center': '/contact',
+
+    // Legal
+    'privacy policy': '/privacy-policy',
+    'terms & conditions': '/terms-and-conditions',
+    'terms and conditions': '/terms-and-conditions',
+    // Alloy emits this label with a literal HTML entity rather than "&"
+    'terms &amp; conditions': '/terms-and-conditions',
 }
 
 export function routeForLabel(label: string): string | null {

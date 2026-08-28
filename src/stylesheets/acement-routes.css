@@ -37,4 +37,8 @@
   .acement-nav a {
     padding: 12px 0;
   }
+
+  .acement-mega-menu {
+    display: none !important;
+  }
 }
