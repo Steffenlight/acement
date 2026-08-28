@@ -1,0 +1,3 @@
+.product-page .css-d25f0m { display: flex; -webkit-box-align: center; align-items: center; padding-top: var(--timeline-space-3xs); padding-bottom: var(--timeline-space-3xs); padding-left: var(--timeline-space-4xs); padding-right: var(--timeline-space-4xs); gap: var(--timeline-space-5xs); width: 100%; -webkit-box-pack: center; justify-content: center; }
+@media screen and (min-width: 480px) {.product-page .css-d25f0m { padding-left: var(--timeline-space-3xs); padding-right: var(--timeline-space-3xs); gap: var(--timeline-space-4xs); }}
+@media screen and (min-width: 768px) {.product-page .css-d25f0m { padding-left: var(--timeline-space-2xs); padding-right: var(--timeline-space-2xs); gap: var(--timeline-space-xs); }}

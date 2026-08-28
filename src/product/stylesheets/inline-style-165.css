@@ -1,0 +1,3 @@
+.product-page .css-1aw54cx { text-align: center; color: var(--timeline-colors-gray-600); font-weight: var(--timeline-fontWeights-medium) !important; }
+@media screen and (min-width: 0em) and (max-width: 767.98px) {.product-page .css-1aw54cx { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-2xs); font-weight: var(--timeline-fontWeights-normal); line-height: 150%; letter-spacing: var(--timeline-letterSpacings-widest); font-variant-numeric: slashed-zero; }}
+@media screen and (min-width: 768px) {.product-page .css-1aw54cx { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xs); font-weight: var(--timeline-fontWeights-medium); line-height: 125%; letter-spacing: var(--timeline-letterSpacings-widest); }}

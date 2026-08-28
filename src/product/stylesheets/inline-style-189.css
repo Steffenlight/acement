@@ -1,0 +1,4 @@
+.product-page .css-l098fe { color: var(--timeline-colors-blackAlpha-700); white-space: nowrap; transition-duration: var(--timeline-transition-duration-fast); }
+@media screen and (min-width: 0em) and (max-width: 959.98px) {.product-page .css-l098fe { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-md); font-weight: var(--timeline-fontWeights-medium); line-height: 120%; }}
+@media screen and (min-width: 960px) {.product-page .css-l098fe { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xl); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; color: var(--timeline-colors-blackAlpha-600); }}
+.product-page .css-l098fe:hover, .product-page .css-l098fe[data-hover] { color: var(--timeline-colors-blackAlpha-700); }

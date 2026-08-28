@@ -1,0 +1,4 @@
+.product-page .css-81x3z1 { display: flex; -webkit-box-align: center; align-items: center; width: 100%; outline: transparent solid 2px; outline-offset: 2px; transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-normal); font-size: var(--timeline-fontSizes-md); padding-top: var(--timeline-space-2xs); padding-bottom: var(--timeline-space-4xs); padding-inline: 0px; }
+.product-page .css-81x3z1:focus-visible, .product-page .css-81x3z1[data-focus-visible] { box-shadow: var(--timeline-shadows-outline); }
+.product-page .css-81x3z1:disabled, .product-page .css-81x3z1[disabled], .product-page .css-81x3z1[aria-disabled="true"], .product-page .css-81x3z1[data-disabled] { opacity: 0.4; cursor: not-allowed; }
+.product-page .css-81x3z1:hover, .product-page .css-81x3z1[data-hover] { background-color: var(--timeline-colors-transparent); }

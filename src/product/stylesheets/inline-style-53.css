@@ -1,0 +1,3 @@
+.product-page .css-l5goe2 { width: 100%; display: none; opacity: 0; background-color: var(--timeline-colors-gray-100); transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-slow); grid-area: 1 / 1; }
+@media screen and (min-width: 960px) {.product-page .css-l5goe2 { display: block; }}
+@media (hover: hover) and (pointer: fine) {.product-page [role="group"]:hover .css-l5goe2, .product-page [role="group"][data-hover] .css-l5goe2, .product-page [data-group]:hover .css-l5goe2, .product-page [data-group][data-hover] .css-l5goe2, .product-page .group:hover .css-l5goe2, .product-page .group[data-hover] .css-l5goe2 { opacity: 1; }}

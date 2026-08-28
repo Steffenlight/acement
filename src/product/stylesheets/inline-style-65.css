@@ -1,0 +1,2 @@
+.product-page .css-1tnggiq { position: relative; display: grid; border-radius: var(--timeline-radii-base); overflow: hidden; }
+.product-page .css-1tnggiq > * { grid-area: 1 / 1; }

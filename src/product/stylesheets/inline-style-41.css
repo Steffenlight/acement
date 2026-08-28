@@ -1,0 +1,4 @@
+.product-page .css-1umca9n { position: relative; display: inline-block; }
+@media screen and (min-width: 0em) and (max-width: 1199.98px) {.product-page .css-1umca9n { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-lg); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; }}
+@media screen and (min-width: 1200px) {.product-page .css-1umca9n { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xl); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; }}
+.product-page .css-1umca9n:hover, .product-page .css-1umca9n[data-hover] { text-decoration: underline 1px; text-underline-offset: 0.2em; }

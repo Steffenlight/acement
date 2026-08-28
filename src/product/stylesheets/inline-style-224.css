@@ -1,0 +1,2 @@
+.product-page .css-1ctj6hy { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-3xl); font-weight: var(--timeline-fontWeights-book); line-height: 110%; letter-spacing: var(--timeline-letterSpacings-tightest); font-variant-numeric: slashed-zero; white-space: pre-wrap; grid-column: span 12; }
+@media screen and (min-width: 768px) {.product-page .css-1ctj6hy { grid-column: span 6; }}

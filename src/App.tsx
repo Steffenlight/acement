@@ -11,6 +11,7 @@ import { AboutPage, BenefitsPage, ContactPage, FaqPage, ProductPage, SciencePage
 import { BlogPage, DetailedFaqPage, LegalPage, ReviewsPage, TestimonialsPage } from './components/AcementContentPages.tsx'
 import { BlogIndexPage, BlogPostPage } from './components/AcementBlog.tsx'
 import FullSciencePage from './science/FullSciencePage.tsx'
+import FullProductPage from './product/FullProductPage.tsx'
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
@@ -68,7 +69,7 @@ function App() {
                 {defaultRoute !== '/' && <Route path="/" element={<Navigate to={defaultRoute} replace />} />}
                 <Route path="/" element={<AppContent />} />
                 <Route path="/shop" element={<ShopPage />} />
-                <Route path="/products/mitopure-softgels-vegan" element={<ProductPage />} />
+                <Route path="/products/mitopure-softgels-vegan" element={<FullProductPage />} />
                 <Route path="/science" element={<FullSciencePage />} />
                 <Route path="/benefits" element={<BenefitsPage />} />
                 <Route path="/about" element={<AboutPage />} />

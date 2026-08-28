@@ -1,0 +1,2 @@
+.product-page .css-1dp6755 { grid-column: span 12; width: var(--timeline-sizes-full); }
+@media screen and (min-width: 960px) {.product-page .css-1dp6755 { grid-column: span 5; padding-right: var(--timeline-space-lg); align-self: stretch; }}

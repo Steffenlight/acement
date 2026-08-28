@@ -1,0 +1,2 @@
+.product-page .css-1het91h { display: flex; grid-column: 1 / -1; justify-self: center; width: calc(100% - 8px); }
+@media screen and (min-width: 960px) {.product-page .css-1het91h { grid-column: auto; justify-self: start; width: auto; }}

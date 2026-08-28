@@ -1,0 +1,3 @@
+.product-page .css-18zazm2 { overflow-anchor: none; border: var(--timeline-borders-none); }
+.product-page .css-18zazm2:last-of-type { border-bottom-width: 1px; }
+.product-page .css-18zazm2:not(:last-of-type) { margin-bottom: var(--timeline-space-4xs); }

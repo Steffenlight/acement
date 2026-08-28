@@ -1,0 +1,3 @@
+.product-page .css-1ctjhtp { position: relative; align-self: center; grid-area: 1 / 1 / auto / -1; transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-fast); display: flex; gap: var(--timeline-space-sm); flex-direction: column; -webkit-box-pack: center; justify-content: center; pointer-events: auto; padding-right: 0px; text-align: center; }
+@media screen and (min-width: 960px) {.product-page .css-1ctjhtp { grid-column: 1 / 5; opacity: 1; padding-right: var(--timeline-space-sm); text-align: left; }}
+@media screen and (min-width: 1200px) {.product-page .css-1ctjhtp { padding-right: var(--timeline-space-m); }}

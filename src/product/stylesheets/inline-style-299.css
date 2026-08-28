@@ -1,0 +1,2 @@
+.product-page .css-74hl3p { grid-column: span 12; order: 2; margin-top: var(--timeline-space-sm); text-align: center; }
+@media screen and (min-width: 960px) {.product-page .css-74hl3p { grid-area: 1 / 5 / auto / span 8; margin-top: 0px; align-self: start; text-align: left; }}
