@@ -16,10 +16,16 @@ export default defineConfig(({ mode }) => {
       }),
       react(),
     ],
-    base: './',
+    // Must be absolute. With './' the bundle is requested relative to the
+    // current path, so on a two-segment route such as /products/x or
+    // /blog/x the browser asks for /products/index-*.js, the SPA rewrite
+    // answers with index.html, and the page renders blank.
+    base: '/',
     build: {
-      minify: false,
-      cssMinify: false,
+      // Alloy ships this project unminified for prototype editing. In
+      // production it means shipping and parsing ~1.3MB of JS.
+      minify: 'esbuild',
+      cssMinify: true,
       sourcemap: false,
       target: 'esnext',
       rollupOptions: {
@@ -35,7 +41,6 @@ export default defineConfig(({ mode }) => {
     },
     esbuild: {
       target: 'esnext',
-      minify: false,
     },
     optimizeDeps: {
       force: true,

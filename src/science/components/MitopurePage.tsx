@@ -55,7 +55,7 @@ function MitopurePage() {
     			<div className={"css-nt5kye"} style={{translate:"none", rotate:"none", scale:"none", transform:"scale(0.9,0.9)", opacity:"0.5"}}>
     				<div className={"css-16qefzr"}>
     					<div className={"css-1es186y"}>
-    						<canvas width={"433"} height={"750"} style={{width:"100%", height:"100%", backgroundBlendMode:"normal", backgroundClip:"content-box", backgroundPosition:"center center", backgroundColor:"rgba(0,0,0,0)", backgroundImage:"url(\"assets/data-asset-9d37df5a-07b2-433a-b06e-ecdf631c8261.png\")", backgroundSize:"100% 100%", backgroundOrigin:"content-box", backgroundRepeat:"no-repeat"}}>
+    						<canvas width={"433"} height={"750"} style={{width:"100%", height:"100%", backgroundBlendMode:"normal", backgroundClip:"content-box", backgroundPosition:"center center", backgroundColor:"rgba(0,0,0,0)", backgroundImage:"url(\"/assets/data-asset-9d37df5a-07b2-433a-b06e-ecdf631c8261.png\")", backgroundSize:"100% 100%", backgroundOrigin:"content-box", backgroundRepeat:"no-repeat"}}>
     
     						</canvas>
     					</div>
