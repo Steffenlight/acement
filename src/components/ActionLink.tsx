@@ -1,5 +1,6 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
 
 
@@ -13,12 +14,13 @@ import type { JSX } from 'react/jsx-runtime'
             label: string;
             className: string;
         }) {
+            const to = label.toLowerCase().includes('science') ? '/science' : '/shop'
             return (
-                <a className={className}>
+                <Link to={to} className={className}>
                     <span className={"children"}>
                         {label}
                     </span>
-                </a>
+                </Link>
             )
         }
     

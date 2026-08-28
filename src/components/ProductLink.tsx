@@ -1,5 +1,6 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
 
 
@@ -8,9 +9,9 @@ import type { JSX } from 'react/jsx-runtime'
 
         function ProductLink({ label }: { label: string }) {
             return (
-                <a className={"chakra-linkbox__overlay css-kvj8dg"}>
+                <Link to={label.includes('Softgels') ? '/products/mitopure-softgels-vegan' : '/shop'} className={"chakra-linkbox__overlay css-kvj8dg"}>
                     {label}
-                </a>
+                </Link>
             )
         }
     

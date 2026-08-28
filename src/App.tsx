@@ -7,6 +7,7 @@ import Footer from './components/Footer.tsx'
 import SiteHeader from './components/SiteHeader.tsx'
 import MitopurePage from './components/MitopurePage.tsx'
 import SiteFooter from './components/SiteFooter.tsx'
+import { AboutPage, ContactPage, FaqPage, ProductPage, SciencePage, ShopPage } from './components/AcementSite.tsx'
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
@@ -62,6 +63,13 @@ function App() {
         <Router>
             <Routes>
                 {defaultRoute !== '/' && <Route path="/" element={<Navigate to={defaultRoute} replace />} />}
+                <Route path="/" element={<AppContent />} />
+                <Route path="/shop" element={<ShopPage />} />
+                <Route path="/products/mitopure-softgels-vegan" element={<ProductPage />} />
+                <Route path="/science" element={<SciencePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/faq" element={<FaqPage />} />
+                <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<AppContent />} />
             </Routes>
         </Router>

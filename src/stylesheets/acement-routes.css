@@ -1,0 +1,40 @@
+@media (max-width: 640px) {
+  .acement-header-inner {
+    min-height: 64px !important;
+    flex-wrap: wrap;
+    padding: 0 24px !important;
+  }
+
+  .acement-logo {
+    white-space: nowrap;
+    font-size: var(--timeline-fontSizes-xl) !important;
+  }
+
+  .acement-menu-button {
+    display: block !important;
+    border: 0;
+    background: transparent;
+    color: var(--timeline-colors-gray-600);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs-mono);
+    letter-spacing: 0.08em;
+    padding: 12px 0;
+    text-transform: uppercase;
+  }
+
+  .acement-nav {
+    display: none !important;
+    flex-basis: 100%;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 4px 0 16px;
+  }
+
+  .acement-nav.encement-nav-open {
+    display: flex !important;
+  }
+
+  .acement-nav a {
+    padding: 12px 0;
+  }
+}
