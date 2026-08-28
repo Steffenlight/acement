@@ -1,0 +1,7 @@
+.css-uvutxu { display: flex; -webkit-box-align: center; align-items: center; padding-top: var(--timeline-space-3xs); padding-bottom: var(--timeline-space-3xs); padding-left: 0px; padding-right: var(--timeline-space-4xs); gap: var(--timeline-space-5xs); width: 100%; -webkit-box-pack: start; justify-content: start; }
+@media screen and (min-width: 480px) {
+  .css-uvutxu { padding-right: var(--timeline-space-3xs); gap: var(--timeline-space-4xs); }
+}
+@media screen and (min-width: 768px) {
+  .css-uvutxu { padding-right: var(--timeline-space-2xs); gap: var(--timeline-space-xs); }
+}

@@ -1,0 +1,3 @@
+.css-yysivz { font-family: var(--timeline-fonts-serif); font-size: var(--timeline-fontSizes-2xl-serif); font-weight: var(--timeline-fontWeights-book-serif); font-variation-settings: "wght" 300, "STYL" 500; line-height: 100%; text-align: center; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--chakra-line-clamp); --chakra-line-clamp: 6; padding-top: var(--timeline-space-4xs); padding-bottom: var(--timeline-space-4xs); }
+.css-yysivz::before { content: "“"; }
+.css-yysivz::after { content: "”"; }

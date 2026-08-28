@@ -1,0 +1,2 @@
+.css-bkcnhs { display: flex; flex-direction: column; gap: var(--timeline-space-xs); position: relative; }
+.css-bkcnhs a[href]:not(.chakra-linkbox__overlay), .css-bkcnhs abbr[title] { position: relative; z-index: 1; }

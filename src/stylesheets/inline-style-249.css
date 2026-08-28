@@ -1,0 +1,7 @@
+.css-1vn31qp { border-radius: var(--timeline-radii-xl); width: 220px; overflow: hidden; position: relative; background: var(--timeline-colors-gray-100); height: 360px; display: flex; flex-direction: column; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; padding: var(--timeline-space-2xs); gap: var(--timeline-space-5xs); color: var(--timeline-colors-gray-600); }
+@media screen and (min-width: 480px) {
+  .css-1vn31qp { gap: var(--timeline-space-4xs); }
+}
+@media screen and (min-width: 768px) {
+  .css-1vn31qp { width: 293px; padding: var(--timeline-space-sm); }
+}

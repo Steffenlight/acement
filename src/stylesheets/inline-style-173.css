@@ -1,0 +1,4 @@
+.css-1701odz { width: var(--timeline-sizes-full); }
+@media screen and (min-width: 960px) {
+  .css-1701odz { max-width: 400px; }
+}

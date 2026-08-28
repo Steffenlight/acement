@@ -1,0 +1,4 @@
+.css-9ulqhf { align-self: stretch; min-width: 0px; margin-inline: clamp(-20px, -10.14px - 2.63vw, -48px); width: calc(100% - (2 * clamp(-20px, -10.14px - 2.63vw, -48px))); }
+@media screen and (min-width: 960px) {
+  .css-9ulqhf { align-self: auto; margin-inline: 0px; width: var(--timeline-sizes-full); }
+}

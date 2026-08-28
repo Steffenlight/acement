@@ -1,0 +1,4 @@
+.css-lq8hxu { grid-column: span 12; inset: 0px; aspect-ratio: 1 / 1; overflow: hidden; border-radius: var(--timeline-radii-base); }
+@media screen and (min-width: 960px) {
+  .css-lq8hxu { grid-column: span 4; }
+}

@@ -1,0 +1,1 @@
+.css-1t9ec4j { display: grid; grid-template-columns: [full-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[full-end]; grid-column: bordered; position: relative; overflow: hidden; --grid-width: 1440px; }

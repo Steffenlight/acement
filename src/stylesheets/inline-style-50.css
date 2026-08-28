@@ -1,0 +1,7 @@
+.css-l5goe2 { width: 100%; display: none; opacity: 0; background-color: var(--timeline-colors-gray-100); transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-slow); grid-area: 1 / 1; }
+@media screen and (min-width: 960px) {
+  .css-l5goe2 { display: block; }
+}
+@media (hover: hover) and (pointer: fine) {
+  [role="group"]:hover .css-l5goe2, [role="group"][data-hover] .css-l5goe2, [data-group]:hover .css-l5goe2, [data-group][data-hover] .css-l5goe2, .group:hover .css-l5goe2, .group[data-hover] .css-l5goe2 { opacity: 1; }
+}

@@ -1,0 +1,10 @@
+.css-tevdxy { list-style-type: none; margin-inline-start: 1em; display: grid; grid-template-columns: repeat(1, minmax(0px, 1fr)); grid-column: span 12; column-gap: var(--timeline-space-3xs); row-gap: var(--timeline-space-lg); margin: 0px; }
+@media screen and (min-width: 375px) {
+  .css-tevdxy { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
+}
+@media screen and (min-width: 768px) {
+  .css-tevdxy { column-gap: var(--timeline-space-sm); }
+}
+@media screen and (min-width: 1200px) {
+  .css-tevdxy { grid-template-columns: repeat(4, minmax(0px, 1fr)); }
+}

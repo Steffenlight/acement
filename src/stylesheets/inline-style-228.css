@@ -1,0 +1,5 @@
+.css-1jcgw14 { display: grid; grid-template-columns: repeat(12, 1fr); grid-column: main; column-gap: clamp(12px, 7.77px + 1.13vw, 24px); row-gap: var(--timeline-space-sm); }
+@media screen and (min-width: 768px) {
+  .css-1jcgw14 { row-gap: var(--timeline-space-m); }
+}
+.css-1jcgw14:hover button:not([disabled]), .css-1jcgw14[data-hover] button:not([disabled]) { opacity: 1; }

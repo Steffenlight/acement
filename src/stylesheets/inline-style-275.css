@@ -1,0 +1,5 @@
+.css-1l4m4qm { position: relative; width: 54px; height: 54px; -webkit-tap-highlight-color: transparent; }
+@media screen and (min-width: 960px) {
+  .css-1l4m4qm { width: 66px; height: 66px; }
+}
+.css-1l4m4qm:hover .motion-thumbnail::before { opacity: 1; }

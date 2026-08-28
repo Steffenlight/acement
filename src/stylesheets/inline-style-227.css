@@ -1,0 +1,15 @@
+.css-1y1ikhe { display: grid; grid-template-columns: [full-start]clamp(4px,calc(2.06px + 0.52vw),12px)[bordered-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[bordered-end]clamp(4px,calc(2.06px + 0.52vw),12px)[full-end]; width: 100%; max-width: 2560px; margin-inline: auto; margin-top: var(--timeline-space-2xl); margin-bottom: var(--timeline-space-2xl); position: relative; -webkit-box-align: center; align-items: center; overflow: hidden; --grid-width: 1440px; }
+.css-1y1ikhe .swiper { z-index: 0; }
+.css-1y1ikhe .swiper-horizontal { overflow: visible; grid-column: main; width: 100%; }
+.css-1y1ikhe .swiper-slide:first-of-type { pointer-events: auto; }
+@media screen and (min-width: 960px) {
+  .css-1y1ikhe .swiper-slide:first-of-type { display: block; }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 960px) {
+}
+@media (min-width: 1200px) {
+}
+.css-1y1ikhe .swiper-wrapper { -webkit-box-align: stretch; align-items: stretch; display: flex; }
+.css-1y1ikhe .swiper-slide { height: unset; }

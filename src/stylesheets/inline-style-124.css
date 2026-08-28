@@ -1,0 +1,4 @@
+.css-1ryyf3c { width: 68px; height: auto; display: inline-block; line-height: 1em; flex-shrink: 0; color: var(--timeline-colors-red-300); vertical-align: middle; fill: none; margin-top: -2px; }
+@media screen and (min-width: 768px) {
+  .css-1ryyf3c { width: clamp(80px, 72.96px + 1.88vw, 100px); }
+}

@@ -1,0 +1,4 @@
+.css-6fyox4 { display: flex; grid-column: main; justify-content: stretch; width: 100%; }
+@media screen and (min-width: 480px) {
+  .css-6fyox4 { -webkit-box-pack: center; justify-content: center; width: auto; }
+}

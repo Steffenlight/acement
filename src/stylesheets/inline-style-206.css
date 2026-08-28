@@ -1,0 +1,4 @@
+.css-15sdulb { display: grid; opacity: 1; transition: opacity 0.3s; grid-column: span 12; margin-bottom: calc(var(--timeline-space-lg)*-1); position: relative; }
+@media screen and (min-width: 1200px) {
+  .css-15sdulb { grid-column: span 12; }
+}

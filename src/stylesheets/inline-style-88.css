@@ -1,0 +1,4 @@
+.css-2maf73 { display: flex; -webkit-box-pack: center; justify-content: center; }
+@media screen and (min-width: 768px) {
+  .css-2maf73 { -webkit-box-pack: end; justify-content: end; }
+}

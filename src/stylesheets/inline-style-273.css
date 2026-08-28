@@ -1,0 +1,4 @@
+.css-i3v4pc { order: 2; height: var(--timeline-sizes-full); display: flex; flex-direction: column; }
+@media screen and (min-width: 960px) {
+  .css-i3v4pc { order: 0; }
+}

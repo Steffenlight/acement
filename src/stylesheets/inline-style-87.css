@@ -1,0 +1,4 @@
+.css-ugkblx { position: absolute; bottom: 43px; left: clamp(20px, 13.2px + 1.81vw, 48px); right: clamp(20px, 13.2px + 1.81vw, 48px); z-index: 2; }
+@media screen and (min-width: 768px) {
+  .css-ugkblx { bottom: var(--timeline-space-lg); left: auto; }
+}

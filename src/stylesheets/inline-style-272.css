@@ -1,0 +1,4 @@
+.css-gsy7sp { display: flex; flex-direction: column; -webkit-box-pack: justify; justify-content: space-between; grid-column: span 12; }
+@media screen and (min-width: 960px) {
+  .css-gsy7sp { grid-column: 6 / -1; }
+}

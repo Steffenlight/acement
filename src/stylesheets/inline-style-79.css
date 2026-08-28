@@ -1,0 +1,4 @@
+.css-vhmi18 { position: absolute; bottom: var(--timeline-space-3xs); left: 0px; right: 0px; z-index: 2; }
+@media screen and (min-width: 768px) {
+  .css-vhmi18 { bottom: var(--timeline-space-m); }
+}

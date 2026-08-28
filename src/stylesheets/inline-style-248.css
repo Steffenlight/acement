@@ -1,0 +1,4 @@
+.css-1e3wj8i { display: grid; grid-template-columns: [full-start]clamp(4px,calc(2.06px + 0.52vw),12px)[bordered-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[bordered-end]clamp(4px,calc(2.06px + 0.52vw),12px)[full-end]; width: 100%; max-width: 100%; margin-inline: auto; margin-top: 0px; margin-bottom: -20px; position: relative; -webkit-box-align: center; align-items: center; grid-column: full; overflow: hidden; border-radius: var(--timeline-radii-base); --grid-width: 1440px; }
+.css-1e3wj8i:hover button:not([disabled]), .css-1e3wj8i[data-hover] button:not([disabled]) { opacity: 1; }
+.css-1e3wj8i .swiper-horizontal { overflow: visible; display: grid; grid-template-columns: subgrid; grid-column: full; width: 100%; }
+.css-1e3wj8i .swiper-slide { width: auto; }

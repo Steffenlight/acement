@@ -1,0 +1,5 @@
+.css-1ug0t4e { display: grid; grid-template-columns: repeat(12, 1fr); grid-column: full; gap: clamp(12px, 7.77px + 1.13vw, 24px); overflow: hidden; border-radius: var(--timeline-radii-lg); width: 100%; min-width: 100%; }
+.css-1ug0t4e .swiper { grid-column: span 12; }
+.css-1ug0t4e .swiper-horizontal { overflow: hidden; border-radius: var(--timeline-radii-lg); }
+.css-1ug0t4e .swiper-wrapper { width: 100%; }
+.css-1ug0t4e .swiper-slide { flex: 0 0 100%; width: 100% !important; }

@@ -1,0 +1,4 @@
+.css-1fmtkaj { display: flex; flex-direction: column; gap: 0px; min-height: auto; text-align: center; width: var(--timeline-sizes-full); }
+@media screen and (min-width: 960px) {
+  .css-1fmtkaj { -webkit-box-pack: justify; justify-content: space-between; min-height: 100%; text-align: left; }
+}

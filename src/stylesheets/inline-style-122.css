@@ -1,0 +1,4 @@
+.css-idi58q { grid-column: span 12; }
+@media screen and (min-width: 960px) {
+  .css-idi58q { grid-column: span 8; }
+}

@@ -1,0 +1,4 @@
+.css-ba2erm { display: flex; -webkit-box-align: center; align-items: center; flex-direction: column; gap: var(--timeline-space-3xs); width: var(--timeline-sizes-full); }
+@media screen and (min-width: 960px) {
+  .css-ba2erm { align-items: flex-start; }
+}

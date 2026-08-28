@@ -1,0 +1,7 @@
+.css-1543gav { display: grid; grid-template-columns: repeat(12, 1fr); grid-area: 1 / full; gap: clamp(12px, 7.77px + 1.13vw, 24px); position: relative; border-radius: var(--timeline-radii-lg); overflow: hidden; height: auto; aspect-ratio: 1 / 1; }
+@media screen and (min-width: 768px) {
+  .css-1543gav { height: 500px; aspect-ratio: auto; }
+}
+@media screen and (min-width: 960px) {
+  .css-1543gav { height: clamp(440px, 80px + 37.5vw, 800px); }
+}

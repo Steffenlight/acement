@@ -1,0 +1,4 @@
+.css-1q8uwok { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; flex-direction: row; gap: var(--timeline-space-4xs); }
+@media screen and (min-width: 768px) {
+  .css-1q8uwok { -webkit-box-pack: start; justify-content: start; }
+}
