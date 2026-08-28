@@ -1,6 +1,8 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
+import { routeForLabel } from '../lib/navRoutes.ts'
 import Arrow_up_right_diagonal from './icons/Arrow_up_right_diagonal.tsx'
 import HeaderSubnav from './HeaderSubnav.tsx'
 import Testimonial from './Testimonial.tsx'
@@ -25,24 +27,35 @@ import Testimonial from './Testimonial.tsx'
                 rel,
             }: HeaderSubnavLinkData = getHeaderSubnavLinkData(dataId);
 
+            const className = `chakra-link header_subnav-item-${itemIndex} css-srs6rl`;
+            const to = routeForLabel(label);
+
+            const content = (
+                <span className={"chakra-text css-1umca9n"}>
+                    <span className={"css-whh5e5"}>
+                        {hasArrow ? (
+                            <span className={"css-1lahpcg"}>
+                                {label}
+                                <Arrow_up_right_diagonal />
+                            </span>
+                        ) : (
+                            label
+                        )}
+                    </span>
+                </span>
+            );
+
+            if (to) {
+                return <Link to={to} className={className}>{content}</Link>;
+            }
+
             return (
                 <a
                     {...(target !== undefined ? { target } : {})}
                     {...(rel !== undefined ? { rel } : {})}
-                    className={`chakra-link header_subnav-item-${itemIndex} css-srs6rl`}
+                    className={className}
                 >
-                    <span className={"chakra-text css-1umca9n"}>
-                        <span className={"css-whh5e5"}>
-                            {hasArrow ? (
-                                <span className={"css-1lahpcg"}>
-                                    {label}
-                                    <Arrow_up_right_diagonal />
-                                </span>
-                            ) : (
-                                label
-                            )}
-                        </span>
-                    </span>
+                    {content}
                 </a>
             );
         }

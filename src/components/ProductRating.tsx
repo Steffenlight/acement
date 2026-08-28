@@ -1,5 +1,8 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
+
+import { routeForLabel } from '../lib/navRoutes.ts'
 
 import Filled_five_point_star from './icons/Filled_five_point_star.tsx'
 import Filled_five_point_star7 from './icons/Filled_five_point_star7.tsx'
@@ -31,9 +34,9 @@ import Filled_five_point_star9 from './icons/Filled_five_point_star9.tsx'
             return (
                 <div className={"css-u1cfch"}>
                     <h2 className={"chakra-text css-18ogj9d"}>
-                        <a className={"chakra-linkbox__overlay css-kvj8dg"}>
+                        <Link to={routeForLabel(name) ?? '/shop'} className={"chakra-linkbox__overlay css-kvj8dg"}>
                             {name}
-                        </a>
+                        </Link>
                     </h2>
                     <div className={"chakra-stack css-vc9d0q"}>
                         {star}

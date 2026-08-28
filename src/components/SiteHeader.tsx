@@ -1,5 +1,6 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
 import CategoryButton from './CategoryButton.tsx'
 import IconButton from './IconButton.tsx'
@@ -48,40 +49,40 @@ function SiteHeader() {
     		<div className={"css-1be9aw6"}>
     			<div className={"css-5aziu9"}>
     				<div className={"header_subnav-trigger css-1v0cd8t"}>
-    					<span className={"chakra-link css-1jqgv6h"}>
+    					<Link to={"/shop"} className={"chakra-link css-1jqgv6h"}>
     						<span className={"chakra-text css-2vvooy"}>
     							<span className={"css-whh5e5"}>
     								Shop
     							</span>
     						</span>
-    					</span>
-    					
+    					</Link>
+
                 <NavigationPanel dataId="0" />
-            
+
     				</div>
     				<div className={"header_subnav-trigger css-1v0cd8t"}>
-    					<span className={"chakra-link css-1jqgv6h"}>
+    					<Link to={"/science"} className={"chakra-link css-1jqgv6h"}>
     						<span className={"chakra-text css-2vvooy"}>
     							<span className={"css-whh5e5"}>
     								Science
     							</span>
     						</span>
-    					</span>
-    					
+    					</Link>
+
                 <NavigationPanel dataId="1" />
-            
+
     				</div>
     				<div className={"header_subnav-trigger css-1v0cd8t"}>
-    					<span className={"chakra-link css-1jqgv6h"}>
+    					<Link to={"/about"} className={"chakra-link css-1jqgv6h"}>
     						<span className={"chakra-text css-2vvooy"}>
     							<span className={"css-whh5e5"}>
     								About
     							</span>
     						</span>
-    					</span>
-    					
+    					</Link>
+
                 <NavigationPanel dataId="2" />
-            
+
     				</div>
     				<LongevityGameLink />
     				<div className={"css-10f3xy2"} style={{opacity:"0", display:"none"}}>

@@ -1,6 +1,8 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
+import { routeForLabel } from '../lib/navRoutes.ts'
 import Arrow_up_right_diagonal from './icons/Arrow_up_right_diagonal.tsx'
 import Arrow_up_right_diagonal1 from './icons/Arrow_up_right_diagonal1.tsx'
 import FooterLink from './FooterLink.tsx'
@@ -20,24 +22,34 @@ import Footer from './Footer.tsx'
         function FooterLink1({ dataId }: { dataId: string }) {
             const data: FooterLinkData = getFooterLinkData(dataId);
 
+            const to = routeForLabel(data.label);
+
+            const content = (
+                <span className={"chakra-text css-t7iote"}>
+                    <span className={"css-whh5e5"}>
+                        {data.external ? (
+                            <span className={"css-1lahpcg"}>
+                                {data.label}
+                                <Arrow_up_right_diagonal1 />
+                            </span>
+                        ) : (
+                            data.label
+                        )}
+                    </span>
+                </span>
+            );
+
+            if (to) {
+                return <Link to={to} className={"chakra-link css-srs6rl"} id={data.id}>{content}</Link>;
+            }
+
             return (
                 <a
                     {...(data.external ? { target: "_blank", rel: data.rel } : {})}
                     className={"chakra-link css-srs6rl"}
                     id={data.id}
                 >
-                    <span className={"chakra-text css-t7iote"}>
-                        <span className={"css-whh5e5"}>
-                            {data.external ? (
-                                <span className={"css-1lahpcg"}>
-                                    {data.label}
-                                    <Arrow_up_right_diagonal1 />
-                                </span>
-                            ) : (
-                                data.label
-                            )}
-                        </span>
-                    </span>
+                    {content}
                 </a>
             );
         }

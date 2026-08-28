@@ -1,5 +1,6 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
+import { Link } from 'react-router-dom'
 
 import Filled_five_point_star from './icons/Filled_five_point_star.tsx'
 import Filled_five_point_star2 from './icons/Filled_five_point_star2.tsx'
@@ -19,13 +20,13 @@ function ReviewsOverview() {
     		<Filled_five_point_star5 />
     		<Filled_five_point_star6 />
     	</div>
-    	<a className={"chakra-button css-59q361"}>
+    	<Link to={"/products/mitopure-softgels-vegan"} className={"chakra-button css-59q361"}>
     		4.7
     		{` from`}
     		13473
     		{` reviews`}
     		{` · 95% recommend`}
-    	</a>
+    	</Link>
     </div>
 }
 
