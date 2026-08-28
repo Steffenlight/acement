@@ -4,7 +4,7 @@
 
 const ROUTES: Record<string, string> = {
     // Shop
-    'shop all': '/shop',
+    'shop all': '/products/mitopure-softgels-vegan',
     'samples': '/shop',
     'accessories': '/shop',
     'topicals': '/shop',

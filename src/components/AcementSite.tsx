@@ -11,7 +11,7 @@ function Header() {
   const location = useLocation()
   const [open, setOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
-  const links = [['Shop', '/shop'], ['Science', '/science'], ['Benefits', '/benefits'], ['About', '/about'], ['FAQ', '/faq']]
+  const links = [['Shop', '/products/mitopure-softgels-vegan'], ['Science', '/science'], ['Benefits', '/benefits'], ['About', '/about'], ['FAQ', '/faq']]
 
   return <header onMouseLeave={() => setActiveMenu(null)} style={{ position: 'sticky', top: 0, zIndex: 10, background: cream, borderBottom: '1px solid var(--timeline-colors-blackAlpha-200)' }}>
     <div className="acement-header-inner" style={{ maxWidth: 1240, margin: '0 auto', minHeight: 78, padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20 }}>
@@ -28,7 +28,7 @@ function Header() {
 
 function MegaMenu({ section, onClose }: { section: string, onClose: () => void }) {
   const data: Record<string, Array<[string, string]>> = {
-    Shop: [['Shop all', '/shop'], ['Mitopure Softgels', '/products/mitopure-softgels-vegan'], ['Mitopure Gummies', '/shop'], ['Accessories', '/shop']],
+    Shop: [['Shop all', '/products/mitopure-softgels-vegan'], ['Mitopure Softgels', '/products/mitopure-softgels-vegan'], ['Mitopure Gummies', '/shop'], ['Accessories', '/shop']],
     Science: [['Science of Mitopure', '/science'], ['How it works', '/science'], ['Benefits', '/benefits'], ['Clinical studies', '/science'], ['Patents', '/science']],
     About: [['Our story', '/about'], ['Reviews', '/reviews'], ['Testimonials', '/testimonials'], ['Journal', '/blog'], ['FAQs', '/faq']],
   }

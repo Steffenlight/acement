@@ -50,7 +50,7 @@ function SiteHeader() {
     		<div className={"css-1be9aw6"}>
     			<div className={"css-5aziu9"}>
     				<div className={"header_subnav-trigger css-1v0cd8t"}>
-    					<Link to={"/shop"} className={"chakra-link css-1jqgv6h"}>
+    					<Link to={"/products/mitopure-softgels-vegan"} className={"chakra-link css-1jqgv6h"}>
     						<span className={"chakra-text css-2vvooy"}>
     							<span className={"css-whh5e5"}>
     								Shop

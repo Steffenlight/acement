@@ -14,7 +14,7 @@ import Menu_hamburger_three_bars from './icons/Menu_hamburger_three_bars.tsx'
 // routes, shown below 960px to match timeline.com's breakpoint.
 
 const LINKS: [string, string][] = [
-    ['Shop', '/shop'],
+    ['Shop', '/products/mitopure-softgels-vegan'],
     ['Science', '/science'],
     ['Benefits', '/benefits'],
     ['About', '/about'],

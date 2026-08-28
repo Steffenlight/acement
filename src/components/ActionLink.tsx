@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
             label: string;
             className: string;
         }) {
-            const to = label.toLowerCase().includes('science') ? '/science' : '/shop'
+            const to = label.toLowerCase().includes('science') ? '/science' : '/products/mitopure-softgels-vegan'
             return (
                 <Link to={to} className={className}>
                     <span className={"children"}>
