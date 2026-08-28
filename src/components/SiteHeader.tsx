@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import CategoryButton from './CategoryButton.tsx'
 import IconButton from './IconButton.tsx'
+import MobileMenu from './MobileMenu.tsx'
 import TimelineHomeLink from './TimelineHomeLink.tsx'
 import LongevityGameLink from './LongevityGameLink.tsx'
 import NavigationPanel from './NavigationPanel.tsx'
@@ -27,7 +28,7 @@ function SiteHeader() {
     			</div>
     		</div>
     		
-                <IconButton variant="menu" icon="menu" />
+                <MobileMenu />
             
     		<TimelineHomeLink />
     		<div className={"css-fcnkvq"}>

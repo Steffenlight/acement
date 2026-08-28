@@ -1,0 +1,122 @@
+/* Fixes for behaviour Alloy's static capture dropped, restored to match
+   timeline.com. Each rule below was read off the live site rather than
+   guessed. */
+
+/* --- Press marquee -------------------------------------------------------
+   The capture kept the marquee's CSS custom properties on the element
+   (--duration, --play, --direction, --iteration-count) and kept the `scroll`
+   keyframes, but lost the rule that binds them together, so the strip sat
+   frozen. This is the binding timeline.com uses. */
+.rfm-marquee {
+    animation-name: scroll;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: var(--iteration-count);
+    animation-play-state: var(--play);
+    animation-delay: var(--delay);
+    animation-direction: var(--direction);
+    animation-fill-mode: both;
+}
+
+/* Respect users who ask for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    .rfm-marquee {
+        animation: none;
+    }
+}
+
+/* --- Mobile navigation ---------------------------------------------------
+   timeline.com shows the hamburger by default and hides it from 960px up.
+   The capture instead baked in `sf-hidden`, so it never appeared at any
+   width. The component no longer emits that class; these rules restore the
+   original breakpoint behaviour. */
+.css-1qdrp3y {
+    display: block;
+}
+
+@media screen and (min-width: 960px) {
+    .css-1qdrp3y {
+        display: none;
+    }
+}
+
+/* --- Mobile menu drawer --------------------------------------------------
+   Styling for MobileMenu.tsx, matching timeline.com's slide-in drawer. */
+.acement-mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+}
+
+.acement-mobile-menu__scrim {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    background: rgba(41, 41, 35, 0.45);
+    cursor: pointer;
+}
+
+.acement-mobile-menu__panel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: min(84vw, 360px);
+    background: var(--timeline-colors-gray-50, #fffffc);
+    padding: 28px 26px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 220ms ease-out;
+}
+
+.acement-mobile-menu__panel[data-state="open"] {
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .acement-mobile-menu__panel { transition: none; }
+}
+
+.acement-mobile-menu__close {
+    align-self: flex-end;
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    line-height: 1;
+    padding: 4px 6px;
+    cursor: pointer;
+    color: var(--timeline-colors-gray-600, #292923);
+}
+
+.acement-mobile-menu__panel ul {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+}
+
+.acement-mobile-menu__panel li + li {
+    border-top: 1px solid var(--timeline-colors-blackAlpha-200, rgba(0, 0, 0, 0.08));
+}
+
+.acement-mobile-menu__panel a {
+    display: block;
+    padding: 17px 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    color: var(--timeline-colors-gray-600, #292923);
+}
+
+.acement-mobile-menu__panel a[aria-current="page"] {
+    color: var(--timeline-colors-red-300, #b64a3d);
+}
+
+.acement-mobile-menu__cta {
+    margin-top: 26px;
+    text-align: center;
+    background: var(--timeline-colors-gray-600, #292923);
+    color: var(--timeline-colors-gray-50, #fffffc) !important;
+    border-radius: var(--timeline-radii-base, 4px);
+}
