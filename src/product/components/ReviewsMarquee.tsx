@@ -4,6 +4,18 @@ import type { JSX } from 'react/jsx-runtime'
 import Reviews from './Reviews.tsx'
 
 
+// PLACEHOLDER COPY — replace with real verified Ace Men reviews before launch.
+// Do not ship attributed quotes that did not come from an actual customer.
+const REVIEWS = [
+    { quote: "“More energy than I've had in ten years”", author: "Derek W" },
+    { quote: "“Adding weight to the bar every session”", author: "Tobias R" },
+    { quote: "“Sleep sorted itself out first”", author: "Elias V" },
+    { quote: "“Drive came back, which I wasn't expecting”", author: "Marcus H" },
+    { quote: "“My bloodwork actually moved”", author: "Preston K" },
+    { quote: "“Best I've felt since my twenties”", author: "Callum B" },
+]
+
+
 // Component
 
         function ReviewsMarquee() {
@@ -29,24 +41,9 @@ import Reviews from './Reviews.tsx'
                         } as React.CSSProperties}
                     >
                         <div className={"rfm-initial-child-container"}>
-                            <ReviewItem quote="“A lifesaver”" author="Catherine J" />
-                            <ReviewItem
-                                quote="“Best supplement I have added for increased performance and recovery”"
-                                author="Marisa P"
-                            />
-                            <ReviewItem
-                                quote="“Game changer for your energy and health”"
-                                author="Ines K"
-                            />
-                            <ReviewItem quote="“It works!”" author="Samsara L" />
-                            <ReviewItem
-                                quote="“Convenient and Effective”"
-                                author="Antoine v"
-                            />
-                            <ReviewItem
-                                quote="“Revitalized mind and body”"
-                                author="Amanda K"
-                            />
+                            {REVIEWS.map((r) => (
+                                <ReviewItem key={r.author} quote={r.quote} author={r.author} />
+                            ))}
                         </div>
                     </div>
                     <div
@@ -60,24 +57,9 @@ import Reviews from './Reviews.tsx'
                             "--min-width": "100%"
                         } as React.CSSProperties}
                     >
-                        <ReviewItem quote="“A lifesaver”" author="Catherine J" />
-                        <ReviewItem
-                            quote="“Best supplement I have added for increased performance and recovery”"
-                            author="Marisa P"
-                        />
-                        <ReviewItem
-                            quote="“Game changer for your energy and health”"
-                            author="Ines K"
-                        />
-                        <ReviewItem quote="“It works!”" author="Samsara L" />
-                        <ReviewItem
-                            quote="“Convenient and Effective”"
-                            author="Antoine v"
-                        />
-                        <ReviewItem
-                            quote="“Revitalized mind and body”"
-                            author="Amanda K"
-                        />
+                        {REVIEWS.map((r) => (
+                            <ReviewItem key={r.author} quote={r.quote} author={r.author} />
+                        ))}
                     </div>
                 </div>
             )
