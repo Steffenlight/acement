@@ -23,9 +23,9 @@ function ProductIntro() {
     		</span>
     	</div>
     	<h1 className={"chakra-text css-ryxp7a"}>
-    		Mitopure Softgels
+    		Ace Men
     		<span className={"css-19mjbaf"}>
-    			Urolithin A
+    			Testosterone Support
     		</span>
     	</h1>
     	<div className={"css-pignbj"}>
@@ -37,13 +37,13 @@ function ProductIntro() {
     				<Verified_badge_checkmark />
     			</div>
     			<span className={"css-1tqud6q"}>
-    				30 day money-back guarantee
+    				90 day money-back guarantee
     			</span>
     		</span>
     	</div>
     	<div className={"css-1jdlkwt"}>
     		<p className={"chakra-text css-u3zvhu"}>
-    			Improve your cellular health by taking Mitopure in its simplest form with two vegan softgels daily for the recommended dose of Urolithin A (500mg of Mitopure). Each sachet contains 60 softgels, which will last you a month.
+    			Ace Men is the #1 doctor recommended natural testosterone support. It works four ways: produces, frees, protects &amp; optimizes testosterone.
     			<sup className={"css-10x2srw"}>
     				†
     			</sup>
