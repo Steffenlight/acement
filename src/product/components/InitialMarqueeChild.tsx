@@ -28,7 +28,7 @@ import type { JSX } from 'react/jsx-runtime'
                             #1 DOCTOR RECOMMENDED
                         </p>
                         <p className={"chakra-text css-d9f0z0"}>
-                            UROLITHIN A BRAND
+                            TESTOSTERONE SUPPORT
                         </p>
                     </div>
                 </div>
