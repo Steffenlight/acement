@@ -15,16 +15,13 @@ function SiteHeader() {
     return <header className={"css-1quqpr3"}>
     	<div className={"css-1l8efhj"}>
     		<div className={"css-1het91h"}>
+    			{/* The Supplements / Skincare category toggle was removed. It came
+    			    from the captured two-category store; ACE MEN sells one product,
+    			    so the control had nothing to switch between. */}
     			<div className={"chakra-stack css-760t2k"}>
     				<div className={"css-30sxij"} style={{width:"126px", transform:"none"}}>
-    
+
     				</div>
-    				
-                <CategoryButton buttonClassName="chakra-button css-nluuds" label="Supplements" />
-            
-    				
-                <CategoryButton buttonClassName="chakra-button css-5h5ps1" label="Skincare" />
-            
     			</div>
     		</div>
     		

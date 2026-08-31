@@ -81,7 +81,9 @@ function OfferBand() {
                 <span className={'ob-now'}>{PRICE_NOW}</span>
                 <span className={'ob-was'} aria-label={`Was ${PRICE_WAS}`}>{PRICE_WAS}</span>
             </p>
-            <p className={'ob-headline'}>50% off for life</p>
+            <p className={'ob-headline'}>
+                {'50% off '}<span className={'ob-underline'}>for life</span>
+            </p>
         </div>
     )
 }

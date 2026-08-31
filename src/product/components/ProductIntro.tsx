@@ -18,7 +18,7 @@ function ProductIntro() {
     		</span>
     		<span className={"chakra-badge badge--product css-2lrs3d"}>
     			<span className={"css-1tqud6q"}>
-    				New 20% Price Cut
+    				{'50% off '}<span className={"ob-underline"}>for life</span>
     			</span>
     		</span>
     	</div>
