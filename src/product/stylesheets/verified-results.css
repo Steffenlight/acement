@@ -1,0 +1,322 @@
+/* Verified results — before/after band on the product page.
+ *
+ * The reference for this section is Mars Men's transformation carousel, but
+ * only for the *information*: two photographs of the same man plus the lab
+ * value that moved between them. Their treatment is direct-response — orange
+ * banner tags stamped over the photo, a bare "T LEVELS" number with no unit.
+ *
+ * This rebuilds it in Acement's own system, and the substantive differences
+ * are deliberate:
+ *
+ *  - Numbers live in the type system, under the photo, not stamped on it.
+ *    Everywhere else on this page a measured value is set as a numeral in the
+ *    sans at fontSizes-3xl over a hairline. A number burned into a JPEG reads
+ *    as a graphic; a number set in the page reads as data.
+ *  - "Week 0 / Week 12" replaces "Before / After". Elapsed time is a fact,
+ *    before/after is a verdict, and the verdict is the reader's to make.
+ *  - The value carries its unit (ng/dL). Without a unit it is a score; with
+ *    one it is a lab result the reader can hold against their own panel.
+ *  - Red is used once per card, on the week-12 value, and nowhere else. That
+ *    keeps the accent near the ~5% of surface area the brand system asks for.
+ *
+ * Carousel mechanics match .tt-track in transformation-mobile.css: plain CSS
+ * scroll-snap, no library. */
+
+.product-page .vr {
+    background: var(--timeline-colors-gray-100);
+    padding-block: clamp(56px, calc(43.77px + 3.4vw), 96px);
+    /* .product-page is a grid item and defaults to min-width:auto, so the
+     * overflowing track would widen the page instead of scrolling inside
+     * itself. Same fix as the transformation timeline. */
+    min-width: 0;
+    overflow: hidden;
+    --vr-gutter: clamp(24px, calc(15.26px + 2.33vw), 60px);
+}
+
+/* Heading ---------------------------------------------------------------- */
+
+.product-page .vr-head {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: var(--vr-gutter);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--timeline-space-m);
+    flex-wrap: wrap;
+}
+
+.product-page .vr-eyebrow {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-blackAlpha-700);
+    margin: 0 0 var(--timeline-space-xs);
+}
+
+.product-page .vr-title {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 110%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-gray-600);
+    max-width: 16ch;
+    margin: 0;
+}
+
+/* The serif standfirst is the page's recognisable voice gesture. Used once
+ * here, to state the protocol before any number is shown. */
+.product-page .vr-standfirst {
+    font-family: var(--timeline-fonts-serif);
+    font-weight: 360;
+    font-size: clamp(18px, calc(15.5px + 0.5vw), 22px);
+    line-height: 135%;
+    color: var(--timeline-colors-blackAlpha-700);
+    max-width: 38ch;
+    margin: 0;
+}
+
+/* Track ------------------------------------------------------------------ */
+
+.product-page .vr-track {
+    display: flex;
+    gap: var(--timeline-space-3xs);
+    margin-top: clamp(32px, calc(25.2px + 1.9vw), 56px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    /* Snapped cards land on the gutter, not the viewport edge. */
+    scroll-padding-left: var(--vr-gutter);
+    padding-inline: var(--vr-gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.product-page .vr-track::-webkit-scrollbar { display: none; }
+
+/* Sized so three cards sit in a 1440 viewport with a fourth clearly peeking.
+ * Four-across fits, but at that width each frame is under 170px and the
+ * photographs stop carrying the section, which is the only thing this band
+ * exists to do. */
+.product-page .vr-card {
+    flex: 0 0 clamp(280px, 27vw, 420px);
+    scroll-snap-align: start;
+    min-width: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .product-page .vr-card { flex: 0 0 78vw; }
+}
+
+/* Image pair ------------------------------------------------------------- */
+
+/* One card, one man, two frames divided by a 1px rule. The pair is a single
+ * object with a single radius, not two separate cards side by side. */
+.product-page .vr-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--timeline-colors-gray-100);
+    border-radius: var(--timeline-radii-base);
+    overflow: hidden;
+}
+
+/* 3:5 matches how a standing full-body phone photo actually crops: head to
+ * roughly mid-shin on a source panel around 0.48 aspect. A squarer frame
+ * would cut at the waist, which is the one crop that makes a body comparison
+ * unreadable. Panels are exported at native aspect, so changing this line
+ * reframes the whole section without re-cutting any image. */
+.product-page .vr-frame {
+    position: relative;
+    aspect-ratio: 3 / 5;
+    background: var(--timeline-colors-gray-200);
+    overflow: hidden;
+}
+
+.product-page .vr-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Two photos of one man are rarely shot from the same distance. Each
+     * frame can be nudged with --vr-pos in the markup so the two subjects
+     * line up; this is the default when it is not set. */
+    object-position: var(--vr-pos, center 22%);
+}
+
+/* Scrim so the white tag holds against a bright bathroom wall. */
+.product-page .vr-frame::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 38%;
+    background: linear-gradient(to top, rgba(20, 22, 26, 0.55), transparent);
+    pointer-events: none;
+}
+
+.product-page .vr-tag {
+    position: absolute;
+    left: var(--timeline-space-3xs);
+    bottom: var(--timeline-space-3xs);
+    z-index: 1;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-white);
+}
+
+/* The only mark on the photography itself: a 5px red dot on the later frame,
+ * so the pair reads left-to-right at a glance without a banner. */
+.product-page .vr-frame[data-point="after"] .vr-tag::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--timeline-colors-red-300);
+    margin-right: 7px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+}
+
+/* Data strip ------------------------------------------------------------- */
+
+.product-page .vr-data {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+}
+
+.product-page .vr-who {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-blackAlpha-700);
+    margin: 0 0 14px;
+}
+
+.product-page .vr-metric {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+    margin: 0 0 4px;
+}
+
+.product-page .vr-readout {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+    font-variant-numeric: slashed-zero;
+}
+
+.product-page .vr-from {
+    font-family: var(--timeline-fonts-sans);
+    font-size: clamp(18px, calc(15.5px + 0.5vw), 22px);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: -0.02em;
+    color: var(--timeline-colors-blackAlpha-500);
+}
+
+/* A rule, not a glyph. An arrow character sets at a different weight in every
+ * fallback font and would be the one place the type system slips. */
+.product-page .vr-arrow {
+    flex: none;
+    align-self: center;
+    width: 18px;
+    height: 1px;
+    background: var(--timeline-colors-blackAlpha-400);
+}
+
+.product-page .vr-to {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 1;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-red-300);
+}
+
+.product-page .vr-unit {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Free testosterone is the mechanism-specific line: "produces, frees,
+ * protects, optimizes" is the product claim, and free T is the half of it a
+ * total-testosterone number cannot show. */
+.product-page .vr-sub {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--timeline-space-3xs);
+    margin: 14px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.03em;
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page .vr-sub b {
+    font-weight: var(--timeline-fontWeights-book);
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page .vr-lab {
+    display: inline-flex;
+    align-items: center;
+    margin-top: var(--timeline-space-3xs);
+    padding-bottom: 2px;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-gray-600);
+    text-decoration: none;
+    border-bottom: 1px solid var(--timeline-colors-blackAlpha-250);
+    transition-property: border-color;
+    transition-duration: var(--timeline-transition-duration-fast);
+}
+
+.product-page .vr-lab:hover { border-bottom-color: var(--timeline-colors-gray-600); }
+
+/* Protocol footnote ------------------------------------------------------ */
+
+/* Sits under the track rather than in fine print at the page foot. The
+ * limitations are the credibility, so they get read at the same moment as
+ * the numbers. */
+.product-page .vr-foot {
+    max-width: 1920px;
+    margin: clamp(32px, calc(25.2px + 1.9vw), 56px) auto 0;
+    padding-inline: var(--vr-gutter);
+}
+
+.product-page .vr-foot p {
+    max-width: 78ch;
+    margin: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-page .vr-track { scroll-behavior: auto; }
+    .product-page .vr-lab { transition-duration: 0.01ms; }
+}

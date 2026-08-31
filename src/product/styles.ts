@@ -375,3 +375,12 @@ import "./stylesheets/inline-style-370.css"
 import "./stylesheets/inline-style-371.css"
 import "./stylesheets/inline-style-372.css"
 import "./stylesheets/inline-style-373.css"
+
+// Rebuilt mobile variant of the transformation timeline (see the CSS file).
+// Last so it wins over the captured inline-style rules.
+import "./stylesheets/transformation-mobile.css"
+
+// Hand-authored verified results band. Also after the capture, for the same
+// reason: its class names are its own, but the captured sheets set element
+// defaults it needs to override.
+import "./stylesheets/verified-results.css"

@@ -11,3 +11,6 @@ dist/
 .claude/
 .vercel/
 .vercel
+
+# working input for scripts/slice-results.py, not site content
+incoming/

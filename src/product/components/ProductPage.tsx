@@ -9,8 +9,6 @@ import ReviewsMarquee from './ReviewsMarquee.tsx'
 import LongevityHeading from './LongevityHeading.tsx'
 import ComparisonChart from './ComparisonChart.tsx'
 import SlideArrowButton from './SlideArrowButton.tsx'
-import DayButton from './DayButton.tsx'
-import AbsorptionTimeline from './AbsorptionTimeline.tsx'
 import ImageCanvas from './ImageCanvas.tsx'
 import QualityStandards from './QualityStandards.tsx'
 import PressItems from './PressItems.tsx'
@@ -25,13 +23,13 @@ import ShippingBenefits from './ShippingBenefits.tsx'
 import Accordion from './Accordion.tsx'
 import SamplePackPurchase from './SamplePackPurchase.tsx'
 import ComparisonCategories from './ComparisonCategories.tsx'
-import SlideArrowControls from './SlideArrowControls.tsx'
-import HourThumbnail from './HourThumbnail.tsx'
 import ComparisonTable from './ComparisonTable.tsx'
 import MitopureRenewalSection from './MitopureRenewalSection.tsx'
 import CustomerReviews from './CustomerReviews.tsx'
 import Reviews from './Reviews.tsx'
 import ProductCarousel from './ProductCarousel.tsx'
+import TransformationTimeline from './TransformationTimeline.tsx'
+import VerifiedResults from './VerifiedResults.tsx'
 
 
 // Component
@@ -137,111 +135,13 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
-    	<div className={"section--mitopure-transformation css-w8jldm"}>
-    		<div className={"css-1t817oh"}>
-    			<div className={"css-1xei9ji"}>
-    				<h2 className={"chakra-text css-1ctj6hy"}>
-    					Your cells feel the benefits before you do
-    				</h2>
-    			</div>
-    		</div>
-    		<div className={"css-ityywy"}>
-    			<div className={"mitopure-transformation--desktop css-1c56x01"}>
-    				<div className={"css-1wua4zq"}>
-    					
-            <SlideArrowControls />
-        
-    				</div>
-    				<div className={"css-1thmk3v"}>
-    					<div className={"css-190kgxt"} style={{width:"23.6363%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							<HourThumbnail />
-    						</div>
-    						<div className={"css-0"} style={{opacity:"1", display:"block"}}>
-    							<div className={"css-0"}>
-    								<h2 className={"chakra-text css-18ogj9d"}>
-    									Urolithin A gets absorbed
-    								</h2>
-    								<div className={"css-whh5e5"}>
-    									<p className={"chakra-text css-cxwm1o"}>
-    										You've just begun taking Mitopure and it's already springing into action. Urolithin A levels peak in your bloodstream, targeting key organs like your muscles.
-    									</p>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    					<div className={"css-190kgxt"} style={{width:"13.4621%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							
-                <DayButton dataId="0" />
-            
-    						</div>
-    						<div className={"css-0"} style={{opacity:"0", display:"none"}}>
-    
-    						</div>
-    					</div>
-    					<div className={"css-190kgxt"} style={{width:"13.4621%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							
-                <DayButton dataId="1" />
-            
-    						</div>
-    						<div className={"css-0"} style={{opacity:"0", display:"none"}}>
-    
-    						</div>
-    					</div>
-    					<div className={"css-190kgxt"} style={{width:"13.4621%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							
-                <DayButton dataId="2" />
-            
-    						</div>
-    						<div className={"css-0"} style={{opacity:"0", display:"none"}}>
-    
-    						</div>
-    					</div>
-    					<div className={"css-190kgxt"} style={{width:"13.4621%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							
-                <DayButton dataId="3" />
-            
-    						</div>
-    						<div className={"css-0"} style={{opacity:"0", display:"none"}}>
-    
-    						</div>
-    					</div>
-    					<div className={"css-190kgxt"} style={{width:"13.4621%"}}>
-    						<div role={"group"} className={"css-ljanx"}>
-    							
-                <DayButton dataId="4" showOverlay={true} />
-            
-    						</div>
-    						<div className={"css-0"} style={{opacity:"0", display:"none"}}>
-    
-    						</div>
-    					</div>
-    				</div>
-    				<div className={"css-1uphhyw"}>
-    					<AbsorptionTimeline />
-    					
-                <EmptyDiv className="css-1cs1yjc" />
-            
-    					
-                <EmptyDiv className="css-1cs1yjc" />
-            
-    					
-                <EmptyDiv className="css-1cs1yjc" />
-            
-    					
-                <EmptyDiv className="css-1cs1yjc" />
-            
-    					
-                <EmptyDiv className="css-1cs1yjc" />
-            
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+    	<TransformationTimeline />
+    	{/* Reads as the payoff to the timeline above: that section ends at day
+    	    60+, this one shows four men at week 12. Placed here rather than
+    	    beside the clinical chart because that band is already gray-100 and
+    	    the two would merge into one slab; here it alternates white → grey →
+    	    dark banner. */}
+    	<VerifiedResults />
     	<div className={"css-ms93xs"}>
     		<div className={"section--banner css-1t993ry"}>
     			<div className={"banner_media-desktop css-12f05a7"}>

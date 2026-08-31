@@ -38,6 +38,9 @@ import images_6887c908_7f57_40cd_9ab8_ece6b2ff6659_svg from '/images/6887c908-7f
 import images_c412221f_cc64_4136_9336_c245078089ca_svg from '/images/c412221f-cc64-4136-9336-c245078089ca.svg';
 import images_35662e78_4545_47b5_9b57_41ad91798086_png from '/images/35662e78-4545-47b5-9b57-41ad91798086.webp';
 import images_8f11680c_8a8c_42c8_81f7_3849ae6a44cf_png from '/images/8f11680c-8a8c-42c8-81f7-3849ae6a44cf.webp';
+import images_milestone_day30 from '/images/milestone-day30.webp';
+import images_milestone_day60 from '/images/milestone-day60.webp';
+import images_milestone_day120 from '/images/milestone-day120.webp';
 
 export const Img = ({ id }) => {
     switch (String(id)) {    case "0":
@@ -142,15 +145,15 @@ export const Img = ({ id }) => {
         );
     case "25":
         return (
-            <img alt={"Mitochondrial biogenesis"} loading={"lazy"} width={"1776"} height={"1776"} decoding={"async"} sizes={""} src="data:," style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
+            <img alt={"Mitochondrial biogenesis"} loading={"lazy"} width={"1080"} height={"1080"} decoding={"async"} sizes={""} src={images_milestone_day30} style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
         );
     case "26":
         return (
-            <img alt={"Woman boxing"} loading={"lazy"} width={"1776"} height={"1776"} decoding={"async"} sizes={""} src="data:," style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
+            <img alt={"Woman boxing"} loading={"lazy"} width={"1080"} height={"1080"} decoding={"async"} sizes={""} src={images_milestone_day60} style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
         );
     case "27":
         return (
-            <img alt={"Muscle fibers"} loading={"lazy"} width={"1080"} height={"1080"} decoding={"async"} sizes={""} src="data:," style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
+            <img alt={"Muscle fibers"} loading={"lazy"} width={"1080"} height={"1080"} decoding={"async"} sizes={""} src={images_milestone_day120} style={{color:"transparent", backgroundSize:"cover", backgroundPosition:"50% 50%", backgroundRepeat:"no-repeat"}}></img>
         );
     case "28":
         return (

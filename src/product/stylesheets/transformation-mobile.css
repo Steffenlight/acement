@@ -1,0 +1,153 @@
+/* Mobile variant of the "Your cells feel the benefits" timeline.
+ *
+ * The original page capture dropped Timeline's mobile markup and CSS entirely,
+ * leaving the section hidden below 768px (see .css-ityywy). This rebuilds it in
+ * the same shape: a row of milestone pills above a full-bleed snap carousel.
+ *
+ * Timeline drives the carousel with react-snaplist-carousel, but the snapping
+ * itself is plain CSS scroll-snap, so no library is needed to match it. */
+
+/* .product-page is a grid item, so it inherits the grid default min-width:auto
+ * and refuses to shrink below its max-content size. Without this, the carousel's
+ * horizontally-overflowing track widens the whole page instead of scrolling
+ * inside itself. min-width:0 lets it size to its grid track, as it already does
+ * everywhere the content happens to fit. */
+.product-page { min-width: 0; }
+
+.product-page .tt-mobile {
+    display: block;
+    min-width: 0;
+    /* Page gutter. Matches the inset Timeline leaves at each end of the track. */
+    --tt-gutter: clamp(24px, calc(15.26px + 2.33vw), 60px);
+}
+
+@media screen and (min-width: 768px) {
+    .product-page .tt-mobile { display: none; }
+}
+
+/* Milestone pills ------------------------------------------------------- */
+
+.product-page .tt-pills {
+    display: flex;
+    gap: var(--timeline-space-3xs);
+    width: 100%;
+    margin-bottom: var(--timeline-space-m);
+    padding-inline: var(--tt-gutter);
+}
+
+.product-page .tt-pill {
+    flex: 1 1 0;
+    min-width: 0;
+    appearance: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.product-page .tt-pill-label {
+    display: block;
+    width: 100%;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-normal);
+    line-height: 150%;
+    letter-spacing: var(--timeline-letterSpacings-widest);
+    font-variant-numeric: slashed-zero;
+    text-align: left;
+    padding-top: var(--timeline-space-5xs);
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+    color: var(--timeline-colors-blackAlpha-700);
+    transition-property: color, border-color;
+    transition-duration: var(--timeline-transition-duration-fast);
+}
+
+.product-page .tt-pill-unit,
+.product-page .tt-pill-value {
+    display: block;
+}
+
+.product-page .tt-pill[aria-selected="true"] .tt-pill-label {
+    border-top-color: var(--timeline-colors-gray-600);
+    color: var(--timeline-colors-gray-600);
+}
+
+/* Snap carousel --------------------------------------------------------- */
+
+.product-page .tt-track {
+    display: flex;
+    gap: var(--timeline-space-3xs);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    /* Snapped cards land on the gutter rather than the screen edge. */
+    scroll-padding-left: var(--tt-gutter);
+    padding-inline: var(--tt-gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.product-page .tt-track::-webkit-scrollbar { display: none; }
+
+.product-page .tt-card {
+    flex: 0 0 70vw;
+    scroll-snap-align: start;
+}
+
+.product-page .tt-media {
+    display: grid;
+    border-radius: var(--timeline-radii-base);
+    overflow: hidden;
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: var(--timeline-transition-duration-fast);
+}
+
+.product-page .tt-media > * { grid-area: 1 / 1; }
+
+.product-page .tt-card[data-active="true"] .tt-media { opacity: 1; }
+
+.product-page .tt-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Video sits over the still and is revealed only on the active card. */
+.product-page .tt-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: var(--timeline-transition-duration-slower);
+}
+
+.product-page .tt-card[data-active="true"] .tt-video { opacity: 1; }
+
+/* Card copy ------------------------------------------------------------- */
+
+.product-page .tt-copy { margin-top: var(--timeline-space-2xs); }
+
+.product-page .tt-milestone {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 110%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    font-variant-numeric: slashed-zero;
+    margin-bottom: var(--timeline-space-sm);
+    color: var(--timeline-colors-gray-600);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-page .tt-track { scroll-behavior: auto; }
+    .product-page .tt-media,
+    .product-page .tt-video,
+    .product-page .tt-pill-label { transition-duration: 0.01ms; }
+}
