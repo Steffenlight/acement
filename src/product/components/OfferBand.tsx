@@ -54,19 +54,21 @@ function ShieldCheck() {
 
 /* Guarantee line under the CTA.
  *
- * NOTE — docs/09-brand-design.md lists "Higher T or your money back" in the
- * copy landmines pulled off competitor pages, filed as "Mars Men's claim and
- * their risk appetite". This is that claim. It is also a promise about a lab
- * value rather than about satisfaction, which is a materially harder thing to
- * honour: a refund policy tied to bloodwork invites the customer to produce a
- * panel, and docs/14 has our refund terms mirroring Mars Men's tighter
- * first-order-only structure rather than a results guarantee. Built as asked;
- * worth an attorney read before launch. */
+ * Promises satisfaction rather than a lab value, which is what docs/14's
+ * refund terms actually cover. An earlier draft read "Higher testosterone in
+ * 90 days or your money back"; that is on the copy landmine list in
+ * docs/09-brand-design.md as Mars Men's claim, and a refund tied to bloodwork
+ * would have had us arbitrating customers' draw conditions.
+ *
+ * NOTE — "risk-free" still runs slightly ahead of the policy. docs/14 has a
+ * $7 processing fee and first-qualifying-order-only, and the FTC reads
+ * "risk-free" as a complete, unconditional refund. Either the fee gets waived
+ * on this claim or the wording softens to "90-day money-back guarantee". */
 function GuaranteeLine() {
     return (
         <p className={'ob-guarantee'}>
             <ShieldCheck />
-            Higher testosterone in 90 days or your money back
+            Try Risk-Free for 90 Days
         </p>
     )
 }

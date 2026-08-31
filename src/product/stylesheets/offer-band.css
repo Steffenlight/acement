@@ -144,9 +144,10 @@
 /* Set at the size and colour of the shipping benefit rows below it rather
  * than as micro-caps. It is a sentence, and at 12px caps with 0.09em tracking
  * it ran wider than the button and wrapped on every phone. */
-/* Block with an inline icon, not a flex row. As a flex row the line wraps on
- * a phone and the shield centres itself against both lines, ending up beside
- * neither. Inline, it stays on the first line and the text wraps under it. */
+/* Block with an inline icon, not a flex row. The current copy fits one line
+ * at every width, but a longer line wraps on a phone, and as a flex row the
+ * shield then centres itself against both lines and sits beside neither.
+ * Inline, it stays on the first line and the text wraps under it. */
 .product-page .ob-guarantee {
     /* Cancels most of .product_ctas' 24px row-gap; the guarantee belongs to
      * the button, not to the block below it. */
