@@ -65,9 +65,11 @@ function ProductPage() {
     				<div role={"separator"} className={"css-o5vfml"}>
     
     				</div>
-	 			<iframe title={"Frontrow"} className={"iframe-frontrow css-nvj32l"} id={"iframe-frontrow-quant-1754"} frameBorder={"0"} sandbox={"allow-same-origin allow-popups allow-top-navigation-by-user-activation"} src="/frames/f5c6ee7f-4d24-4228-92bd-370012bc9072/index.html">
-    
-    				</iframe>
+    				{/* The captured FrontRowMD clinician-review iframe was removed. It
+    				    rendered nothing but still reserved 150px, which was the blank
+    				    band above the accordion. It is also Timeline's widget showing
+    				    Timeline's clinicians; per docs/10 our badge has to be earned
+    				    post-launch, not borrowed. */}
     				<div className={"css-0"}>
     					
                 <Accordion dataId="0" />

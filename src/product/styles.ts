@@ -388,3 +388,7 @@ import "./stylesheets/verified-results.css"
 // Buy-box offer band and primary CTA. Last, so its .ob-cta override lands
 // after the captured .css-sce20v rules it has to beat.
 import "./stylesheets/offer-band.css"
+
+// Accordion panels. The capture shipped the buttons but none of the panels,
+// so none of this exists in the captured sheets.
+import "./stylesheets/accordion.css"

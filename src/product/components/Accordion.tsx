@@ -2,8 +2,23 @@ import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
 import AccordionButton from './AccordionButton.tsx'
-import AccordionButton1 from './AccordionButton1.tsx'
+import AccordionButton1, { getAccordionButtonData } from './AccordionButton1.tsx'
+import PANELS from './AccordionPanels.tsx'
 
+
+/* The capture shipped these as dead buttons: Chakra's class names, but no
+ * state, no handlers, and CollapsePanel hard-coded to height 0 / display none.
+ * Behaviour rebuilt to match timeline.com, checked against the live site:
+ *
+ *   - Single-open. Opening one item closes the other; there is no state where
+ *     two panels are expanded.
+ *   - The plus becomes a minus in place — the icon is not rotated and no
+ *     second glyph is swapped in, the vertical stroke is just dropped.
+ *
+ * Height is animated with a 0fr → 1fr grid row rather than by measuring the
+ * panel, so it works on content of any height with no ResizeObserver and no
+ * layout read. The captured css-i6bazn (overflow: hidden) is kept on the
+ * clipping element, which is exactly what that class did in the original. */
 
         type AccordionData =
             | {
@@ -20,11 +35,15 @@ import AccordionButton1 from './AccordionButton1.tsx'
                     buttonDataId: string;
                 }>;
               };
-    
+
 // Component
 
         function Accordion({ dataId }: { dataId: string }) {
             const data: AccordionData = getAccordionData(dataId);
+            const [openKey, setOpenKey] = React.useState<string | null>(null);
+
+            const toggle = (key: string) =>
+                setOpenKey(current => (current === key ? null : key));
 
             return (
                 <div className={"chakra-accordion css-0"}>
@@ -34,6 +53,8 @@ import AccordionButton1 from './AccordionButton1.tsx'
                                 key={item.buttonId}
                                 buttonId={item.buttonId}
                                 label={item.label}
+                                expanded={openKey === item.buttonId}
+                                onToggle={() => toggle(item.buttonId)}
                             />
                         ))
                         : data.items.map((item) => (
@@ -41,35 +62,43 @@ import AccordionButton1 from './AccordionButton1.tsx'
                                 key={item.buttonDataId}
                                 className={item.className}
                                 buttonDataId={item.buttonDataId}
+                                expanded={openKey === item.buttonDataId}
+                                onToggle={() => toggle(item.buttonDataId)}
                             />
                         ))}
                 </div>
             );
         }
-    
+
 
 // Subcomponents
 
-        function CollapsePanel() {
+        function CollapsePanel({
+            id,
+            labelledBy,
+            expanded,
+            children
+        }: {
+            id: string;
+            labelledBy: string;
+            expanded: boolean;
+            children?: React.ReactNode;
+        }) {
             return (
                 <div
-                    className={"css-i6bazn"}
-                    style={{
-                        height: "0px",
-                        opacity: "0",
-                        transform: "none",
-                        transformOrigin: "50% 50% 0px"
-                    }}
+                    className={"css-i6bazn ac-collapse"}
+                    data-expanded={expanded ? "true" : "false"}
                 >
-                    <div
-                        className={"chakra-collapse"}
-                        style={{
-                            overflow: "hidden",
-                            display: "none",
-                            opacity: "0",
-                            height: "0px"
-                        }}
-                    >
+                    <div className={"ac-collapse__inner"}>
+                        <div
+                            id={id}
+                            role={"region"}
+                            aria-labelledby={labelledBy}
+                            hidden={!expanded}
+                            className={"chakra-accordion__panel ac-panel"}
+                        >
+                            {children}
+                        </div>
                     </div>
                 </div>
             );
@@ -77,11 +106,18 @@ import AccordionButton1 from './AccordionButton1.tsx'
 
         function ProductAccordionItem({
             buttonId,
-            label
+            label,
+            expanded,
+            onToggle
         }: {
             buttonId: string;
             label: string;
+            expanded: boolean;
+            onToggle: () => void;
         }) {
+            const panelId = `${buttonId}-panel`;
+            const Panel = PANELS[label];
+
             return (
                 <div className={"chakra-accordion__item css-3ttb7v"}>
                     <div role={"separator"} className={"css-o5vfml"}>
@@ -89,31 +125,51 @@ import AccordionButton1 from './AccordionButton1.tsx'
                     <AccordionButton
                         id={buttonId}
                         label={label}
+                        expanded={expanded}
+                        panelId={panelId}
+                        onToggle={onToggle}
                     />
-                    <CollapsePanel />
+                    <CollapsePanel id={panelId} labelledBy={buttonId} expanded={expanded}>
+                        {Panel ? <Panel /> : null}
+                    </CollapsePanel>
                 </div>
             );
         }
 
         function FaqAccordionItem({
             className,
-            buttonDataId
+            buttonDataId,
+            expanded,
+            onToggle
         }: {
             className: string;
             buttonDataId: string;
+            expanded: boolean;
+            onToggle: () => void;
         }) {
+            const panelId = `faq-panel-${buttonDataId}`;
+            const buttonId = `faq-button-${buttonDataId}`;
+
             return (
                 <>
                     <div role={"separator"} className={"css-160z9us"}>
                     </div>
                     <div className={className}>
-                        <AccordionButton1 dataId={buttonDataId} />
-                        <CollapsePanel />
+                        <AccordionButton1
+                            dataId={buttonDataId}
+                            id={buttonId}
+                            expanded={expanded}
+                            panelId={panelId}
+                            onToggle={onToggle}
+                        />
+                        <CollapsePanel id={panelId} labelledBy={buttonId} expanded={expanded}>
+                            <p>{getAccordionButtonData(buttonDataId).answer}</p>
+                        </CollapsePanel>
                     </div>
                 </>
             );
         }
-    
+
 
 
         function getAccordionData(id: string): AccordionData {
@@ -165,6 +221,6 @@ import AccordionButton1 from './AccordionButton1.tsx'
                 ]
             };
         }
-    
+
 
 export default Accordion
