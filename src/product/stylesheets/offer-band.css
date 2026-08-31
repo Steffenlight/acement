@@ -14,9 +14,9 @@
  *  - Condensed mono becomes Suisse Intl micro-caps at 0.09em, the tracking
  *    every other label on the page already uses.
  *
- * The pop is carried by the button: solid red, full width, 52px. On a page
- * whose only other red is a 5px dot and one numeral per results card, that
- * is the loudest element by a distance, which is what a CTA should be. */
+ * The offer is carried by the red pill, not by the button. The button stays
+ * the page's standard ink, so the buy box keeps one visual language and the
+ * red stays scarce enough to still mean something where it does appear. */
 
 .product-page .ob {
     display: flex;
@@ -39,21 +39,27 @@
     font-variant-numeric: slashed-zero;
 }
 
+/* One step down the type scale from 3xl. The pair has to read as a
+ * comparison, and at 3xl the new price so outweighed the old one that the
+ * old one stopped registering as a number at all. */
 .product-page .ob-now {
     font-family: var(--timeline-fonts-sans);
-    font-size: var(--timeline-fontSizes-3xl);
+    font-size: var(--timeline-fontSizes-2xl);
     font-weight: var(--timeline-fontWeights-book);
     line-height: 1;
     letter-spacing: var(--timeline-letterSpacings-tightest);
     color: var(--timeline-colors-gray-600);
 }
 
+/* Deliberately close to .ob-now in size and dark enough to read. A struck
+ * price that has faded to near-invisible proves nothing — the saving only
+ * lands if the reader can take in both numbers. */
 .product-page .ob-was {
     font-family: var(--timeline-fonts-sans);
-    font-size: clamp(18px, calc(15.5px + 0.5vw), 24px);
+    font-size: var(--timeline-fontSizes-lg);
     font-weight: var(--timeline-fontWeights-book);
     letter-spacing: -0.02em;
-    color: var(--timeline-colors-blackAlpha-400);
+    color: var(--timeline-colors-blackAlpha-700);
     /* text-decoration-thickness keeps the rule from thinning out at the
      * larger clamp sizes, where the default hairline all but disappears. */
     text-decoration: line-through;
@@ -68,17 +74,25 @@
     padding-top: 4px;
 }
 
+/* Geometry copied from the "Clinically recommended" pill in the subscription
+ * options above (.css-1cym26v): 10px / 500 / 0.09em, 21px tall, 8px side
+ * padding, 4px radius. Only the fill changes. Reusing an existing badge shape
+ * rather than inventing one means the offer reads as part of the buy box
+ * instead of an ad pasted on top of it. */
 .product-page .ob-headline {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 21px;
     margin: 0;
-    padding-bottom: 3px;
+    padding: 0 8px;
     font-family: var(--timeline-fonts-sans);
-    font-size: clamp(14px, calc(13.3px + 0.19vw), 16px);
-    font-weight: var(--timeline-fontWeights-medium, 500);
+    font-size: 10px;
+    font-weight: 500;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: var(--timeline-colors-red-300);
-    border-bottom: 2px solid var(--timeline-colors-red-300);
+    color: var(--timeline-colors-gray-50);
+    background: var(--timeline-colors-red-300);
+    border-radius: var(--timeline-radii-base);
 }
 
 .product-page .ob-note {
@@ -100,7 +114,7 @@
     min-height: 52px;
     align-items: center;
     justify-content: center;
-    background: var(--timeline-colors-red-300);
+    background: var(--timeline-colors-gray-600);
     /* gray-50 (#FFFFFC), not white. Every other reversed element on this page
      * sits on the paper tone; pure white next to them reads as a colour bug. */
     color: var(--timeline-colors-gray-50);
@@ -110,7 +124,7 @@
 }
 
 .product-page .button--add-to-cart.ob-cta:hover {
-    background: var(--timeline-colors-red-500);
+    background: var(--timeline-colors-gray-700, #1c1c17);
 }
 
 .product-page .ob-cta .children {
