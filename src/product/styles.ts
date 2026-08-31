@@ -384,3 +384,7 @@ import "./stylesheets/transformation-mobile.css"
 // reason: its class names are its own, but the captured sheets set element
 // defaults it needs to override.
 import "./stylesheets/verified-results.css"
+
+// Buy-box offer band and primary CTA. Last, so its .ob-cta override lands
+// after the captured .css-sce20v rules it has to beat.
+import "./stylesheets/offer-band.css"

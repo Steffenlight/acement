@@ -1,6 +1,8 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
+import { ArrowRight } from './OfferBand.tsx'
+
 
 
         type AddToCartButtonData = {
@@ -41,9 +43,17 @@ import type { JSX } from 'react/jsx-runtime'
                 };
             }
 
+            // The subscription CTA. ob-cta restyles it as the page's one loud
+            // element; the one-time purchase button above keeps css-sce20v's
+            // captured look, so the override is scoped to this class only.
             return {
-                className: "chakra-button button--add-to-cart css-sce20v",
-                content: <>Add to cart</>,
+                className: "chakra-button button--add-to-cart css-sce20v ob-cta",
+                content: (
+                    <>
+                        Try now and save 50%
+                        <ArrowRight />
+                    </>
+                ),
             };
         }
     

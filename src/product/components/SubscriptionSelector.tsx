@@ -6,6 +6,7 @@ import SupplyPrice from './SupplyPrice.tsx'
 import SubscriptionDetails from './SubscriptionDetails.tsx'
 import AddToCartButton from './AddToCartButton.tsx'
 import Price from './Price.tsx'
+import OfferBand from './OfferBand.tsx'
 
 
 // Component
@@ -23,6 +24,7 @@ import Price from './Price.tsx'
                         <SubscriptionOption dataId="3" variant="bestValue" />
                     </div>
                     <div className={"chakra-stack product_ctas css-1j7yyl0"}>
+                        <OfferBand />
                         <div className={"chakra-stack css-xqcv1s"}>
                             <div className={"css-165casq"}>
                                 <AddToCartButton dataId="0" />

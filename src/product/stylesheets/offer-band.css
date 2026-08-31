@@ -1,0 +1,138 @@
+/* Offer band + primary CTA in the buy box.
+ *
+ * Reference is a direct-response block: black ground, orange type, condensed
+ * mono caps, hand-drawn underline. Translated into Acement's system rather
+ * than copied:
+ *
+ *  - The ground stays light. The reference needs black because orange on
+ *    white is illegible at that weight; our red holds on paper, so the buy
+ *    box keeps its editorial column and the band reads as a panel inside it
+ *    rather than a billboard dropped into it.
+ *  - The scribble underline becomes a 2px red rule. Everything else on this
+ *    page draws separation with a hairline; a hand-drawn mark would be the
+ *    only illustrated element in the entire design system.
+ *  - Condensed mono becomes Suisse Intl micro-caps at 0.09em, the tracking
+ *    every other label on the page already uses.
+ *
+ * The pop is carried by the button: solid red, full width, 52px. On a page
+ * whose only other red is a 5px dot and one numeral per results card, that
+ * is the loudest element by a distance, which is what a CTA should be. */
+
+.product-page .ob {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--timeline-space-3xs);
+    flex-wrap: wrap;
+    background: var(--timeline-colors-gray-100);
+    border-radius: var(--timeline-radii-base);
+    padding: var(--timeline-space-2xs) var(--timeline-space-xs);
+    margin-bottom: var(--timeline-space-3xs);
+}
+
+/* Prices --------------------------------------------------------------- */
+
+.product-page .ob-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-variant-numeric: slashed-zero;
+}
+
+.product-page .ob-now {
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 1;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page .ob-was {
+    font-family: var(--timeline-fonts-sans);
+    font-size: clamp(18px, calc(15.5px + 0.5vw), 24px);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: -0.02em;
+    color: var(--timeline-colors-blackAlpha-400);
+    /* text-decoration-thickness keeps the rule from thinning out at the
+     * larger clamp sizes, where the default hairline all but disappears. */
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+/* Deal ----------------------------------------------------------------- */
+
+.product-page .ob-deal {
+    text-align: right;
+    margin-left: auto;
+    padding-top: 4px;
+}
+
+.product-page .ob-headline {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 3px;
+    font-family: var(--timeline-fonts-sans);
+    font-size: clamp(14px, calc(13.3px + 0.19vw), 16px);
+    font-weight: var(--timeline-fontWeights-medium, 500);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-red-300);
+    border-bottom: 2px solid var(--timeline-colors-red-300);
+}
+
+.product-page .ob-note {
+    margin: 6px 0 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Primary CTA ---------------------------------------------------------- */
+
+/* Overrides the captured .css-sce20v, which is shared with the one-time
+ * purchase button below and must keep its own look. */
+.product-page .button--add-to-cart.ob-cta {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    background: var(--timeline-colors-red-300);
+    /* gray-50 (#FFFFFC), not white. Every other reversed element on this page
+     * sits on the paper tone; pure white next to them reads as a colour bug. */
+    color: var(--timeline-colors-gray-50);
+    border-radius: var(--timeline-radii-base);
+    transition-property: background-color;
+    transition-duration: var(--timeline-transition-duration-fast);
+}
+
+.product-page .button--add-to-cart.ob-cta:hover {
+    background: var(--timeline-colors-red-500);
+}
+
+.product-page .ob-cta .children {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-page .ob-cta svg {
+    flex: none;
+    width: 16px;
+    height: 16px;
+}
+
+@media screen and (max-width: 400px) {
+    .product-page .ob-deal {
+        margin-left: 0;
+        text-align: left;
+    }
+    .product-page .ob-note { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-page .button--add-to-cart.ob-cta { transition-duration: 0.01ms; }
+}
