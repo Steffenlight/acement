@@ -6,7 +6,7 @@ import SupplyPrice from './SupplyPrice.tsx'
 import SubscriptionDetails from './SubscriptionDetails.tsx'
 import AddToCartButton from './AddToCartButton.tsx'
 import Price from './Price.tsx'
-import OfferBand, { GuaranteeLine } from './OfferBand.tsx'
+import OfferBand from './OfferBand.tsx'
 
 
 // Component
@@ -25,11 +25,13 @@ import OfferBand, { GuaranteeLine } from './OfferBand.tsx'
                                 <AddToCartButton dataId="0" />
                             </div>
                         </div>
-                        {/* The "One-time purchase · $99" link that sat here was
-                            replaced by the guarantee, leaving the subscription
-                            as the only path. AddToCartButton still carries its
-                            dataId "1" variant for when it comes back. */}
-                        <GuaranteeLine />
+                        {/* Nothing sits under the CTA now. The "One-time
+                            purchase · $99" link was removed with the supply
+                            tiers, and the shield guarantee that replaced it
+                            moved into ShippingBenefits below, where it is the
+                            middle of the three checkmark rows. AddToCartButton
+                            still carries its dataId "1" variant for when the
+                            one-time option comes back. */}
                     </div>
                 </div>
             )
