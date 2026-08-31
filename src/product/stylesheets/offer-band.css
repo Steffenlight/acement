@@ -6,8 +6,8 @@
  *
  *  - The ground stays light. The reference needs black because orange on
  *    white is illegible at that weight; our red holds on paper, so the buy
- *    box keeps its editorial column and the band reads as a panel inside it
- *    rather than a billboard dropped into it.
+ *    box keeps its editorial column and the offer sits in it as type rather
+ *    than as a billboard dropped on top of it.
  *  - The scribble underline becomes a 2px red rule. Everything else on this
  *    page draws separation with a hairline; a hand-drawn mark would be the
  *    only illustrated element in the entire design system.
@@ -18,18 +18,26 @@
  * the page's standard ink, so the buy box keeps one visual language and the
  * red stays scarce enough to still mean something where it does appear. */
 
-/* Centred, not top-aligned. The price row is one line and the deal block is
- * two, so aligning their tops left the prices floating above the pill. */
+/* No panel. With the supply tiers gone the buy box is just price and button,
+ * and a filled box around the price fenced the two apart. Unpadded, the band
+ * spans the button's exact width, so $59 sits on the button's left edge and
+ * the pill on its right — the price now reads as the button's label rather
+ * than as a separate module above it.
+ *
+ * Centred, not top-aligned: the price row is one line and the deal block is
+ * two, so aligning their tops left the prices floating above the pill.
+ *
+ * The negative margin eats most of .product_ctas' 24px row-gap, which also
+ * spaces the CTA from the one-time purchase link below and so can't be
+ * changed directly. Net gap to the button is 16px. */
 .product-page .ob {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--timeline-space-3xs);
     flex-wrap: wrap;
-    background: var(--timeline-colors-gray-100);
-    border-radius: var(--timeline-radii-base);
-    padding: var(--timeline-space-2xs) var(--timeline-space-xs);
-    margin-bottom: var(--timeline-space-3xs);
+    padding: 0;
+    margin-bottom: -8px;
 }
 
 /* Prices --------------------------------------------------------------- */
