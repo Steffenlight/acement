@@ -50,6 +50,22 @@
     font-variant-numeric: slashed-zero;
 }
 
+/* Optical nudge, not a layout change. flex-end lines the price's *box* bottom
+ * up with the pill, but the box carries the font's descender space, so the
+ * baseline the digits actually sit on ends up 5.6px above the pill's lower
+ * edge and the pill reads as hanging low. Dropping the numerals onto that edge
+ * costs nothing elsewhere: the descender space they gain is invisible, and the
+ * gap from the digits down to the button becomes 16px, matching the pill's.
+ *
+ * 0.2em rather than 6px so it tracks the price's clamp (28→36px), where the
+ * true offset runs 5.6→7.0px. Both spans share a font-size, so shifting them
+ * together keeps them aligned to each other. */
+.product-page .ob-now,
+.product-page .ob-was {
+    position: relative;
+    top: 0.2em;
+}
+
 /* One step down the type scale from 3xl. The pair has to read as a
  * comparison, and at 3xl the new price so outweighed the old one that the
  * old one stopped registering as a number at all. */
