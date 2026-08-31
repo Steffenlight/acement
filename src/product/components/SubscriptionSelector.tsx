@@ -14,15 +14,10 @@ import OfferBand from './OfferBand.tsx'
         function SubscriptionSelector() {
             return (
                 <div className={"chakra-stack product_subscriptionMultiVariant css-fci8ch"}>
-                    <h2 className={"chakra-text css-eb5ql6"}>
-                        Subscribe &amp; Save:
-                    </h2>
-                    <div className={"chakra-stack css-8pfri0"} role={"radiogroup"}>
-                        <SubscriptionOption dataId="0" variant="standard" />
-                        <SubscriptionOption dataId="1" variant="standard" />
-                        <SubscriptionOption dataId="2" variant="clinical" />
-                        <SubscriptionOption dataId="3" variant="bestValue" />
-                    </div>
+                    {/* The "Subscribe & Save" heading and the 1/2/4/12-month
+                        radio group were removed, leaving a single offer and one
+                        CTA. SubscriptionOption and its helpers are kept below
+                        for when supply tiers come back. */}
                     <div className={"chakra-stack product_ctas css-1j7yyl0"}>
                         <OfferBand />
                         <div className={"chakra-stack css-xqcv1s"}>

@@ -18,9 +18,11 @@
  * the page's standard ink, so the buy box keeps one visual language and the
  * red stays scarce enough to still mean something where it does appear. */
 
+/* Centred, not top-aligned. The price row is one line and the deal block is
+ * two, so aligning their tops left the prices floating above the pill. */
 .product-page .ob {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: var(--timeline-space-3xs);
     flex-wrap: wrap;
@@ -51,15 +53,16 @@
     color: var(--timeline-colors-gray-600);
 }
 
-/* Deliberately close to .ob-now in size and dark enough to read. A struck
- * price that has faded to near-invisible proves nothing — the saving only
- * lands if the reader can take in both numbers. */
+/* Set at the same size as .ob-now, separated by opacity alone. Two numbers at
+ * one size read as a straight comparison; shrinking the old price makes the
+ * saving look smaller than it is, which is the opposite of the point. */
 .product-page .ob-was {
     font-family: var(--timeline-fonts-sans);
-    font-size: var(--timeline-fontSizes-lg);
+    font-size: var(--timeline-fontSizes-2xl);
+    line-height: 1;
     font-weight: var(--timeline-fontWeights-book);
-    letter-spacing: -0.02em;
-    color: var(--timeline-colors-blackAlpha-700);
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-blackAlpha-500);
     /* text-decoration-thickness keeps the rule from thinning out at the
      * larger clamp sizes, where the default hairline all but disappears. */
     text-decoration: line-through;
@@ -71,14 +74,14 @@
 .product-page .ob-deal {
     text-align: right;
     margin-left: auto;
-    padding-top: 4px;
 }
 
-/* Geometry copied from the "Clinically recommended" pill in the subscription
- * options above (.css-1cym26v): 10px / 500 / 0.09em, 21px tall, 8px side
- * padding, 4px radius. Only the fill changes. Reusing an existing badge shape
- * rather than inventing one means the offer reads as part of the buy box
- * instead of an ad pasted on top of it. */
+/* Geometry taken from the site's small badge (.css-1cym26v, the "Clinically
+ * recommended" pill): 10px / 500 / 0.09em, 21px tall, 8px side padding, 4px
+ * radius. Only the fill changes. Reusing an existing badge shape rather than
+ * inventing one means the offer reads as part of the buy box instead of an ad
+ * pasted on top of it. The pill that shape came from lived in the supply
+ * options, which are now removed; the values are held here directly. */
 .product-page .ob-headline {
     display: inline-flex;
     align-items: center;
