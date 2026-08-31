@@ -62,9 +62,9 @@ function ProductPage() {
     						*Our clinical study showed that sedentary, middle-aged adults with an average BMI of 29.52 increased hamstring muscle strength.
     					</p>
     				</div>
-    				<div role={"separator"} className={"css-o5vfml"}>
-    
-    				</div>
+    				{/* The column's own separator was removed too. The accordion
+    				    renders one above its first item, and with the iframe gone
+    				    the two sat directly on top of each other. */}
     				{/* The captured FrontRowMD clinician-review iframe was removed. It
     				    rendered nothing but still reserved 150px, which was the blank
     				    band above the accordion. It is also Timeline's widget showing
