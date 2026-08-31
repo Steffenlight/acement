@@ -6,7 +6,7 @@ import SupplyPrice from './SupplyPrice.tsx'
 import SubscriptionDetails from './SubscriptionDetails.tsx'
 import AddToCartButton from './AddToCartButton.tsx'
 import Price from './Price.tsx'
-import OfferBand from './OfferBand.tsx'
+import OfferBand, { GuaranteeLine } from './OfferBand.tsx'
 
 
 // Component
@@ -25,10 +25,11 @@ import OfferBand from './OfferBand.tsx'
                                 <AddToCartButton dataId="0" />
                             </div>
                         </div>
-                        {/* The "One-time purchase · $99" link was removed with
-                            the supply tiers, leaving the subscription as the
-                            only path. AddToCartButton still carries its dataId
-                            "1" variant for when it comes back. */}
+                        {/* The "One-time purchase · $99" link that sat here was
+                            replaced by the guarantee, leaving the subscription
+                            as the only path. AddToCartButton still carries its
+                            dataId "1" variant for when it comes back. */}
+                        <GuaranteeLine />
                     </div>
                 </div>
             )

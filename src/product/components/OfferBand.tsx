@@ -31,6 +31,47 @@ function ArrowRight() {
 }
 
 
+function ShieldCheck() {
+    return (
+        <svg viewBox={'0 0 16 16'} fill={'none'} aria-hidden={'true'} className={'ob-shield'}>
+            <path
+                d={'M8 1.5 2.75 3.4v4.2c0 3 2.1 5.7 5.25 6.9 3.15-1.2 5.25-3.9 5.25-6.9V3.4L8 1.5Z'}
+                stroke={'currentColor'}
+                strokeWidth={'1.3'}
+                strokeLinejoin={'round'}
+            />
+            <path
+                d={'m5.9 7.9 1.5 1.5 2.9-2.9'}
+                stroke={'currentColor'}
+                strokeWidth={'1.3'}
+                strokeLinecap={'round'}
+                strokeLinejoin={'round'}
+            />
+        </svg>
+    )
+}
+
+
+/* Guarantee line under the CTA.
+ *
+ * NOTE — docs/09-brand-design.md lists "Higher T or your money back" in the
+ * copy landmines pulled off competitor pages, filed as "Mars Men's claim and
+ * their risk appetite". This is that claim. It is also a promise about a lab
+ * value rather than about satisfaction, which is a materially harder thing to
+ * honour: a refund policy tied to bloodwork invites the customer to produce a
+ * panel, and docs/14 has our refund terms mirroring Mars Men's tighter
+ * first-order-only structure rather than a results guarantee. Built as asked;
+ * worth an attorney read before launch. */
+function GuaranteeLine() {
+    return (
+        <p className={'ob-guarantee'}>
+            <ShieldCheck />
+            Higher testosterone in 90 days or your money back
+        </p>
+    )
+}
+
+
 function OfferBand() {
     return (
         <div className={'ob'}>
@@ -44,5 +85,5 @@ function OfferBand() {
 }
 
 
-export { ArrowRight }
+export { ArrowRight, GuaranteeLine }
 export default OfferBand
