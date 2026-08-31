@@ -92,9 +92,6 @@
      * larger clamp sizes, where the default hairline all but disappears. */
     text-decoration: line-through;
     text-decoration-thickness: 2px;
-    /* The strike in red while the numerals stay grey: the mark that cancels
-     * the old price is the same colour as the offer that replaced it. */
-    text-decoration-color: var(--timeline-colors-red-300);
 }
 
 /* Deal ----------------------------------------------------------------- */
