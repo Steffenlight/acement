@@ -29,11 +29,17 @@ function ShippingBenefits() {
     return (
         <ul className={"chakra-stack css-3vdebf"}>
             {BENEFITS.map(text => (
+                // The css-puz2r7 wrapper is load-bearing, not markup noise: the
+                // row's font-size, weight, line-height and tracking are all set
+                // by `.css-puz2r7 > p.chakra-text`, a child selector. Drop the
+                // div and the text falls back to the inherited 16px.
                 <li className={"chakra-stack css-1y3kakk"} key={text}>
                     <Black_circle_with_greyscale_background />
-                    <p className={"chakra-text css-u3zvhu"}>
-                        {text}
-                    </p>
+                    <div className={"css-puz2r7"}>
+                        <p className={"chakra-text css-u3zvhu"}>
+                            {text}
+                        </p>
+                    </div>
                 </li>
             ))}
         </ul>
