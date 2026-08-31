@@ -2,7 +2,6 @@ import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 import { Link } from 'react-router-dom'
 
-import CategoryButton from './CategoryButton.tsx'
 import IconButton from './IconButton.tsx'
 import MobileMenu from './MobileMenu.tsx'
 import TimelineHomeLink from './TimelineHomeLink.tsx'

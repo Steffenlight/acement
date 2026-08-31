@@ -86,14 +86,10 @@
  * inventing one means the offer reads as part of the buy box instead of an ad
  * pasted on top of it. The pill that shape came from lived in the supply
  * options, which are now removed; the values are held here directly. */
-/* inline-block, not inline-flex. As a flex container the pill's own text
- * became anonymous flex items either side of the underlined <span>, and the
- * whitespace between them was discarded — it rendered "50% OFFFOR LIFE".
- * line-height does the vertical centring that align-items used to. */
 .product-page .ob-headline {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     min-height: 21px;
-    line-height: 21px;
     margin: 0;
     padding: 0 8px;
     font-family: var(--timeline-fonts-sans);
@@ -101,29 +97,11 @@
     font-weight: 500;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    /* Splitting "for life" into its own span for the underline gave the pill
-     * a wrap opportunity, and it broke onto two lines. */
-    white-space: nowrap;
     color: var(--timeline-colors-gray-50);
     background: var(--timeline-colors-red-300);
     border-radius: var(--timeline-radii-base);
     /* Pushed to the band's right edge, which lines up with the button's. */
     margin-left: auto;
-    /* Lifts the pill off the flex line's bottom onto the price's baseline.
-     * flex-end aligns it to the price's *box* bottom, which sits about 5.6px
-     * below the baseline at the current size — enough that the pill read as
-     * hanging low. The offset scales with the price clamp (28→36px) from 5.5
-     * to 7.0px, so one value covers the range to within a pixel. */
-    margin-bottom: 6px;
-}
-
-/* Marks "for life" inside the offer, in both the pill and the title badge.
- * The claim is the permanence, not the percentage — every competitor runs a
- * first-order discount, so the underline goes on the half nobody else says. */
-.product-page .ob-underline {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
 }
 
 /* Primary CTA ---------------------------------------------------------- */
