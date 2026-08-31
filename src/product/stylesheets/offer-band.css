@@ -24,15 +24,16 @@
  * the pill on its right — the price now reads as the button's label rather
  * than as a separate module above it.
  *
- * Centred, not top-aligned: the price row is one line and the deal block is
- * two, so aligning their tops left the prices floating above the pill.
+ * Bottom-aligned, so the pill sits on the same line as the price rather than
+ * floating beside it. Both items are single-line now, and flex-end puts the
+ * pill's lower edge on the price's.
  *
  * The negative margin eats most of .product_ctas' 24px row-gap, which also
  * spaces the CTA from the one-time purchase link below and so can't be
  * changed directly. Net gap to the button is 16px. */
 .product-page .ob {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     gap: var(--timeline-space-3xs);
     flex-wrap: wrap;
@@ -79,11 +80,6 @@
 
 /* Deal ----------------------------------------------------------------- */
 
-.product-page .ob-deal {
-    text-align: right;
-    margin-left: auto;
-}
-
 /* Geometry taken from the site's small badge (.css-1cym26v, the "Clinically
  * recommended" pill): 10px / 500 / 0.09em, 21px tall, 8px side padding, 4px
  * radius. Only the fill changes. Reusing an existing badge shape rather than
@@ -104,15 +100,8 @@
     color: var(--timeline-colors-gray-50);
     background: var(--timeline-colors-red-300);
     border-radius: var(--timeline-radii-base);
-}
-
-.product-page .ob-note {
-    margin: 6px 0 0;
-    font-family: var(--timeline-fonts-sans);
-    font-size: var(--timeline-fontSizes-2xs);
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--timeline-colors-blackAlpha-700);
+    /* Pushed to the band's right edge, which lines up with the button's. */
+    margin-left: auto;
 }
 
 /* Primary CTA ---------------------------------------------------------- */
@@ -148,14 +137,6 @@
     flex: none;
     width: 16px;
     height: 16px;
-}
-
-@media screen and (max-width: 400px) {
-    .product-page .ob-deal {
-        margin-left: 0;
-        text-align: left;
-    }
-    .product-page .ob-note { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {

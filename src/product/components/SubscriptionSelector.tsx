@@ -25,14 +25,10 @@ import OfferBand from './OfferBand.tsx'
                                 <AddToCartButton dataId="0" />
                             </div>
                         </div>
-                        <div className={"css-xi606m"}>
-                            <div className={"css-165casq"}>
-                                <AddToCartButton dataId="1" />
-                            </div>
-                        </div>
-                        <div>
-
-                        </div>
+                        {/* The "One-time purchase · $99" link was removed with
+                            the supply tiers, leaving the subscription as the
+                            only path. AddToCartButton still carries its dataId
+                            "1" variant for when it comes back. */}
                     </div>
                 </div>
             )
