@@ -92,6 +92,17 @@
     /* An empty span the capture left spanning all 12 columns. Left in place
      * it claims its own grid row and pushes the pair apart. */
     .product-page .section--comparisonTable .css-iyykce { display: none; }
+
+    /* The capture pins these wrappers at 873px and 800px, so on anything wider
+     * than about 1300px the table stops at 800px and leaves a growing band of
+     * empty grey to its right. Releasing them lets the table fill its grid
+     * area, which is what the layout being copied does. */
+    .product-page .section--comparisonTable .css-gv08nt,
+    .product-page .section--comparisonTable .css-1j4l2ns {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
 }
 
 /* Phones: make the three columns fit rather than scroll.
@@ -163,4 +174,23 @@
     }
 
     .product-page .ct-brand { width: 52px; }
+
+    /* The heading barely shrank — 32px against the desktop's 43px — while
+     * every other element in the section came down by half. It ends up
+     * dominating a band whose point is the table. */
+    .product-page .section--comparisonTable h2 {
+        font-size: var(--timeline-fontSizes-2xl);
+    }
+
+    /* Rows measured 62/44/62/44, because two labels wrap and two do not. The
+     * uneven rhythm reads as a mistake rather than as density. */
+    .product-page .section--comparisonTable tbody tr { height: 58px; }
+
+    /* The table is wider than the screen and the cut lands mid-column, which
+     * looks broken rather than swipeable. A fade on the right edge says there
+     * is more without adding furniture. */
+    .product-page .section--comparisonTable .css-19eihll {
+        -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+        mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+    }
 }

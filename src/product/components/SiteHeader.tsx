@@ -72,8 +72,6 @@ import HeaderMenu from './HeaderMenu.tsx'
                                 <SubnavTrigger label="Science" dataId="1" />
                                 <SubnavTrigger label="About" dataId="2" />
 
-                                <LongevityGameLink />
-
                                 <div
                                     className={"css-10f3xy2"}
                                     style={{ opacity: "0", display: "none" }}
