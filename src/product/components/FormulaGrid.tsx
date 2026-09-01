@@ -1,6 +1,9 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
+import ResearchDrawer from './ResearchDrawer.tsx'
+import { ArrowRight } from './OfferBand.tsx'
+
 
 /* "8 ingredients in one formula" — the ingredient grid.
  *
@@ -105,6 +108,8 @@ function IngredientCell({ item }: { item: Ingredient }) {
 
 
 function FormulaGrid() {
+    const [researchOpen, setResearchOpen] = React.useState(false)
+
     return (
         <section className={'fg'} aria-labelledby={'fg-title'}>
             <div className={'fg-head'}>
@@ -115,6 +120,21 @@ function FormulaGrid() {
             <ul className={'fg-grid'}>
                 {FORMULA.map(item => <IngredientCell key={item.name} item={item} />)}
             </ul>
+
+            <div className={'fg-cta'}>
+                <button
+                    type={'button'}
+                    className={'rd-trigger'}
+                    onClick={() => setResearchOpen(true)}
+                    aria-haspopup={'dialog'}
+                    aria-expanded={researchOpen}
+                >
+                    See clinical research
+                    <ArrowRight />
+                </button>
+            </div>
+
+            <ResearchDrawer open={researchOpen} onClose={() => setResearchOpen(false)} />
 
             <div className={'fg-foot'}>
                 <p>

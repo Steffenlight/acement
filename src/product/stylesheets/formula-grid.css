@@ -211,3 +211,13 @@
         max-width: none;
     }
 }
+
+/* Research link ---------------------------------------------------------
+ * Between the grid and the disclaimer: the grid states the doses, this is
+ * where to go if you want to know what is behind them, and the disclaimer
+ * closes the section. */
+.product-page .fg-cta {
+    max-width: 1920px;
+    margin: clamp(28px, calc(22px + 1.6vw), 44px) auto 0;
+    padding-inline: var(--fg-gutter);
+}

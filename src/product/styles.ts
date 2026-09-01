@@ -395,3 +395,6 @@ import "./stylesheets/accordion.css"
 
 // Ingredient grid.
 import "./stylesheets/formula-grid.css"
+
+// Clinical research drawer, opened from under the ingredient grid.
+import "./stylesheets/research-drawer.css"
