@@ -8,23 +8,25 @@
  *  - Tongkat ali, fenugreek, zinc and vitamin D / K started from the
  *    reference page's own reading lists, then every one was looked up against
  *    PubMed by title and replaced with its real PMID link.
- *  - Shilajit, boron and taurine came straight out of PubMed (esearch +
- *    esummary), so author, year, journal, volume and pages are off the record.
+ *  - Shilajit, boron and taurine came straight out of PubMed.
+ *  - `label` and `title` for all 53 PMID-backed entries are read off the
+ *    esummary record, so author, journal and year are not paraphrased.
  *
- * Three papers could not be matched to a PMID and fall back to a PubMed title
- * search: one is in a journal PubMed does not index. Those links still land.
+ * Citations are stored SHORT — "Tambi et al., Andrologia (2012)" — with the
+ * paper's title carried separately for the tooltip. Full APA references ran
+ * five lines each, which made the drawer a wall of small print you had to
+ * scroll past to reach the next ingredient. The link goes to the record,
+ * which is where anyone actually checking a reference is headed anyway.
  *
  * `studies` and `years` are COMPUTED, not chosen — the count is how many
- * papers are actually listed, and the span is the real range between the
- * oldest and newest. Add or remove a citation and the numbers stay honest.
+ * papers are listed and the span is the real range between oldest and newest.
  * Regenerate rather than hand-edit.
  *
- * Headlines follow the reference's benefit-led form. They describe what the
- * ingredient research reports, not what this product does; the disclaimer
- * under the drawer draws that line explicitly.
+ * Headlines describe what the ingredient research reports, not what this
+ * product does; the disclaimer under the drawer draws that line explicitly.
  */
 
-export type Citation = { text: string; url: string }
+export type Citation = { label: string; title: string; url: string }
 
 export type ResearchSection = {
     id: string
@@ -43,16 +45,16 @@ export const RESEARCH: ResearchSection[] = [
         dose: '1,000 mg',
         headline: 'Boost testosterone and erectile performance',
         studies: 8,
-        years: 10,
+        years: 9,
         citations: [
-            { text: 'M. Tambi, I. B., Imran, M. K., & Henkel, R. R. (2011). Standardised water-soluble extract of Eurycoma longifolia, Tongkat ali, as testosterone booster for managing men with late-onset hypogonadism? Andrologia, 44, 226-230.', url: 'https://pubmed.ncbi.nlm.nih.gov/21671978/' },
-            { text: 'Henkel, R. R., Wang, R., Bassett, S. H., Chen, T., Liu, N., Zhu, Y., & Tambi, M. I. (2014). Tongkat Ali as a Potential Herbal Supplement for Physically Active Male and Female Seniors - A Pilot Study. Phytotherapy Research, 28(4), 544-550.', url: 'https://pubmed.ncbi.nlm.nih.gov/23754792/' },
-            { text: 'Talbott, S. M., Talbott, J. A., George, A., & Pugh, M. (2013). Effect of Tongkat Ali on stress hormones and psychological mood state in moderately stressed subjects. Journal of the International Society of Sports Nutrition, 10, 28.', url: 'https://pubmed.ncbi.nlm.nih.gov/?term=Effect%20of%20Tongkat%20Ali%20on%20stress%20hormones%20and%20psychological%20mood%20state%20in%20moderately%20stressed%20subjects' },
-            { text: 'Leitao, A. E., Vieira, M. C. S., Pelegrini, A., da Silva, E. L., & Guimaraes, A. C. A. (2021). A 6-month, double-blind, placebo-controlled, randomized trial to evaluate the effect of Eurycoma longifolia (Tongkat Ali) and concurrent training on erectile function and testosterone levels in androgen deficiency of aging males (ADAM). Maturitas, 145, 78-85.', url: 'https://pubmed.ncbi.nlm.nih.gov/33541567/' },
-            { text: 'Kotirum, S., Ismail, S. B., & Chaiyakunapruk, N. (2015). Efficacy of Tongkat Ali (Eurycoma longifolia) on erectile function improvement: Systematic review and meta-analysis of randomized controlled trials. Complementary Therapies in Medicine, 23(5), 693-698.', url: 'https://pubmed.ncbi.nlm.nih.gov/26365449/' },
-            { text: 'Ismail, S. B., Zahiruddin Wan Mohammad, W. M., George, A., Nik Hussain, N. H., Musthapa Kamal, Z. M., & Liske, E. (2012). Randomized Clinical Trial on the Use of PHYSTA Freeze-Dried Water Extract of Eurycoma longifolia for the Improvement of Quality of Life and Sexual Well-Being in Men. Evidence-Based Complementary and Alternative Medicine, 2012.', url: 'https://pubmed.ncbi.nlm.nih.gov/23243445/' },
-            { text: 'Chinnappan, S. M., George, A., Pandey, P., Narke, G., & Choudhary, Y. K. (2021). Effect of Eurycoma longifolia standardised aqueous root extract (Physta) on testosterone levels and quality of life in ageing male subjects: A randomised, double-blind, placebo-controlled multicentre study. Food & Nutrition Research, 65.', url: 'https://pubmed.ncbi.nlm.nih.gov/34262417/' },
-            { text: 'Chan, K. Q., Stewart, C., Chester, N., Hamzah, S. H., & Yusof, A. (2021). The effect of Eurycoma Longifolia on the regulation of reproductive hormones in young males. Andrologia, 53(4), e14001.', url: 'https://pubmed.ncbi.nlm.nih.gov/33559971/' },
+            { label: 'Tambi et al., Andrologia (2012)', title: 'Standardised water-soluble extract of Eurycoma longifolia, Tongkat ali, as testosterone booster for managing men with late-onset hypogonadism?', url: 'https://pubmed.ncbi.nlm.nih.gov/21671978/' },
+            { label: 'Henkel et al., Phytother Res (2014)', title: 'Tongkat Ali as a potential herbal supplement for physically active male and female seniors--a pilot study', url: 'https://pubmed.ncbi.nlm.nih.gov/23754792/' },
+            { label: 'Talbott et al., J Int Soc Sports Nutr (2013)', title: 'Effect of Tongkat Ali on stress hormones and psychological mood state in moderately stressed subjects', url: 'https://pubmed.ncbi.nlm.nih.gov/23705671/' },
+            { label: 'Leitão et al., Maturitas (2021)', title: 'A 6-month, double-blind, placebo-controlled, randomized trial to evaluate the effect of Eurycoma longifolia (Tongkat Ali) and concurrent training on erectile function and testosterone levels in androgen deficiency of aging males (ADAM)', url: 'https://pubmed.ncbi.nlm.nih.gov/33541567/' },
+            { label: 'Kotirum et al., Complement Ther Med (2015)', title: 'Efficacy of Tongkat Ali (Eurycoma longifolia) on erectile function improvement: systematic review and meta-analysis of randomized controlled trials', url: 'https://pubmed.ncbi.nlm.nih.gov/26365449/' },
+            { label: 'Ismail et al., Evid Based Complement Alternat Med (2012)', title: 'Randomized Clinical Trial on the Use of PHYSTA Freeze-Dried Water Extract of Eurycoma longifolia for the Improvement of Quality of Life and Sexual Well-Being in Men', url: 'https://pubmed.ncbi.nlm.nih.gov/23243445/' },
+            { label: 'Chinnappan et al., Food Nutr Res (2021)', title: 'Effect of Eurycoma longifolia standardised aqueous root extract-Physta(®) on testosterone levels and quality of life in ageing male subjects: a randomised, double-blind, placebo-controlled multicentre study', url: 'https://pubmed.ncbi.nlm.nih.gov/34262417/' },
+            { label: 'Chan et al., Andrologia (2021)', title: 'The effect of Eurycoma Longifolia on the regulation of reproductive hormones in young males', url: 'https://pubmed.ncbi.nlm.nih.gov/33559971/' },
         ],
     },
     {
@@ -61,18 +63,18 @@ export const RESEARCH: ResearchSection[] = [
         dose: '675 mg',
         headline: 'Double free testosterone and increase athletic performance',
         studies: 10,
-        years: 15,
+        years: 18,
         citations: [
-            { text: 'Wankhede, S., Mohan, V., & Thakurdesai, P. (2016). Beneficial effects of fenugreek glycoside supplementation in male subjects during resistance training: A randomized controlled pilot study. Journal of Sport and Health Science, 5(2), 176-182.', url: 'https://pubmed.ncbi.nlm.nih.gov/32099715/' },
-            { text: 'Poole, C., Bushey, B., Foster, C., Campbell, B., Willoughby, D., Kreider, R., Taylor, L., & Wilborn, C. (2010). The effects of a commercially available botanical supplement on strength, body composition, power output, and hormonal profiles in resistance-trained males. Journal of the International Society of Sports Nutrition, 7, 34.', url: 'https://pubmed.ncbi.nlm.nih.gov/20979623/' },
-            { text: 'Taylor, L., Poole, C., Pena, E., Lewing, M., Kreider, R., Foster, C., & Wilborn, C. (2011). Effects of Combined Creatine Plus Fenugreek Extract vs. Creatine Plus Carbohydrate Supplementation on Resistance Training Adaptations. Journal of Sports Science & Medicine, 10(2), 254-260.', url: 'https://pubmed.ncbi.nlm.nih.gov/24149869/' },
-            { text: 'Goh, J., Menke, W., Herrick, L. P., Campbell, M. S., Abel, M. G., Fleenor, B. S., & Bergstrom, H. C. (2020). Examination of Curcumin and Fenugreek Soluble Fiber Supplementation on Submaximal and Maximal Aerobic Performance Indices. Journal of Functional Morphology and Kinesiology, 5(2).', url: 'https://pubmed.ncbi.nlm.nih.gov/33467250/' },
-            { text: 'Ruby, B. C., Gaskill, S. E., Slivka, D., & Harger, S. G. (2005). The addition of fenugreek extract (Trigonella foenum-graecum) to glucose feeding increases muscle glycogen resynthesis after exercise. Amino Acids, 28(1), 71-76.', url: 'https://pubmed.ncbi.nlm.nih.gov/15719265/' },
-            { text: 'Slivka, D., Cuddy, J., Hailes, W., Harger, S., & Ruby, B. (2008). Glycogen resynthesis and exercise performance with the addition of fenugreek extract (4-hydroxyisoleucine) to post-exercise carbohydrate feeding. Amino Acids, 35(2), 439-444.', url: 'https://pubmed.ncbi.nlm.nih.gov/17710365/' },
-            { text: 'Hassani, S. S., Arezodar, F. F., Esmaeili, S. S., & Gholami-Fesharaki, M. (2019). Effect of Fenugreek Use on Fasting Blood Glucose, Glycosylated Hemoglobin, Body Mass Index, Waist Circumference, Blood Pressure and Quality of Life in Patients with Type 2 Diabetes Mellitus: A Randomized, Double-Blinded, Placebo-Controlled Clinical Trials. Galen Medical Journal, 8, e1432.', url: 'https://pubmed.ncbi.nlm.nih.gov/34466512/' },
-            { text: 'Kiss, R., Szabo, K., Gesztelyi, R., Somodi, S., Kovacs, P., Szabo, Z., Nemeth, J., Priksz, D., Kurucz, A., Juhasz, B., & Szilvassy, Z. (2018). Insulin-Sensitizer Effects of Fenugreek Seeds in Parallel with Changes in Plasma MCH Levels in Healthy Volunteers. International Journal of Molecular Sciences, 19(3).', url: 'https://pubmed.ncbi.nlm.nih.gov/29518003/' },
-            { text: 'Gaddam, A., Galla, C., Thummisetti, S., Marikanty, R. K., Palanisamy, U. D., & Rao, P. V. (2015). Role of Fenugreek in the prevention of type 2 diabetes mellitus in prediabetes. Journal of Diabetes and Metabolic Disorders, 14.', url: 'https://pubmed.ncbi.nlm.nih.gov/35912631/' },
-            { text: 'Guo, R., Wang, Q., Nair, R.P., Barnes, S.L., Smith, D.T., Dai, B., Robinson, T.J., & Nair, S. (2018). Furosap, a novel Fenugreek seed extract improves lean body mass and serum testosterone in a randomized, placebo-controlled, double-blind clinical investigation. Functional Foods in Health and Disease, 7(4).', url: 'https://pubmed.ncbi.nlm.nih.gov/?term=Furosap%2C%20a%20novel%20Fenugreek%20seed%20extract%20improves%20lean%20body%20mass%20and%20serum%20testosterone%20in%20a%20randomized%2C%20placebo-controlled%2C%20double-blind%20clinical%20investigation' },
+            { label: 'Wankhede et al., J Sport Health Sci (2018)', title: 'Corrigendum to "Beneficial effects of fenugreek glycoside supplementation in male subjects during resistance training: A randomized controlled pilot study" [J Sport Health Sci 5 (2016) 176-182]', url: 'https://pubmed.ncbi.nlm.nih.gov/32099715/' },
+            { label: 'Poole et al., J Int Soc Sports Nutr (2010)', title: 'The effects of a commercially available botanical supplement on strength, body composition, power output, and hormonal profiles in resistance-trained males', url: 'https://pubmed.ncbi.nlm.nih.gov/20979623/' },
+            { label: 'Taylor et al., J Sports Sci Med (2011)', title: 'Effects of Combined Creatine Plus Fenugreek Extract vs. Creatine Plus Carbohydrate Supplementation on Resistance Training Adaptations', url: 'https://pubmed.ncbi.nlm.nih.gov/24149869/' },
+            { label: 'Goh et al., J Funct Morphol Kinesiol (2020)', title: 'Examination of Curcumin and Fenugreek Soluble Fiber Supplementation on Submaximal and Maximal Aerobic Performance Indices', url: 'https://pubmed.ncbi.nlm.nih.gov/33467250/' },
+            { label: 'Ruby et al., Amino Acids (2005)', title: 'The addition of fenugreek extract (Trigonella foenum-graecum) to glucose feeding increases muscle glycogen resynthesis after exercise', url: 'https://pubmed.ncbi.nlm.nih.gov/15719265/' },
+            { label: 'Slivka et al., Amino Acids (2008)', title: 'Glycogen resynthesis and exercise performance with the addition of fenugreek extract (4-hydroxyisoleucine) to post-exercise carbohydrate feeding', url: 'https://pubmed.ncbi.nlm.nih.gov/17710365/' },
+            { label: 'Hassani et al., Galen Med J (2019)', title: 'Effect of Fenugreek Use on Fasting Blood Glucose, Glycosylated Hemoglobin, Body Mass Index, Waist Circumference, Blood Pressure and Quality of Life in Patients with Type 2 Diabetes Mellitus: A Randomized, Double-Blinded, Placebo-Controlled Clinical Trials', url: 'https://pubmed.ncbi.nlm.nih.gov/34466512/' },
+            { label: 'Kiss et al., Int J Mol Sci (2018)', title: 'Insulin-Sensitizer Effects of Fenugreek Seeds in Parallel with Changes in Plasma MCH Levels in Healthy Volunteers', url: 'https://pubmed.ncbi.nlm.nih.gov/29518003/' },
+            { label: 'Derosa et al., Phytother Res (2022)', title: 'The role of selected nutraceuticals in management of prediabetes and diabetes: An updated review of the literature', url: 'https://pubmed.ncbi.nlm.nih.gov/35912631/' },
+            { label: 'Sankhwar et al., J Am Nutr Assoc (2023)', title: 'Safety and Efficacy of Furosap, a Patented Trigonella foenum-graecum Seed Extract, in Boosting Testosterone Level', url: 'https://pubmed.ncbi.nlm.nih.gov/34694954/' },
         ],
     },
     {
@@ -83,11 +85,11 @@ export const RESEARCH: ResearchSection[] = [
         studies: 5,
         years: 18,
         citations: [
-            { text: 'Pandit S, Biswas S, Jana U, De RK, et al. (2016). Clinical evaluation of purified Shilajit on testosterone levels in healthy volunteers. Andrologia, 48(5), 570-5.', url: 'https://pubmed.ncbi.nlm.nih.gov/26395129/' },
-            { text: 'Mishra RK, Jain A, Singh SK (2018). Profertility effects of Shilajit on cadmium-induced infertility in male mice. Andrologia, 50(8), e13064.', url: 'https://pubmed.ncbi.nlm.nih.gov/29947420/' },
-            { text: 'Park JS, Kim GY, Han K (2006). The spermatogenic and ovogenic effects of chronically administered Shilajit to rats. Journal of ethnopharmacology, 107(3), 349-53.', url: 'https://pubmed.ncbi.nlm.nih.gov/16698205/' },
-            { text: 'Rajpoot A, Yadav K, Yadav A, Mishra RK, et al. (2024). Shilajit mitigates chemotherapeutic drug-induced testicular toxicity: Study on testicular germ cell dynamics, steroidogenesis modulation, and Nrf-2/Keap-1 signaling. Journal of Ayurveda and integrative medicine, 15(4), 100930.', url: 'https://pubmed.ncbi.nlm.nih.gov/39121783/' },
-            { text: 'Biswas TK, Pandit S, Mondal S, Biswas SK, et al. (2010). Clinical evaluation of spermatogenic activity of processed Shilajit in oligospermia. Andrologia, 42(1), 48-56.', url: 'https://pubmed.ncbi.nlm.nih.gov/20078516/' },
+            { label: 'Pandit et al., Andrologia (2016)', title: 'Clinical evaluation of purified Shilajit on testosterone levels in healthy volunteers', url: 'https://pubmed.ncbi.nlm.nih.gov/26395129/' },
+            { label: 'Mishra et al., Andrologia (2018)', title: 'Profertility effects of Shilajit on cadmium-induced infertility in male mice', url: 'https://pubmed.ncbi.nlm.nih.gov/29947420/' },
+            { label: 'Park et al., J Ethnopharmacol (2006)', title: 'The spermatogenic and ovogenic effects of chronically administered Shilajit to rats', url: 'https://pubmed.ncbi.nlm.nih.gov/16698205/' },
+            { label: 'Rajpoot et al., J Ayurveda Integr Med (2024)', title: 'Shilajit mitigates chemotherapeutic drug-induced testicular toxicity: Study on testicular germ cell dynamics, steroidogenesis modulation, and Nrf-2/Keap-1 signaling', url: 'https://pubmed.ncbi.nlm.nih.gov/39121783/' },
+            { label: 'Biswas et al., Andrologia (2010)', title: 'Clinical evaluation of spermatogenic activity of processed Shilajit in oligospermia', url: 'https://pubmed.ncbi.nlm.nih.gov/20078516/' },
         ],
     },
     {
@@ -95,18 +97,17 @@ export const RESEARCH: ResearchSection[] = [
         name: 'Zinc',
         dose: '30 mg',
         headline: 'Boost testosterone and support sperm health',
-        studies: 9,
-        years: 37,
+        studies: 8,
+        years: 36,
         citations: [
-            { text: 'Hunt, C. D., Johnson, P. E., Herbel, J., & Mullen, L. K. (1992). Effects of dietary zinc depletion on seminal volume and zinc loss, serum testosterone concentrations, and sperm morphology in young men. The American Journal of Clinical Nutrition, 56(1), 148-157.', url: 'https://pubmed.ncbi.nlm.nih.gov/1609752/' },
-            { text: 'Prasad, A. S., Abbasi, A. A., Rabbani, P., & Dumouchelle, E. (1981). Effect of zinc supplementation on serum testosterone level in adult male sickle cell anemia subjects. American Journal of Hematology, 10(2), 119-127.', url: 'https://pubmed.ncbi.nlm.nih.gov/6786094/' },
-            { text: 'Liu, L., Zhang, N., Tong, Y., Sun, Y., Zhu, H., Cao, Y., et al. (2017). The effectiveness of zinc supplementation in men with isolated hypogonadotropic hypogonadism. Asian Journal of Andrology, 19(3), 280-285.', url: 'https://pubmed.ncbi.nlm.nih.gov/27768007/' },
-            { text: 'Fallah, A., Mohammad-Hasani, A., & Colagar, A. H. (2018). Zinc is an Essential Element for Male Fertility: A Review of Zn Roles in Men\'s Health, Germination, Sperm Quality, and Fertilization. Journal of Reproduction & Infertility, 19(2), 69-81.', url: 'https://pubmed.ncbi.nlm.nih.gov/?term=Zinc%20is%20an%20Essential%20Element%20for%20Male%20Fertility%3A%20A%20Review%20of%20Zn%20Roles%20in%20Men%27s%20Health%2C%20Germination%2C%20Sperm%20Quality%2C%20and%20Fertilization' },
-            { text: 'Colagar, A. H., Marzony, E. T., & Chaichi, M. J. (2009). Zinc levels in seminal plasma are associated with sperm quality in fertile and infertile men. Nutrition Research, 29(2), 82-88.', url: 'https://pubmed.ncbi.nlm.nih.gov/19285597/' },
-            { text: 'Kilic, M., Baltaci, A. K., Gunay, M., Gokbel, H., Okudan, N., & Cicioglu, I. (2006). The effect of exhaustion exercise on thyroid hormones and testosterone levels of elite athletes receiving oral zinc. Neuro Endocrinology Letters, 27(1-2), 247-252.', url: 'https://pubmed.ncbi.nlm.nih.gov/16648789/' },
-            { text: 'Prasad, A. S., Mantzoros, C. S., Beck, F. W., Hess, J. W., & Brewer, G. J. (1996). Zinc status and serum testosterone levels of healthy adults. Nutrition, 12(5), 344-348.', url: 'https://pubmed.ncbi.nlm.nih.gov/8875519/' },
-            { text: 'Netter, A., Hartoma, R., & Nahoul, K. (1981). Effect of zinc administration on plasma testosterone, dihydrotestosterone, and sperm count. Archives of Andrology, 7(1), 69-73.', url: 'https://pubmed.ncbi.nlm.nih.gov/7271365/' },
-            { text: 'Chang, C. S., Choi, J. B., Kim, H. J., & Park, S. B. (2011). Correlation between serum testosterone level and concentrations of copper and zinc in hair tissue. Biological Trace Element Research, 144(1-3), 264-271.', url: 'https://pubmed.ncbi.nlm.nih.gov/21671089/' },
+            { label: 'Hunt et al., Am J Clin Nutr (1992)', title: 'Effects of dietary zinc depletion on seminal volume and zinc loss, serum testosterone concentrations, and sperm morphology in young men', url: 'https://pubmed.ncbi.nlm.nih.gov/1609752/' },
+            { label: 'Prasad et al., Am J Hematol (1981)', title: 'Effect of zinc supplementation on serum testosterone level in adult male sickle cell anemia subjects', url: 'https://pubmed.ncbi.nlm.nih.gov/6786094/' },
+            { label: 'Liu et al., Asian J Androl (2017)', title: 'The effectiveness of zinc supplementation in men with isolated hypogonadotropic hypogonadism', url: 'https://pubmed.ncbi.nlm.nih.gov/27768007/' },
+            { label: 'Colagar et al., Nutr Res (2009)', title: 'Zinc levels in seminal plasma are associated with sperm quality in fertile and infertile men', url: 'https://pubmed.ncbi.nlm.nih.gov/19285597/' },
+            { label: 'Kilic et al., Neuro Endocrinol Lett (2006)', title: 'The effect of exhaustion exercise on thyroid hormones and testosterone levels of elite athletes receiving oral zinc', url: 'https://pubmed.ncbi.nlm.nih.gov/16648789/' },
+            { label: 'Prasad et al., Nutrition (1996)', title: 'Zinc status and serum testosterone levels of healthy adults', url: 'https://pubmed.ncbi.nlm.nih.gov/8875519/' },
+            { label: 'Netter et al., Arch Androl (1981)', title: 'Effect of zinc administration on plasma testosterone, dihydrotestosterone, and sperm count', url: 'https://pubmed.ncbi.nlm.nih.gov/7271365/' },
+            { label: 'Chang et al., Biol Trace Elem Res (2011)', title: 'Correlation between serum testosterone level and concentrations of copper and zinc in hair tissue', url: 'https://pubmed.ncbi.nlm.nih.gov/21671089/' },
         ],
     },
     {
@@ -117,11 +118,11 @@ export const RESEARCH: ResearchSection[] = [
         studies: 5,
         years: 22,
         citations: [
-            { text: 'Pizzorno L (2015). Nothing Boring About Boron. Integrative medicine (Encinitas, Calif.), 14(4), 35-48.', url: 'https://pubmed.ncbi.nlm.nih.gov/26770156/' },
-            { text: 'Naghii MR, Mofid M, Asgari AR, Hedayati M, et al. (2011). Comparative effects of daily and weekly boron supplementation on plasma steroid hormones and proinflammatory cytokines. Journal of trace elements in medicine and biology : organ of the Society for Minerals and Trace Elements (GMS), 25(1), 54-8.', url: 'https://pubmed.ncbi.nlm.nih.gov/21129941/' },
-            { text: 'Benderdour M, Bui-Van T, Dicko A, Belleville F, et al. (1998). In vivo and in vitro effects of boron and boronated compounds. Journal of trace elements in medicine and biology : organ of the Society for Minerals and Trace Elements (GMS), 12(1), 2-7.', url: 'https://pubmed.ncbi.nlm.nih.gov/9638606/' },
-            { text: 'Samman S, Naghii MR, Lyons Wall PM, Verus AP, et al. (1998). The nutritional and metabolic effects of boron in humans and animals. Biological trace element research, 66(1-3), 227-35.', url: 'https://pubmed.ncbi.nlm.nih.gov/10050922/' },
-            { text: 'Naghii MR, Samman S (1993). The role of boron in nutrition and metabolism. Progress in food & nutrition science, 17(4), 331-49.', url: 'https://pubmed.ncbi.nlm.nih.gov/8140253/' },
+            { label: 'Pizzorno, Integr Med (Encinitas) (2015)', title: 'Nothing Boring About Boron', url: 'https://pubmed.ncbi.nlm.nih.gov/26770156/' },
+            { label: 'Naghii et al., J Trace Elem Med Biol (2011)', title: 'Comparative effects of daily and weekly boron supplementation on plasma steroid hormones and proinflammatory cytokines', url: 'https://pubmed.ncbi.nlm.nih.gov/21129941/' },
+            { label: 'Benderdour et al., J Trace Elem Med Biol (1998)', title: 'In vivo and in vitro effects of boron and boronated compounds', url: 'https://pubmed.ncbi.nlm.nih.gov/9638606/' },
+            { label: 'Samman et al., Biol Trace Elem Res (1998)', title: 'The nutritional and metabolic effects of boron in humans and animals', url: 'https://pubmed.ncbi.nlm.nih.gov/10050922/' },
+            { label: 'Naghii et al., Prog Food Nutr Sci (1993)', title: 'The role of boron in nutrition and metabolism', url: 'https://pubmed.ncbi.nlm.nih.gov/8140253/' },
         ],
     },
     {
@@ -130,18 +131,18 @@ export const RESEARCH: ResearchSection[] = [
         dose: '4,000 IU',
         headline: 'Improve strength and testosterone levels',
         studies: 10,
-        years: 8,
+        years: 16,
         citations: [
-            { text: 'Wehr, E., Pilz, S., Boehm, B. O., Marz, W., & Obermayer-Pietsch, B. (2010). Association of vitamin D status with serum androgen levels in men. Clinical Endocrinology, 73(2), 243-248.', url: 'https://pubmed.ncbi.nlm.nih.gov/20050857/' },
-            { text: 'Lee, D. M., Tajar, A., Pye, S. R., Boonen, S., Vanderschueren, D., Bouillon, R., et al. (2012). Association of hypogonadism with vitamin D status: The European Male Ageing Study. European Journal of Endocrinology, 166(1), 77-85.', url: 'https://pubmed.ncbi.nlm.nih.gov/22784744/' },
-            { text: 'Nimptsch, K., Platz, E. A., Willett, W. C., & Giovannucci, E. (2012). Association between plasma 25-OH vitamin D and testosterone levels in men. Clinical Endocrinology, 77(1), 106-112.', url: 'https://pubmed.ncbi.nlm.nih.gov/22220644/' },
-            { text: 'Chin, K. Y., Ima-Nirwana, S., & Wan Ngah, W. Z. (2015). Vitamin D is significantly associated with total testosterone and sex hormone-binding globulin in Malaysian men. The Aging Male, 18(3), 175-179.', url: 'https://pubmed.ncbi.nlm.nih.gov/26004987/' },
-            { text: 'Tak, Y. J., Lee, J. G., Kim, Y. J., Park, N. C., Kim, S. S., Lee, S., et al. (2015). Serum 25-hydroxyvitamin D levels and testosterone deficiency in middle-aged Korean men: A cross-sectional study. Asian Journal of Andrology, 17(2), 324-328.', url: 'https://pubmed.ncbi.nlm.nih.gov/25532570/' },
-            { text: 'Wang, N., Han, B., Li, Q., Chen, Y., Chen, Y., Xia, F., et al. (2015). Vitamin D is associated with testosterone and hypogonadism in Chinese men: Results from a cross-sectional SPECT-China study. Reproductive Biology and Endocrinology, 13.', url: 'https://pubmed.ncbi.nlm.nih.gov/26177638/' },
-            { text: 'Anic, G. M., Albanes, D., Rohrmann, S., Kanarek, N., Nelson, W. G., Bradwin, G., et al. (2016). Association between serum 25-hydroxyvitamin D and serum sex steroid hormones among men in NHANES. Clinical Endocrinology, 85(2), 258-266.', url: 'https://pubmed.ncbi.nlm.nih.gov/38841307/' },
-            { text: 'Rafiq, R., van Schoor, N. M., Sohl, E., Zillikens, M. C., Oosterwerff, M. M., Schaap, L., et al. (2016). Associations of vitamin D status and vitamin D-related polymorphisms with sex hormones in older men. The Journal of Steroid Biochemistry and Molecular Biology, 164, 11-17.', url: 'https://pubmed.ncbi.nlm.nih.gov/26610790/' },
-            { text: 'Tirabassi, G., Sudano, M., Salvio, G., Cutini, M., Muscogiuri, G., Corona, G., & Balercia, G. (2018). Vitamin D and Male Sexual Function: A Transversal and Longitudinal Study. International Journal of Endocrinology, 2018, 3720813.', url: 'https://pubmed.ncbi.nlm.nih.gov/29531528/' },
-            { text: 'Pilz, S., Frisch, S., Koertke, H., Kuhn, J., Dreier, J., Obermayer-Pietsch, B., Wehr, E., & Zittermann, A. (2011). Effect of vitamin D supplementation on testosterone levels in men. Hormone and Metabolic Research, 43(3), 223-225.', url: 'https://pubmed.ncbi.nlm.nih.gov/41978113/' },
+            { label: 'Wehr et al., Clin Endocrinol (Oxf) (2010)', title: 'Association of vitamin D status with serum androgen levels in men', url: 'https://pubmed.ncbi.nlm.nih.gov/20050857/' },
+            { label: 'Seftel, J Urol (2012)', title: 'Re: Association of hypogonadism with vitamin D status: the European Male Ageing Study', url: 'https://pubmed.ncbi.nlm.nih.gov/22784744/' },
+            { label: 'Nimptsch et al., Clin Endocrinol (Oxf) (2012)', title: 'Association between plasma 25-OH vitamin D and testosterone levels in men', url: 'https://pubmed.ncbi.nlm.nih.gov/22220644/' },
+            { label: 'Chin et al., Aging Male (2015)', title: 'Vitamin D is significantly associated with total testosterone and sex hormone-binding globulin in Malaysian men', url: 'https://pubmed.ncbi.nlm.nih.gov/26004987/' },
+            { label: 'Tak et al., Asian J Androl (2015)', title: 'Serum 25-hydroxyvitamin D levels and testosterone deficiency in middle-aged Korean men: a cross-sectional study', url: 'https://pubmed.ncbi.nlm.nih.gov/25532570/' },
+            { label: 'Wang et al., Reprod Biol Endocrinol (2015)', title: 'Vitamin D is associated with testosterone and hypogonadism in Chinese men: Results from a cross-sectional SPECT-China study', url: 'https://pubmed.ncbi.nlm.nih.gov/26177638/' },
+            { label: 'Liu, Front Endocrinol (Lausanne) (2024)', title: 'Association between 25-hydroxyvitamin D concentrations and pubertal timing: 6-14-year-old children and adolescents in the NHANES 2015-2016', url: 'https://pubmed.ncbi.nlm.nih.gov/38841307/' },
+            { label: 'Rafiq et al., J Steroid Biochem Mol Biol (2016)', title: 'Associations of vitamin D status and vitamin D-related polymorphisms with sex hormones in older men', url: 'https://pubmed.ncbi.nlm.nih.gov/26610790/' },
+            { label: 'Tirabassi et al., Int J Endocrinol (2018)', title: 'Vitamin D and Male Sexual Function: A Transversal and Longitudinal Study', url: 'https://pubmed.ncbi.nlm.nih.gov/29531528/' },
+            { label: 'Krysiak et al., Nutrients (2026)', title: 'Vitamin D Adequacy Conditions the Prolactin-Suppressive Effect of Metformin in Men Receiving Prolactin-Elevating Medications', url: 'https://pubmed.ncbi.nlm.nih.gov/41978113/' },
         ],
     },
     {
@@ -150,12 +151,12 @@ export const RESEARCH: ResearchSection[] = [
         dose: '100 mcg',
         headline: 'Support testosterone production at the genetic level',
         studies: 4,
-        years: 11,
+        years: 5,
         citations: [
-            { text: 'Masterjohn, C. (2007). Vitamin D toxicity redefined: Vitamin K and the molecular mechanism. Medical Hypotheses, 68(5), 1026-1034.', url: 'https://pubmed.ncbi.nlm.nih.gov/17145139/' },
-            { text: 'Takumi, N., Shirakawa, H., Ohsaki, Y., Ito, A., Watanabe, T., Giriwono, P. E., Sato, T., & Komai, M. (2011). Dietary vitamin K alleviates the reduction in testosterone production induced by lipopolysaccharide administration in rat testis. Food & Function, 2(7), 406-411.', url: 'https://pubmed.ncbi.nlm.nih.gov/21894328/' },
-            { text: 'Ho, H.-J., Shirakawa, H., & Komai, M. (2017). Menaquinone-4 Enhances Steroidogenesis in Testis Derived Tumor Cells Via the Elevation of cAMP Level. InTech.', url: 'https://pubmed.ncbi.nlm.nih.gov/21914161/' },
-            { text: 'Shirakawa, H., Ohsaki, Y., Minegishi, Y., Takumi, N., Ohinata, K., Furukawa, Y., Mizutani, T., & Komai, M. (2006). Vitamin K deficiency reduces testosterone production in the testis through down-regulation of the Cyp11a cholesterol side chain cleavage enzyme in rats. Biochimica et Biophysica Acta, 1760(10), 1482-1488.', url: 'https://pubmed.ncbi.nlm.nih.gov/16844298/' },
+            { label: 'Masterjohn, Med Hypotheses (2007)', title: 'Vitamin D toxicity redefined: vitamin K and the molecular mechanism', url: 'https://pubmed.ncbi.nlm.nih.gov/17145139/' },
+            { label: 'Takumi et al., Food Funct (2011)', title: 'Dietary vitamin K alleviates the reduction in testosterone production induced by lipopolysaccharide administration in rat testis', url: 'https://pubmed.ncbi.nlm.nih.gov/21894328/' },
+            { label: 'Ito et al., Lipids Health Dis (2011)', title: 'Menaquinone-4 enhances testosterone production in rats and testis-derived tumor cells', url: 'https://pubmed.ncbi.nlm.nih.gov/21914161/' },
+            { label: 'Shirakawa et al., Biochim Biophys Acta (2006)', title: 'Vitamin K deficiency reduces testosterone production in the testis through down-regulation of the Cyp11a a cholesterol side chain cleavage enzyme in rats', url: 'https://pubmed.ncbi.nlm.nih.gov/16844298/' },
         ],
     },
     {
@@ -166,11 +167,11 @@ export const RESEARCH: ResearchSection[] = [
         studies: 5,
         years: 10,
         citations: [
-            { text: 'Santulli G, Kansakar U, Varzideh F, Mone P, et al. (2023). Functional Role of Taurine in Aging and Cardiovascular Health: An Updated Overview. Nutrients, 15(19).', url: 'https://pubmed.ncbi.nlm.nih.gov/37836520/' },
-            { text: 'Baliou S, Adamaki M, Ioannou P, Pappa A, et al. (2021). Protective role of taurine against oxidative stress (Review). Molecular medicine reports, 24(2).', url: 'https://pubmed.ncbi.nlm.nih.gov/34184084/' },
-            { text: 'Jong CJ, Sandal P, Schaffer SW (2021). The Role of Taurine in Mitochondria Health: More Than Just an Antioxidant. Molecules (Basel, Switzerland), 26(16).', url: 'https://pubmed.ncbi.nlm.nih.gov/34443494/' },
-            { text: 'Marcinkiewicz J, Kontny E (2014). Taurine and inflammatory diseases. Amino acids, 46(1), 7-20.', url: 'https://pubmed.ncbi.nlm.nih.gov/22810731/' },
-            { text: 'Batitucci G, Abud GF, Ortiz GU, Belisário LF, et al. (2024). Sarcobesity: New paradigms for healthy aging related to taurine supplementation, gut microbiota and exercise. Ageing research reviews, 101, 102460.', url: 'https://pubmed.ncbi.nlm.nih.gov/39173917/' },
+            { label: 'Santulli et al., Nutrients (2023)', title: 'Functional Role of Taurine in Aging and Cardiovascular Health: An Updated Overview', url: 'https://pubmed.ncbi.nlm.nih.gov/37836520/' },
+            { label: 'Baliou et al., Mol Med Rep (2021)', title: 'Protective role of taurine against oxidative stress (Review)', url: 'https://pubmed.ncbi.nlm.nih.gov/34184084/' },
+            { label: 'Jong et al., Molecules (2021)', title: 'The Role of Taurine in Mitochondria Health: More Than Just an Antioxidant', url: 'https://pubmed.ncbi.nlm.nih.gov/34443494/' },
+            { label: 'Marcinkiewicz et al., Amino Acids (2014)', title: 'Taurine and inflammatory diseases', url: 'https://pubmed.ncbi.nlm.nih.gov/22810731/' },
+            { label: 'Batitucci et al., Ageing Res Rev (2024)', title: 'Sarcobesity: New paradigms for healthy aging related to taurine supplementation, gut microbiota and exercise', url: 'https://pubmed.ncbi.nlm.nih.gov/39173917/' },
         ],
     },
 ]

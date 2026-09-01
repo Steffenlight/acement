@@ -124,16 +124,16 @@ function ResearchDrawer({ open, onClose }: { open: boolean; onClose: () => void 
 
                         {RESEARCH.map(s => (
                             <section className={'rd-section'} id={s.id} data-rd-section={'true'} key={s.id}>
-                                <h3 className={'rd-headline'}>{s.headline}</h3>
+                                <h3 className={'rd-name'}>{s.name}</h3>
+                                <p className={'rd-headline'}>{s.headline}</p>
 
                                 <div className={'rd-meta'}>
-                                    <span className={'rd-meta__name'}>{s.name}</span>
                                     <span className={'rd-meta__dose'}>{s.dose}</span>
                                     <span className={'rd-meta__stat'}><b>{s.studies}</b> studies</span>
                                     <span className={'rd-meta__stat'}><b>{s.years}</b> years</span>
                                 </div>
 
-                                <ol className={'rd-cites'}>
+                                <ul className={'rd-cites'}>
                                     {s.citations.map(c => (
                                         <li key={c.url}>
                                             <a
@@ -141,12 +141,13 @@ function ResearchDrawer({ open, onClose }: { open: boolean; onClose: () => void 
                                                 href={c.url}
                                                 target={'_blank'}
                                                 rel={'noopener noreferrer'}
+                                                title={c.title}
                                             >
-                                                {c.text}
+                                                {c.label}
                                             </a>
                                         </li>
                                     ))}
-                                </ol>
+                                </ul>
                             </section>
                         ))}
 

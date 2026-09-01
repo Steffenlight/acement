@@ -165,26 +165,36 @@
     scroll-margin-top: var(--timeline-space-sm);
 }
 
-/* The benefit line leads, as it does on the reference. It is the only thing
- * in the drawer set above body size, so the eye lands on what the research
- * found before it lands on the paperwork. */
-.product-page .rd-headline {
-    margin: 0 0 var(--timeline-space-3xs);
+/* The ingredient leads, in red. It is the thing you are scanning for when you
+ * open this drawer — the benefit line matters once you have found the row, not
+ * before it. Red because it is the only place in the drawer that needs to be
+ * findable at a glance while scrolling. */
+.product-page .rd-name {
+    margin: 0 0 2px;
     font-family: var(--timeline-fonts-sans);
     font-size: var(--timeline-fontSizes-md);
-    font-weight: var(--timeline-fontWeights-book);
-    line-height: 125%;
+    font-weight: var(--timeline-fontWeights-medium, 500);
+    line-height: 1.2;
     letter-spacing: var(--timeline-letterSpacings-tightest);
-    color: var(--timeline-colors-gray-600);
-    max-width: 30ch;
+    color: var(--timeline-colors-red-300);
 }
 
-/* Ingredient, dose, and the two counts, on one micro-caps line. */
+.product-page .rd-headline {
+    margin: 0 0 6px;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-sm);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 130%;
+    color: var(--timeline-colors-gray-600);
+    max-width: 40ch;
+}
+
+/* Dose and the two counts. */
 .product-page .rd-meta {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 6px var(--timeline-space-3xs);
+    gap: 4px var(--timeline-space-3xs);
     margin-bottom: var(--timeline-space-3xs);
     font-family: var(--timeline-fonts-sans);
     font-size: var(--timeline-fontSizes-2xs);
@@ -194,19 +204,19 @@
     color: var(--timeline-colors-blackAlpha-700);
 }
 
-.product-page .rd-meta__name {
-    font-weight: 500;
-    color: var(--timeline-colors-red-300);
-}
-
 .product-page .rd-meta__stat b {
     font-weight: 500;
     color: var(--timeline-colors-gray-600);
 }
 
+/* One line per paper, unnumbered. Full APA references ran five lines each and
+ * turned the drawer into small print you had to scroll past to reach the next
+ * ingredient — which defeats a table of contents. The paper's title is on the
+ * link's tooltip, and the record itself is one click away. */
 .product-page .rd-cites {
-    margin: var(--timeline-space-3xs) 0 0;
-    padding-left: 1.2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     font-family: var(--timeline-fonts-sans);
     font-size: var(--timeline-fontSizes-2xs);
     line-height: 160%;
@@ -214,7 +224,11 @@
     max-width: 68ch;
 }
 
-.product-page .rd-cites li { margin-bottom: var(--timeline-space-4xs); }
+.product-page .rd-cites li {
+    margin-bottom: 1px;
+    /* Long journal names still have to fold somewhere on a phone. */
+    line-height: 150%;
+}
 
 /* The whole citation is the link — a separate "view" affordance beside a
  * reference the reader is already scanning is one target too many. */
