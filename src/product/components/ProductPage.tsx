@@ -3,7 +3,6 @@ import type { JSX } from 'react/jsx-runtime'
 
 import EmptyDiv from './EmptyDiv.tsx'
 import BenefitsList from './BenefitsList.tsx'
-import Separator from './Separator.tsx'
 import ShopButton from './ShopButton.tsx'
 import ReviewsMarquee from './ReviewsMarquee.tsx'
 import LongevityHeading from './LongevityHeading.tsx'
@@ -21,7 +20,6 @@ import ProductIntro from './ProductIntro.tsx'
 import SubscriptionSelector from './SubscriptionSelector.tsx'
 import ShippingBenefits from './ShippingBenefits.tsx'
 import Accordion from './Accordion.tsx'
-import SamplePackPurchase from './SamplePackPurchase.tsx'
 import ComparisonCategories from './ComparisonCategories.tsx'
 import ComparisonTable from './ComparisonTable.tsx'
 import MitopureRenewalSection from './MitopureRenewalSection.tsx'
@@ -76,13 +74,6 @@ function ProductPage() {
     					
                 <Accordion dataId="0" />
             
-    				</div>
-    				<div className={"css-1quqpr3"}>
-    					<Separator />
-    					
-                <EmptyDiv className="css-1tmpo6k" />
-            
-    					<SamplePackPurchase />
     				</div>
     			</div>
     		</div>

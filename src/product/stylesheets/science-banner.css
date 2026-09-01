@@ -65,22 +65,48 @@
 
 .product-page .ct-brand svg { width: 100%; height: auto; display: block; }
 
-/* Comparison table on phones -------------------------------------------
+/* Comparison table layout ----------------------------------------------
  *
- * Three comparison columns plus the criteria column want ~560px; a phone has
- * ~330px of content width. The captured section clips at .section--
- * comparisonTable (overflow-x: hidden), so without this the third column is
- * simply invisible rather than reachable.
+ * Desktop: heading left, table right, on one row. The captured grid stacked
+ * them — heading across all 12 columns, table across all 12 beneath — which
+ * is the arrangement the product page shipped with. The layout being copied
+ * sets the heading beside the table instead, which is also what lets four
+ * rows read as one block rather than as a list under a title.
+ */
+@media screen and (min-width: 960px) {
+    .product-page .section--comparisonTable .css-1nten1k {
+        grid-column: 1 / span 4;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .product-page .section--comparisonTable .css-1nten1k h2 {
+        text-align: left;
+    }
+
+    .product-page .section--comparisonTable .css-19eihll {
+        grid-column: 5 / span 8;
+        grid-row: 1;
+    }
+
+    /* An empty span the capture left spanning all 12 columns. Left in place
+     * it claims its own grid row and pushes the pair apart. */
+    .product-page .section--comparisonTable .css-iyykce { display: none; }
+}
+
+/* Phones: make the three columns fit rather than scroll.
  *
- * Swiping is the right answer here rather than restacking, which is what I
- * tried first and what made the section three times taller than the design
- * being copied.
- *
- * A sticky criteria column would be better still, and was tried: position
- * sticky on a th inside this border-collapsed table stopped the value cells
- * painting entirely. Not worth chasing for four rows you can see in one swipe.
+ * The table was 560px against ~330px of usable width, so the last column had
+ * to be swiped to. Fixed layout with proportional columns fits it instead —
+ * the criteria column takes 40%, the three comparisons 20% each — and the
+ * padding comes down to buy those columns their width back. Nothing is off
+ * screen, so there is nothing to discover by swiping.
  */
 @media screen and (max-width: 760px) {
+    /* The captured section clips at overflow-x: hidden, so without lifting it
+     * the third column is not merely off screen, it is unreachable. */
+    .product-page .section--comparisonTable { overflow-x: visible; }
+
     .product-page .css-19eihll {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -89,9 +115,52 @@
 
     .product-page .css-19eihll::-webkit-scrollbar { display: none; }
 
-    /* The clip has to lift too, or the scroll container is itself cut off. */
-    .product-page .section--comparisonTable { overflow-x: visible; }
+    /* Claw back the width the columns need from the padding rather than from
+     * the columns themselves. table-layout: fixed with percentage widths was
+     * tried and collapsed the columns to 18px — the captured cell rules win
+     * on the first row, which is what fixed layout measures.
+     *
+     * These four cuts take the table from 560px to inside a phone's width,
+     * so what was a swipe to reach the last column is now at most a nudge. */
+    .product-page .section--comparisonTable th[scope="row"] {
+        padding-right: var(--timeline-space-4xs);
+    }
 
-    .product-page .ct-brand { width: 62px; }
+    .product-page .section--comparisonTable th[scope="row"] span {
+        font-size: var(--timeline-fontSizes-xs);
+        line-height: 135%;
+    }
 
+    .product-page .section--comparisonTable thead th,
+    .product-page .section--comparisonTable tbody td {
+        padding-inline: var(--timeline-space-5xs);
+    }
+
+    .product-page .section--comparisonTable thead th p {
+        font-size: var(--timeline-fontSizes-2xs);
+        line-height: 130%;
+    }
+
+    /* The 560px came from the wrappers, not from the table or its cells —
+     * .css-gv08nt sits at 600px and .css-1j4l2ns at 560px, and the table just
+     * fills them. Narrowing the cells did nothing until these gave way. */
+    .product-page .section--comparisonTable .css-gv08nt,
+    .product-page .section--comparisonTable .css-1j4l2ns {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .product-page .section--comparisonTable .css-1xlvs78,
+    .product-page .section--comparisonTable .css-d25f0m {
+        width: 60px;
+        min-width: 56px;
+    }
+
+    .product-page .section--comparisonTable .css-uvutxu {
+        width: auto;
+        min-width: 0;
+    }
+
+    .product-page .ct-brand { width: 52px; }
 }
