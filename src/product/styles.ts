@@ -396,6 +396,9 @@ import "./stylesheets/accordion.css"
 // Ingredient grid.
 import "./stylesheets/formula-grid.css"
 
+// ACE vs TRT vs generic boosters.
+import "./stylesheets/compare-table.css"
+
 // Clinical research drawer, opened from under the ingredient grid.
 import "./stylesheets/research-drawer.css"
 

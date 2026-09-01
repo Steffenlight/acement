@@ -1,0 +1,283 @@
+/* Comparison table.
+ *
+ * The reference is black with a solid orange column running through it, mono
+ * caps row labels, and white circular marks. Translated:
+ *
+ *  - The orange column becomes a raised paper card on the grey band, which is
+ *    what the captured table already did for its own column and what the rest
+ *    of this page does to say "this one". A solid red column would be the
+ *    largest area of red on the site by an order of magnitude, and red is
+ *    doing precise work elsewhere — one numeral per results card, one pill in
+ *    the buy box.
+ *  - Mono caps become Suisse Intl at the 0.09em tracking used everywhere else.
+ *  - The marks stay circular, because a tick that has to read at a glance
+ *    across three columns needs a container.
+ *
+ * A real <table> rather than a grid of divs: it is tabular data, the row and
+ * column headers mean something to a screen reader, and the header cells give
+ * the mobile layout its labels for free through data-label. */
+
+.product-page .ct {
+    background: var(--timeline-colors-gray-100);
+    padding-block: clamp(56px, calc(43.77px + 3.4vw), 96px);
+    min-width: 0;
+    --ct-gutter: clamp(24px, calc(15.26px + 2.33vw), 60px);
+}
+
+/* Heading --------------------------------------------------------------- */
+
+.product-page .ct-head {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: var(--ct-gutter);
+    text-align: center;
+}
+
+.product-page .ct-eyebrow {
+    margin: 0 0 var(--timeline-space-3xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page .ct-title {
+    margin: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 110%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-gray-600);
+}
+
+/* Table ----------------------------------------------------------------- */
+
+.product-page .ct-wrap {
+    max-width: 1100px;
+    margin: clamp(32px, calc(25.2px + 1.9vw), 56px) auto 0;
+    padding-inline: var(--ct-gutter);
+}
+
+.product-page .ct-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--timeline-fonts-sans);
+}
+
+.product-page .ct-table th,
+.product-page .ct-table td {
+    padding: var(--timeline-space-2xs) var(--timeline-space-3xs);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Column headers */
+.product-page .ct-table thead th {
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+    padding-bottom: var(--timeline-space-3xs);
+}
+
+.product-page .ct-table thead th[data-ours] {
+    color: var(--timeline-colors-red-300);
+}
+
+/* Row labels */
+.product-page .ct-table tbody th {
+    width: 30%;
+    text-align: left;
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page .ct-table tbody tr + tr th,
+.product-page .ct-table tbody tr + tr td {
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+}
+
+/* Our column is a raised paper card running the height of the table. The
+ * background sits on the cells rather than on a wrapper, because a table has
+ * nowhere to put a column-spanning element. */
+.product-page .ct-table td[data-ours] {
+    background: var(--timeline-colors-gray-50);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.product-page .ct-table thead th[data-ours] {
+    background: var(--timeline-colors-gray-50);
+    border-radius: var(--timeline-radii-lg) var(--timeline-radii-lg) 0 0;
+    padding-top: var(--timeline-space-2xs);
+}
+
+.product-page .ct-table tbody tr:last-child td[data-ours] {
+    border-radius: 0 0 var(--timeline-radii-lg) var(--timeline-radii-lg);
+}
+
+/* The card's own rules should not run to its edges. */
+.product-page .ct-table tbody tr + tr td[data-ours] {
+    border-top-color: var(--timeline-colors-blackAlpha-200, rgba(0, 0, 0, 0.08));
+}
+
+/* Values ---------------------------------------------------------------- */
+
+.product-page .ct-text {
+    font-size: var(--timeline-fontSizes-xs);
+    line-height: 135%;
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page td:not([data-ours]) .ct-text {
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page .ct-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: var(--timeline-radii-full);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: 500;
+}
+
+.product-page .ct-mark svg { width: 16px; height: 16px; }
+
+/* Ours reads as ink; the other columns' marks are muted, so a row scans
+ * left-to-right without every tick shouting equally. */
+.product-page td[data-ours] .ct-mark[data-kind="yes"] {
+    background: var(--timeline-colors-gray-600);
+    color: var(--timeline-colors-gray-50);
+}
+
+.product-page td:not([data-ours]) .ct-mark[data-kind="yes"] {
+    background: var(--timeline-colors-blackAlpha-250);
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page .ct-mark[data-kind="no"],
+.product-page .ct-mark[data-kind="unknown"] {
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--timeline-colors-blackAlpha-250);
+    color: var(--timeline-colors-blackAlpha-500);
+}
+
+.product-page .ct-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Footnote -------------------------------------------------------------- */
+
+.product-page .ct-foot {
+    max-width: 1100px;
+    margin: clamp(28px, calc(22px + 1.6vw), 44px) auto 0;
+    padding-inline: var(--ct-gutter);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Phones -----------------------------------------------------------------
+ *
+ * Must stay at the END of this file — same specificity as the rules above, so
+ * it only wins on order.
+ *
+ * Four columns do not fit a phone: the label alone wants 90px, leaving under
+ * 80px each for values like "Synthetic replacement". So each row becomes a
+ * block — label across the top, then the three values side by side under
+ * their own captions, which come from data-label. No horizontal scroll, and
+ * the column a value belongs to is never more than a few pixels away from it,
+ * which is the failure mode of a scrolling table.
+ */
+@media screen and (max-width: 660px) {
+    .product-page .ct-table,
+    .product-page .ct-table tbody,
+    .product-page .ct-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .product-page .ct-table thead { display: none; }
+
+    .product-page .ct-table tbody tr {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--timeline-space-4xs);
+        padding: var(--timeline-space-3xs) 0;
+        border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+    }
+
+    .product-page .ct-table tbody tr + tr th,
+    .product-page .ct-table tbody tr + tr td { border-top: 0; }
+
+    .product-page .ct-table tbody th {
+        grid-column: 1 / -1;
+        width: auto;
+        padding: 0 0 var(--timeline-space-4xs);
+    }
+
+    .product-page .ct-table td {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        padding: var(--timeline-space-4xs) 4px;
+        border-radius: var(--timeline-radii-base);
+    }
+
+    /* The caption a value sits under, so the column is readable without a
+     * header row to look back up to. */
+    /* min-height reserves two lines for every caption. "Generic boosters"
+     * wraps and "TRT" does not, and without it the values below sat at three
+     * different heights across one row. */
+    .product-page .ct-table td::before {
+        content: attr(data-label);
+        display: block;
+        min-height: 2.4em;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--timeline-colors-blackAlpha-500);
+        text-align: center;
+    }
+
+    .product-page .ct-table td[data-ours]::before {
+        color: var(--timeline-colors-red-300);
+    }
+
+    .product-page .ct-table td[data-ours],
+    .product-page .ct-table tbody tr:last-child td[data-ours],
+    .product-page .ct-table thead th[data-ours] {
+        border-radius: var(--timeline-radii-base);
+    }
+
+    .product-page .ct-text {
+        font-size: var(--timeline-fontSizes-2xs);
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .product-page .ct-mark { width: 22px; height: 22px; }
+    .product-page .ct-mark svg { width: 14px; height: 14px; }
+}
