@@ -157,7 +157,7 @@
 /* Sections -------------------------------------------------------------- */
 
 .product-page .rd-section {
-    padding-top: var(--timeline-space-2xs);
+    padding-top: var(--timeline-space-sm);
     margin-bottom: var(--timeline-space-m);
     /* Dotted, matching the separators the rest of the product column uses,
      * rather than the solid hairline used inside the ingredient grid. */
@@ -165,24 +165,27 @@
     scroll-margin-top: var(--timeline-space-sm);
 }
 
-.product-page .rd-section__head {
-    display: flex;
-    align-items: baseline;
-    gap: var(--timeline-space-3xs);
-    margin-bottom: var(--timeline-space-4xs);
-}
-
-.product-page .rd-section__name {
-    margin: 0;
+/* The benefit line leads, as it does on the reference. It is the only thing
+ * in the drawer set above body size, so the eye lands on what the research
+ * found before it lands on the paperwork. */
+.product-page .rd-headline {
+    margin: 0 0 var(--timeline-space-3xs);
     font-family: var(--timeline-fonts-sans);
-    font-size: var(--timeline-fontSizes-sm);
-    font-weight: var(--timeline-fontWeights-medium, 500);
-    line-height: 1.25;
-    letter-spacing: 0;
+    font-size: var(--timeline-fontSizes-md);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 125%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
     color: var(--timeline-colors-gray-600);
+    max-width: 30ch;
 }
 
-.product-page .rd-section__dose {
+/* Ingredient, dose, and the two counts, on one micro-caps line. */
+.product-page .rd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px var(--timeline-space-3xs);
+    margin-bottom: var(--timeline-space-3xs);
     font-family: var(--timeline-fonts-sans);
     font-size: var(--timeline-fontSizes-2xs);
     letter-spacing: 0.09em;
@@ -191,13 +194,14 @@
     color: var(--timeline-colors-blackAlpha-700);
 }
 
-.product-page .rd-section__summary {
-    margin: 0;
-    font-family: var(--timeline-fonts-sans);
-    font-size: var(--timeline-fontSizes-xs);
-    line-height: 160%;
-    color: var(--timeline-colors-blackAlpha-800, rgba(0, 0, 0, 0.8));
-    max-width: 62ch;
+.product-page .rd-meta__name {
+    font-weight: 500;
+    color: var(--timeline-colors-red-300);
+}
+
+.product-page .rd-meta__stat b {
+    font-weight: 500;
+    color: var(--timeline-colors-gray-600);
 }
 
 .product-page .rd-cites {
@@ -212,10 +216,20 @@
 
 .product-page .rd-cites li { margin-bottom: var(--timeline-space-4xs); }
 
-.product-page .rd-doi {
-    color: var(--timeline-colors-gray-600);
+/* The whole citation is the link — a separate "view" affordance beside a
+ * reference the reader is already scanning is one target too many. */
+.product-page .rd-cite {
+    color: inherit;
     text-decoration: underline;
+    text-decoration-color: var(--timeline-colors-blackAlpha-250);
     text-underline-offset: 2px;
+    transition: text-decoration-color var(--timeline-transition-duration-fast, 0.15s),
+        color var(--timeline-transition-duration-fast, 0.15s);
+}
+
+.product-page .rd-cite:hover {
+    color: var(--timeline-colors-gray-600);
+    text-decoration-color: var(--timeline-colors-gray-600);
 }
 
 .product-page .rd-foot {
