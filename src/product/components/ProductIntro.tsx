@@ -23,10 +23,7 @@ function ProductIntro() {
     		</span>
     	</div>
     	<h1 className={"chakra-text css-ryxp7a"}>
-    		Ace Men
-    		<span className={"css-19mjbaf"}>
-    			Testosterone Support
-    		</span>
+    		Testosterone Support
     	</h1>
     	<div className={"css-pignbj"}>
     		<RatingButton />
