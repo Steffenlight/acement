@@ -31,6 +31,7 @@ import ProductCarousel from './ProductCarousel.tsx'
 import TransformationTimeline from './TransformationTimeline.tsx'
 import VerifiedResults from './VerifiedResults.tsx'
 import FormulaGrid from './FormulaGrid.tsx'
+import ClosingBanner from './ClosingBanner.tsx'
 
 
 // Component
@@ -282,6 +283,8 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
+    	{/* Last band on the page. Opens on paper, closes on ink. */}
+    	<ClosingBanner />
     </main>
 }
 

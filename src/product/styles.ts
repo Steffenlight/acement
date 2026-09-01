@@ -398,3 +398,6 @@ import "./stylesheets/formula-grid.css"
 
 // Clinical research drawer, opened from under the ingredient grid.
 import "./stylesheets/research-drawer.css"
+
+// Closing banner at the foot of the page.
+import "./stylesheets/closing-banner.css"
