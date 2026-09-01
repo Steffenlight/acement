@@ -401,3 +401,4 @@ import "./stylesheets/research-drawer.css"
 
 // The science page's closing promo band, re-scoped to this page.
 import "./stylesheets/science-banner.css"
+import "./stylesheets/mobile-gallery.css"
