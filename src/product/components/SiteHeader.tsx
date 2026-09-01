@@ -4,7 +4,6 @@ import type { JSX } from 'react/jsx-runtime'
 import CategoryButton from './CategoryButton.tsx'
 import HeaderButton from './HeaderButton.tsx'
 import TimelineHomeLink from './TimelineHomeLink.tsx'
-import LongevityGameLink from './LongevityGameLink.tsx'
 import HeaderMenu from './HeaderMenu.tsx'
 
 

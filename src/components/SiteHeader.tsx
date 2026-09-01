@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import IconButton from './IconButton.tsx'
 import MobileMenu from './MobileMenu.tsx'
 import TimelineHomeLink from './TimelineHomeLink.tsx'
-import LongevityGameLink from './LongevityGameLink.tsx'
 import NavigationPanel from './NavigationPanel.tsx'
 
 
@@ -81,7 +80,6 @@ function SiteHeader() {
                 <NavigationPanel dataId="2" />
 
     				</div>
-    				<LongevityGameLink />
     				<div className={"css-10f3xy2"} style={{opacity:"0", display:"none"}}>
     
     				</div>

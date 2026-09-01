@@ -5,7 +5,6 @@ import ActionButton from './ActionButton.tsx'
 import IconButton from './IconButton.tsx'
 import TimelineHomeLink from './TimelineHomeLink.tsx'
 import CartButton from './CartButton.tsx'
-import HeaderNavItem from './HeaderNavItem.tsx'
 import HeaderNav from './HeaderNav.tsx'
 import NavigationPanel from './NavigationPanel.tsx'
 
@@ -61,8 +60,6 @@ import NavigationPanel from './NavigationPanel.tsx'
                                 <HeaderSubnav label="Shop" dataId="0" />
                                 <HeaderSubnav label="Science" dataId="1" />
                                 <HeaderSubnav label="About" dataId="2" />
-
-                                <HeaderNavItem dataId="16" />
 
                                 <div
                                     className={"css-10f3xy2"}

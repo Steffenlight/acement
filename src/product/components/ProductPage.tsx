@@ -82,13 +82,18 @@ function ProductPage() {
     		<div className={"css-hjkrkj"}>
     			<div className={"css-f9qfdi"}>
     				<div className={"css-1kaj2z2"}>
-    					
+
             <ReviewsMarquee />
-        
+
     				</div>
     			</div>
     		</div>
     	</div>
+    	{/* Straight from the social proof into the pitch: the mechanism, then
+    	    the formula behind it, then the bloodwork that proves it. */}
+    	<TransformationTimeline />
+    	<FormulaGrid />
+    	<VerifiedResults />
     	<div className={"css-ms93xs"}>
     		<div className={"section--comparisonTable css-1c7d2b"}>
     			{/* The Supplements / Urolithin A toggle was removed: it switched
@@ -113,11 +118,6 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
-    	{/* Between the comparison table and the clinical chart: how we compare,
-    	    then what is actually in it, then the evidence. Both neighbours are
-    	    gray-100, so this sits on paper and breaks up what was a single
-    	    grey slab running the height of two sections. */}
-    	<FormulaGrid />
     	<div className={"css-ms93xs"}>
     		<div className={"section--benefits css-d6zq8"}>
     			<div className={"css-jlwfyy sf-hidden"}>
@@ -133,13 +133,6 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
-    	<TransformationTimeline />
-    	{/* Reads as the payoff to the timeline above: that section ends at day
-    	    60+, this one shows four men at week 12. Placed here rather than
-    	    beside the clinical chart because that band is already gray-100 and
-    	    the two would merge into one slab; here it alternates white → grey →
-    	    dark banner. */}
-    	<VerifiedResults />
     	<div className={"css-ms93xs"}>
     		<div className={"section--banner css-1t993ry"}>
     			<div className={"banner_media-desktop css-12f05a7"}>
