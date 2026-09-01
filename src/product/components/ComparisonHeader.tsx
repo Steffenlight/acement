@@ -1,37 +1,32 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
-import Img from './Img.tsx'
-import Mitopure_brand_logo from './icons/Mitopure_brand_logo.tsx'
-import Mitopure_brand_logo1 from './icons/Mitopure_brand_logo1.tsx'
+import AceMenWordmark from '../../components/icons/AceMenWordmark.tsx'
 
 
-    
-// Component
-
+/* The captured header carried a circular ingredient photo above each label.
+ * Those are dropped: we have a photograph for ACE but none for "TRT" or
+ * "generic boosters", and one column with a disc beside two without reads as
+ * broken rather than as deliberate. Labels alone, with the brand column
+ * keeping its raised card. */
         function ComparisonHeader({
             headerClassName,
-            imageId,
             label,
             isBrand = false
         }: {
             headerClassName: string;
-            imageId: string;
             label?: string;
             isBrand?: boolean;
         }) {
             return (
                 <th scope={"col"} className={headerClassName}>
                     <div className={"chakra-stack css-7w5drv"}>
-                        <div className={"css-1xqutr6"}>
-                            <Img id={imageId} />
-                        </div>
                         <HeaderLabel label={label} isBrand={isBrand} />
                     </div>
                 </th>
             )
         }
-    
+
 
 // Subcomponents
 
@@ -43,7 +38,11 @@ import Mitopure_brand_logo1 from './icons/Mitopure_brand_logo1.tsx'
             isBrand: boolean;
         }) {
             if (isBrand) {
-                return <Mitopure_brand_logo1 />
+                return (
+                    <span className={"ct-brand"}>
+                        <AceMenWordmark />
+                    </span>
+                )
             }
 
             return (
@@ -52,6 +51,6 @@ import Mitopure_brand_logo1 from './icons/Mitopure_brand_logo1.tsx'
                 </p>
             )
         }
-    
+
 
 export default ComparisonHeader

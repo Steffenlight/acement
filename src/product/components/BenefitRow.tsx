@@ -6,12 +6,30 @@ import Solid_black_circle from './icons/Solid_black_circle.tsx'
 import BenefitHeader from './BenefitHeader.tsx'
 
 
+/* Four rows, ACE against TRT and generic boosters.
+ *
+ * Language is kept as short as the reference's — a row that needs a sentence
+ * is not a row. The status union is widened from the captured
+ * check/circle/Partial/Limited to any string, so a cell can say "Shuts it
+ * down" the way the Mars Men table does, where a tick or a cross would lose
+ * the point.
+ *
+ * TRT takes the tick on clinical doses. A table where one column wins every
+ * row reads as marketing; one that concedes reads as a comparison, and this
+ * is the row where conceding costs nothing and buys the other three.
+ *
+ * ACE values are checkable against docs/03-mechanism.md: one serving a day,
+ * full studied doses, third-party tested per batch, no hormone replacement so
+ * nothing is suppressed and nothing needs tapering. */
+
+        type Status = "check" | "circle" | string;
+
         type BenefitRowData = {
             label: string;
             firstCellClassName: string;
-            statuses: Array<"check" | "circle" | "Partial" | "Limited">;
+            statuses: Status[];
         };
-    
+
 // Component
 
         function BenefitRow({ dataId }: { dataId: string }) {
@@ -30,7 +48,7 @@ import BenefitHeader from './BenefitHeader.tsx'
                 </tr>
             );
         }
-    
+
 
 // Subcomponents
 
@@ -39,7 +57,7 @@ import BenefitHeader from './BenefitHeader.tsx'
             status
         }: {
             className: string;
-            status: "check" | "circle" | "Partial" | "Limited";
+            status: Status;
         }) {
             return (
                 <td className={className}>
@@ -57,41 +75,34 @@ import BenefitHeader from './BenefitHeader.tsx'
                 </td>
             );
         }
-    
 
 
         function getBenefitRowData(id: string): BenefitRowData {
-            const stringId = String(id);
-
-            const rows: Record<string, BenefitRowData> = {
+            const data: Record<string, BenefitRowData> = {
                 "0": {
-                    label: "Directly activates mitophagy",
-                    firstCellClassName: "css-1o771i",
-                    statuses: ["check", "circle", "circle", "circle", "Partial"]
+                    label: "Supports your own production",
+                    firstCellClassName: "css-1xlvs78",
+                    statuses: ["check", "Shuts it down", "circle"],
                 },
                 "1": {
-                    label: "Targets a root cause of age-related cellular energy decline",
-                    firstCellClassName: "css-1o771i",
-                    statuses: ["check", "Partial", "Partial", "circle", "Partial"]
+                    label: "Full clinical doses",
+                    firstCellClassName: "css-1xlvs78",
+                    statuses: ["check", "check", "circle"],
                 },
                 "2": {
-                    label: "Benefits without changing exercise routine",
-                    firstCellClassName: "css-1o771i",
-                    statuses: ["check", "check", "check", "circle", "check"]
+                    label: "No needles, no prescription",
+                    firstCellClassName: "css-1xlvs78",
+                    statuses: ["check", "circle", "check"],
                 },
                 "3": {
-                    label: "Complete human clinical trials",
-                    firstCellClassName: "css-vf5z52",
-                    statuses: ["check", "Limited", "check", "check", "Limited"]
-                }
+                    label: "Third-party tested",
+                    firstCellClassName: "css-1xlvs78",
+                    statuses: ["check", "N/A", "circle"],
+                },
             };
 
-            return rows[stringId] ?? {
-                label: "",
-                firstCellClassName: "css-1o771i",
-                statuses: ["check", "check", "check", "check", "check"]
-            };
+            return data[String(id)] ?? data["0"];
         }
-    
+
 
 export default BenefitRow

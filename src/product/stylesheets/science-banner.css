@@ -54,3 +54,44 @@
 .product-page .css-1bib11y:focus, .product-page .css-1bib11y[data-focus] { box-shadow: var(--timeline-shadows-outline); }
 
 .product-page .css-1bib11y:active, .product-page .css-1bib11y[data-active] { background: var(--timeline-colors-whiteAlpha-200); color: var(--timeline-colors-gray-50); }
+
+/* The ACE wordmark in the comparison table's brand column, standing in for the
+ * captured Mitopure logo lockup. Sized to the column rather than the header. */
+.product-page .ct-brand {
+    display: block;
+    width: clamp(78px, 9vw, 104px);
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page .ct-brand svg { width: 100%; height: auto; display: block; }
+
+/* Comparison table on phones -------------------------------------------
+ *
+ * Three comparison columns plus the criteria column want ~560px; a phone has
+ * ~330px of content width. The captured section clips at .section--
+ * comparisonTable (overflow-x: hidden), so without this the third column is
+ * simply invisible rather than reachable.
+ *
+ * Swiping is the right answer here rather than restacking, which is what I
+ * tried first and what made the section three times taller than the design
+ * being copied.
+ *
+ * A sticky criteria column would be better still, and was tried: position
+ * sticky on a th inside this border-collapsed table stopped the value cells
+ * painting entirely. Not worth chasing for four rows you can see in one swipe.
+ */
+@media screen and (max-width: 760px) {
+    .product-page .css-19eihll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .product-page .css-19eihll::-webkit-scrollbar { display: none; }
+
+    /* The clip has to lift too, or the scroll container is itself cut off. */
+    .product-page .section--comparisonTable { overflow-x: visible; }
+
+    .product-page .ct-brand { width: 62px; }
+
+}

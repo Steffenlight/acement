@@ -3,46 +3,32 @@ import type { JSX } from 'react/jsx-runtime'
 
 import ComparisonCriteriaHeader from './ComparisonCriteriaHeader.tsx'
 import ComparisonHeader from './ComparisonHeader.tsx'
-import ComparisonTable from './ComparisonTable.tsx'
 
 
-// Component
+/* Three columns instead of the captured five: ACE against TRT and the generic
+ * booster shelf, which is the comparison someone shopping for testosterone
+ * support is actually making. The captured table set Urolithin A against NAD+,
+ * CoQ10, creatine and spermidine — a molecule we do not sell, against
+ * categories nobody is weighing us up against. */
 function ComparisonTableHeader() {
     return <tr className={"css-8qlua0"}>
     	<ComparisonCriteriaHeader />
     	
                 <ComparisonHeader
                     headerClassName="css-1xlvs78"
-                    imageId="18"
                     isBrand={true}
                 />
             
     	
                 <ComparisonHeader
                     headerClassName="css-d25f0m"
-                    imageId="19"
-                    label="NAD+"
+                    label="TRT"
                 />
             
     	
                 <ComparisonHeader
                     headerClassName="css-d25f0m"
-                    imageId="20"
-                    label="CoQ10"
-                />
-            
-    	
-                <ComparisonHeader
-                    headerClassName="css-d25f0m"
-                    imageId="19"
-                    label="Creatine"
-                />
-            
-    	
-                <ComparisonHeader
-                    headerClassName="css-d25f0m"
-                    imageId="21"
-                    label="Spermidine"
+                    label="Generic boosters"
                 />
             
     </tr>

@@ -31,7 +31,6 @@ import ProductCarousel from './ProductCarousel.tsx'
 import TransformationTimeline from './TransformationTimeline.tsx'
 import VerifiedResults from './VerifiedResults.tsx'
 import FormulaGrid from './FormulaGrid.tsx'
-import CompareTable from './CompareTable.tsx'
 import ClosingBanner from './ClosingBanner.tsx'
 
 
@@ -99,11 +98,30 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
-    	{/* Replaced the captured Urolithin-A-versus-other-supplements table with
-    	    ACE against TRT and generic boosters, which is the comparison a
-    	    testosterone shopper is actually making. ComparisonCategories,
-    	    LongevityHeading and ComparisonTable are left in the tree unused. */}
-    	<CompareTable />
+    	<div className={"css-ms93xs"}>
+    		<div className={"section--comparisonTable css-1c7d2b"}>
+    			{/* The Supplements / Urolithin A toggle was removed: it switched
+    			    between two comparisons we no longer make, and the reference
+    			    layout we are following has no toggle either. */}
+    			<div className={"css-gwfq4y"}>
+    				<span className={"css-iyykce"}>
+    					
+                <EmptyDiv className="css-0" />
+            
+    				</span>
+    				<div className={"css-1nten1k"}>
+    					<LongevityHeading />
+    				</div>
+    				<div className={"css-19eihll"}>
+    					<div className={"css-gv08nt"}>
+    						<div className={"css-1j4l2ns"}>
+    							<ComparisonTable />
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     	{/* Between the comparison table and the clinical chart: how we compare,
     	    then what is actually in it, then the evidence. Both neighbours are
     	    gray-100, so this sits on paper and breaks up what was a single
