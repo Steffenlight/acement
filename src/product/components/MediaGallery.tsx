@@ -12,47 +12,11 @@ import ImageButton from './ImageButton.tsx'
 
         function MediaGallery() {
             return (
+                <>
                 <div className={"css-on2xdd"}>
                     <div className={"css-d0ukde"}>
-                        <div className={"css-1t0mzr4"}>
-                            <div
-                                className={"rfm-marquee-container css-1r9wea"}
-                                style={{
-                                    "--pause-on-hover": "running",
-                                    "--pause-on-click": "running",
-                                    "--width": "100%",
-                                    "--transform": "none",
-                                }}
-                            >
-                                <div
-                                    className={"rfm-marquee"}
-                                    style={{
-                                        "--play": "running",
-                                        "--direction": "normal",
-                                        "--duration": "14.35875s",
-                                        "--delay": "0s",
-                                        "--iteration-count": "infinite",
-                                        "--min-width": "auto",
-                                    }}
-                                >
-                                    <InitialMarqueeChild />
-                                    <MarqueeChild />
-                                </div>
-                                <div
-                                    className={"rfm-marquee"}
-                                    style={{
-                                        "--play": "running",
-                                        "--direction": "normal",
-                                        "--duration": "14.35875s",
-                                        "--delay": "0s",
-                                        "--iteration-count": "infinite",
-                                        "--min-width": "auto",
-                                    }}
-                                >
-                                    <MarqueeChild />
-                                    <MarqueeChild />
-                                </div>
-                            </div>
+                        <div className={"css-1t0mzr4 gallery-marquee--desktop"}>
+                            <GalleryMarquee />
                         </div>
                         <div className={"chakra-aspect-ratio css-1lule79"}>
                             <div className={"css-1yaumx6"}>
@@ -76,11 +40,58 @@ import ImageButton from './ImageButton.tsx'
                     <GalleryImageItem imgId="15" />
                     <GalleryImageItem imgId="16" />
                 </div>
+                <div className={"gallery-marquee--mobile"}>
+                    <GalleryMarquee />
+                </div>
+                </>
             )
         }
-    
+
 
 // Subcomponents
+
+        function GalleryMarquee() {
+            return (
+                <div
+                    className={"rfm-marquee-container css-1r9wea"}
+                    style={{
+                        "--pause-on-hover": "running",
+                        "--pause-on-click": "running",
+                        "--width": "100%",
+                        "--transform": "none",
+                    }}
+                >
+                    <div
+                        className={"rfm-marquee"}
+                        style={{
+                            "--play": "running",
+                            "--direction": "normal",
+                            "--duration": "14.35875s",
+                            "--delay": "0s",
+                            "--iteration-count": "infinite",
+                            "--min-width": "auto",
+                        }}
+                    >
+                        <InitialMarqueeChild />
+                        <MarqueeChild />
+                    </div>
+                    <div
+                        className={"rfm-marquee"}
+                        style={{
+                            "--play": "running",
+                            "--direction": "normal",
+                            "--duration": "14.35875s",
+                            "--delay": "0s",
+                            "--iteration-count": "infinite",
+                            "--min-width": "auto",
+                        }}
+                    >
+                        <MarqueeChild />
+                        <MarqueeChild />
+                    </div>
+                </div>
+            )
+        }
 
         function GalleryImageItem({ imgId }: { imgId: string }) {
             return (
