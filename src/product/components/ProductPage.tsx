@@ -30,6 +30,7 @@ import Reviews from './Reviews.tsx'
 import ProductCarousel from './ProductCarousel.tsx'
 import TransformationTimeline from './TransformationTimeline.tsx'
 import VerifiedResults from './VerifiedResults.tsx'
+import FormulaGrid from './FormulaGrid.tsx'
 
 
 // Component
@@ -122,6 +123,11 @@ function ProductPage() {
     			</div>
     		</div>
     	</div>
+    	{/* Between the comparison table and the clinical chart: how we compare,
+    	    then what is actually in it, then the evidence. Both neighbours are
+    	    gray-100, so this sits on paper and breaks up what was a single
+    	    grey slab running the height of two sections. */}
+    	<FormulaGrid />
     	<div className={"css-ms93xs"}>
     		<div className={"section--benefits css-d6zq8"}>
     			<div className={"css-jlwfyy sf-hidden"}>

@@ -392,3 +392,6 @@ import "./stylesheets/offer-band.css"
 // Accordion panels. The capture shipped the buttons but none of the panels,
 // so none of this exists in the captured sheets.
 import "./stylesheets/accordion.css"
+
+// Ingredient grid.
+import "./stylesheets/formula-grid.css"
