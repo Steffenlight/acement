@@ -1,55 +1,56 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
-import AceMenWordmark from '../../components/icons/AceMenWordmark.tsx'
+import MitopurePromo from './MitopurePromo.tsx'
 
 
-/* Closing banner at the foot of the product page.
+/* The promo band from the foot of the science page, copied onto the product
+ * page. Markup is the capture's, lifted from science/components/MitopurePage
+ * unchanged — the same wrappers, the same class names, the same copy.
  *
- * Modelled on the promo band at the bottom of our own science page: full-bleed
- * photograph, an eyebrow lockup, a two-tone headline where the first clause is
- * white and the second drops to grey, and one light button.
+ * Two things had to travel with it:
  *
- * Two substitutions:
+ *  - The CSS. The captured sheets are namespaced per page, so the product page
+ *    cannot see .science-page rules. product/stylesheets/science-banner.css
+ *    carries all 22 rule blocks with only the scope rewritten.
+ *  - The photograph. On the science page it comes through <Img id="21" />,
+ *    which is that page's own image switch; the file itself already sits in
+ *    public/images, so it is referenced directly here rather than dragging the
+ *    whole switch across.
  *
- *  - The reference's eyebrow is a "Powered by <ingredient brand>" lockup. We
- *    have no branded extract to name — docs/03 is explicit that we buy generic
- *    standardized extracts and skip the licence fee — so the wordmark signs off
- *    instead, which is what the last band on a page is for.
- *  - The copy is the campaign platform locked on 2026-08-31 (docs/18):
- *    "For the man you're supposed to be." with the kicker "He's in there."
- *    The two-tone treatment the reference uses for headline-then-subhead maps
- *    onto line-then-kicker exactly.
- *
- * PHOTOGRAPHY PENDING. `IMAGE` is null, which renders a tonal panel in the
- * slot's place; the band reads correctly without it because the ground is
- * already dark and the type is reversed. Set a path and it takes over. */
+ * Note this band is Timeline's, Mitopure badge and all, exactly as asked. It
+ * sits on a page that is still largely Timeline's — the product photography,
+ * the comparison table, the press strip — so it is consistent with the rest of
+ * the prototype rather than a new exception. */
 
-const IMAGE: string | null = null
+import bannerImage from '/images/b945b9e2-90cb-497e-90f7-2e79bac87392.webp'
 
 
 function ClosingBanner() {
     return (
-        <section className={'cb'}>
-            <div className={'cb-copy'}>
-                <div className={'cb-mark'}>
-                    <AceMenWordmark />
+        <div className={"css-ms93xs"}>
+            <div className={"section--banner css-1l9r55b"}>
+                <div className={"banner_media-desktop css-12f05a7"}>
+                    <img
+                        alt={""}
+                        role={"presentation"}
+                        loading={"lazy"}
+                        decoding={"async"}
+                        sizes={""}
+                        src={bannerImage}
+                        style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", objectFit: "cover", objectPosition: "center center", color: "transparent" }}
+                    />
                 </div>
+                <div className={"css-xcf7pf"}>
+                    <div className={"css-1weg7h6"}>
+                        <MitopurePromo />
+                    </div>
+                </div>
+                <div className={"banner_media-mobile css-adgo35 sf-hidden"}>
 
-                <h2 className={'cb-title'}>
-                    For the man you&rsquo;re supposed to be.{' '}
-                    <span className={'cb-kicker'}>He&rsquo;s in there.</span>
-                </h2>
-
-                <a className={'cb-cta'} href={'#'}>
-                    Shop ACE
-                </a>
+                </div>
             </div>
-
-            <div className={'cb-media'}>
-                {IMAGE && <img src={IMAGE} alt={''} loading={'lazy'} decoding={'async'} />}
-            </div>
-        </section>
+        </div>
     )
 }
 

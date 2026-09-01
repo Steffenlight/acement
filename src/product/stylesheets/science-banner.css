@@ -1,0 +1,56 @@
+/* The science page's closing promo band, copied onto the product page.
+ *
+ * These rules are lifted verbatim from science/stylesheets/ — the only change
+ * is the scope, .science-page becoming .product-page, because the captured
+ * sheets are namespaced per page and the product page cannot see the science
+ * page's copies. Selectors, values and order are otherwise untouched, so the
+ * band renders exactly as it does on /science.
+ *
+ * Generated, not hand-written. If the science version changes, re-extract
+ * rather than editing this file.
+ */
+
+
+.product-page .css-1l9r55b { display: grid; grid-template-columns: [full-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[full-end]; grid-column: bordered; overflow: hidden; border-radius: var(--timeline-radii-lg); row-gap: 0px; background-color: rgb(28, 31, 43); --grid-width: 1440px; }
+
+@media screen and (min-width: 768px) {.product-page .css-1l9r55b { border-radius: var(--timeline-radii-xl); }}
+
+.product-page .css-xcf7pf { display: grid; grid-template-columns: repeat(12, 1fr); grid-column: main; gap: clamp(12px, 7.77px + 1.13vw, 24px); order: 2; -webkit-box-align: center; align-items: center; position: relative; overflow: hidden; }
+
+@media screen and (min-width: 960px) {.product-page .css-xcf7pf { min-height: clamp(320px, 160px + 16.67vw, 480px); grid-row: 1; }}
+
+@media (min-width: 960px) {.product-page .css-xcf7pf { container-type: inline-size; }}
+
+.product-page .css-1weg7h6 { position: relative; height: 100%; grid-column: span 12; }
+
+@media screen and (min-width: 960px) {.product-page .css-1weg7h6 { grid-column: 1 / span 5; }}
+
+.product-page .css-1weg7h6 { grid-column: 1 / span 6; }
+
+.product-page .css-16nkz8l { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; flex-direction: column; gap: 0px; height: 100%; text-align: center; padding-top: var(--timeline-space-m); padding-bottom: var(--timeline-space-lg); }
+
+@media screen and (min-width: 960px) {.product-page .css-16nkz8l { -webkit-box-align: start; align-items: start; text-align: left; padding-top: var(--timeline-space-xl); padding-bottom: var(--timeline-space-xl); }}
+
+.product-page .css-1n9n0g6 { display: flex; -webkit-box-align: center; align-items: center; flex-direction: row; gap: var(--timeline-space-4xs); margin-bottom: var(--timeline-space-3xs); }
+
+.product-page .css-zdfcm7 { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-2xs-mono); font-weight: var(--timeline-fontWeights-book); line-height: 150%; letter-spacing: var(--timeline-letterSpacings-mono); text-transform: uppercase; font-variant-numeric: slashed-zero; color: var(--timeline-colors-gray-50); padding-top: 2px; }
+
+.product-page .css-17rnpvt { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xl); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; }
+
+.product-page .css-1hl3kow { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xl); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; color: var(--timeline-colors-gray-50); }
+
+.product-page .css-12du0zj { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-xl); font-weight: var(--timeline-fontWeights-book); line-height: 120%; letter-spacing: var(--timeline-letterSpacings-tight); font-variant-numeric: slashed-zero; color: var(--timeline-colors-whiteAlpha-700); }
+
+.product-page .css-1bib11y { display: inline-flex; appearance: none; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; user-select: none; position: relative; white-space: nowrap; vertical-align: middle; outline: transparent solid 2px; outline-offset: 2px; line-height: 20px; font-weight: var(--timeline-fontWeights-book); transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-normal); border-width: 1px; border-style: solid; border-image: none; text-transform: uppercase; border-color: var(--timeline-colors-gray-50); max-width: 100%; padding-inline-start: var(--timeline-space-4); padding-inline-end: var(--timeline-space-4); padding-right: var(--timeline-space-xs); padding-left: var(--timeline-space-xs); height: auto; font-size: var(--timeline-fontSizes-2xs-mono); font-family: var(--timeline-fonts-sans); letter-spacing: var(--timeline-letterSpacings-mono); font-variant-numeric: slashed-zero; padding-top: var(--timeline-space-3xs); padding-bottom: var(--timeline-space-3xs); background: var(--timeline-colors-gray-50); color: var(--timeline-colors-gray-600); min-width: 0px; border-radius: var(--timeline-radii-base); margin-top: var(--timeline-space-sm); }
+
+.product-page .css-1bib11y:focus-visible, .product-page .css-1bib11y[data-focus-visible] { box-shadow: var(--timeline-shadows-outline); }
+
+.product-page .css-1bib11y:disabled, .product-page .css-1bib11y[disabled], .product-page .css-1bib11y[aria-disabled="true"], .product-page .css-1bib11y[data-disabled] { opacity: 1; cursor: not-allowed; box-shadow: var(--timeline-shadows-none); background: var(--timeline-colors-blackAlpha-200); color: var(--timeline-colors-blackAlpha-500); border-color: var(--timeline-colors-blackAlpha-200); }
+
+.product-page .css-1bib11y:hover, .product-page .css-1bib11y[data-hover] { background: var(--timeline-colors-transparent); color: var(--timeline-colors-gray-50); border-color: var(--timeline-colors-gray-50); }
+
+.product-page .css-1bib11y:hover:disabled, .product-page .css-1bib11y[data-hover]:disabled, .product-page .css-1bib11y:hover[disabled], .product-page .css-1bib11y[data-hover][disabled], .product-page .css-1bib11y:hover[aria-disabled="true"], .product-page .css-1bib11y[data-hover][aria-disabled="true"], .product-page .css-1bib11y:hover[data-disabled], .product-page .css-1bib11y[data-hover][data-disabled] { background: var(--timeline-colors-blackAlpha-200); color: var(--timeline-colors-blackAlpha-500); border-color: var(--timeline-colors-blackAlpha-200); }
+
+.product-page .css-1bib11y:focus, .product-page .css-1bib11y[data-focus] { box-shadow: var(--timeline-shadows-outline); }
+
+.product-page .css-1bib11y:active, .product-page .css-1bib11y[data-active] { background: var(--timeline-colors-whiteAlpha-200); color: var(--timeline-colors-gray-50); }
