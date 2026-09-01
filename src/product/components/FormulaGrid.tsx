@@ -20,9 +20,9 @@ import type { JSX } from 'react/jsx-runtime'
  *    disclaimer, which is why it sits under the grid rather than being left
  *    to the one on the product intro.
  *
- * Ingredient photography is not in yet. Each cell renders a tonal disc in the
- * slot's place so the grid reads correctly; drop a path into `image` and it
- * takes over. */
+ * Ingredient photography lives in public/images/ingredients/. Setting `image`
+ * to null on any row falls back to a tonal disc, so a missing photo degrades
+ * rather than breaking the grid. */
 
 type Ingredient = {
     name: string
@@ -37,51 +37,51 @@ const FORMULA: Ingredient[] = [
         name: 'Tongkat Ali',
         dose: '1,000 mg',
         description: 'Supports testosterone production, libido, fertility and lean muscle.',
-        image: null,
+        image: '/images/ingredients/tongkat-ali.webp',
     },
     {
         name: 'Shilajit',
         dose: '400 mg',
         description: 'Supports fertility markers and testosterone levels.',
-        image: null,
+        image: '/images/ingredients/shilajit.webp',
     },
     {
         name: 'K1 & K2',
         dose: '100 mcg',
         description: 'Supports bone density and mood, and works alongside D3 in testosterone production.',
-        image: null,
+        image: '/images/ingredients/k1-k2.webp',
     },
     {
         name: 'Vitamin D',
         dose: '4,000 IU',
         description: 'Essential to cellular health and to regulating testosterone.',
-        image: null,
+        image: '/images/ingredients/vitamin-d.webp',
     },
     {
         name: 'Zinc',
         dose: '30 mg',
         description: 'An essential trace mineral in testosterone metabolism and immune function.',
-        image: null,
+        image: '/images/ingredients/zinc.webp',
     },
     {
         // Ours is ashwagandha 600mg. See note above.
         name: 'Taurine',
         dose: '675 mg',
         description: 'Reduces oxidative stress and supports blood flow.',
-        image: null,
+        image: '/images/ingredients/taurine.webp',
     },
     {
         name: 'Fenugreek',
         dose: '675 mg',
         description: 'Supports testosterone production, DHT and male vitality.',
-        image: null,
+        image: '/images/ingredients/fenugreek.webp',
     },
     {
         // Ours is 10mg, the dose used in the research. See note above.
         name: 'Boron',
         dose: '4 mg',
         description: 'A trace mineral studied for raising free testosterone and regulating estrogen.',
-        image: null,
+        image: '/images/ingredients/boron.webp',
     },
 ]
 

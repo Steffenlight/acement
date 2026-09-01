@@ -72,12 +72,6 @@
     .product-page .fg-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media screen and (max-width: 560px) {
-    .product-page .fg-grid {
-        grid-template-columns: 1fr;
-        row-gap: var(--timeline-space-sm);
-    }
-}
 
 /* Each cell is a row of a spec sheet, so it gets the rule the rest of the
  * page uses to separate rows rather than a border box of its own. */
@@ -168,4 +162,52 @@
     font-size: var(--timeline-fontSizes-2xs);
     line-height: 160%;
     color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Phones -----------------------------------------------------------------
+ *
+ * Must stay at the END of this file. These rules carry the same specificity
+ * as the base ones they override, so if the block sits above them the base
+ * rules win on order and the whole breakpoint silently does nothing.
+ *
+ * Stays 2-up rather than dropping to one column. At 375px that is about
+ * 157px per cell, too narrow for the disc-left layout — the text column
+ * would be roughly 70px. So the cell goes vertical: disc and dose share a
+ * top row, name and description run full width beneath.
+ *
+ * Two-up is worth it. Eight ingredients stacked one per row is a long scroll
+ * for what is a spec list, and the point of the section is taking in the
+ * whole roster at once. */
+@media screen and (max-width: 560px) {
+    .product-page .fg-grid {
+        column-gap: var(--timeline-space-3xs);
+        row-gap: var(--timeline-space-sm);
+    }
+
+    /* align-content is load-bearing. Cells stretch to the tallest in their
+     * row, and without it the surplus height is shared out across both auto
+     * rows — so a cell with a short description pushed its own name down and
+     * the two columns' names stopped lining up. */
+    .product-page .fg-cell {
+        grid-template-columns: 1fr;
+        align-content: start;
+        row-gap: var(--timeline-space-4xs);
+    }
+
+    .product-page .fg-media {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--timeline-space-4xs);
+    }
+
+    .product-page .fg-disc {
+        width: 44px;
+        height: 44px;
+    }
+
+    .product-page .fg-desc {
+        font-size: var(--timeline-fontSizes-2xs);
+        line-height: 155%;
+        max-width: none;
+    }
 }
