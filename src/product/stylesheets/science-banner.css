@@ -263,3 +263,21 @@
     width: 100%;
     height: 100%;
 }
+
+/* --- Mobile: gallery gutter ------------------------------------------------
+ *
+ * The slide sat at 24px from each edge, 77% of the viewport. The reference
+ * runs nearly edge to edge at about 86%, which is what makes the next slide
+ * peek far enough to read as a carousel rather than as a card with margins.
+ */
+@media screen and (max-width: 959px) {
+    /* The 24px inset is the product section's own gutter, on an ancestor —
+     * adding padding here only pushed the slide further in. Full-bleed out to
+     * the viewport instead, then an 8px inner gutter. */
+    .product-page .css-on2xdd {
+        width: 100vw;
+        margin-inline: calc(50% - 50vw);
+        padding-inline: 8px;
+        scroll-padding-left: 8px;
+    }
+}

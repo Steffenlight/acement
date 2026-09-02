@@ -152,9 +152,6 @@
         grid-template-columns: none;
     }
 
-    /* The div that used to hold the Supplements / Skincare toggle. Empty since
-     * that came out, but it still claims column 1 and would sit under the nav. */
-    .header .css-1het91h { display: none; }
 }
 
 /* --- Announcement bar ------------------------------------------------------
@@ -186,3 +183,40 @@
 }
 
 .ab-link:hover { text-decoration-thickness: 2px; }
+
+/* --- Header on phones ------------------------------------------------------
+ *
+ * The captured grid keeps two rows at every width: a 32px row for the nav and
+ * a 60px row for burger / logo / icons. On a phone the nav is replaced by the
+ * hamburger, so row one renders empty — 32px of blank band between the offer
+ * bar and the logo, which is the grey strip above the header. Collapsing it
+ * takes the header from 100px to 68px.
+ *
+ * The burger also sat centred inside its 118px grid cell, putting it ~59px
+ * from the edge while the logo and cart sit at the page gutter. Left-aligned
+ * so all three read off the same margin.
+ */
+@media screen and (max-width: 959px) {
+    .header .css-1l8efhj {
+        grid-template-rows: 60px;
+        align-items: center;
+    }
+
+    .header .css-1be9aw6 { display: none; }
+
+    /* display:block, so justify-content did nothing — the icon was centred in
+     * its 118px column, sitting ~57px in while the logo and cart read off the
+     * page gutter. */
+    .header .chakra-button.css-1qdrp3y {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+    }
+}
+
+/* The div that used to hold the Supplements / Skincare toggle. Empty since
+ * that came out, but it spans 1 / -1, so it takes a whole grid row to itself
+ * and pushes the burger, logo and cart into an implicit second row — which is
+ * the blank band above the logo on phones. Hidden at every width. */
+.header .css-1het91h { display: none; }
