@@ -14,6 +14,7 @@ import images_ca50f806_35dd_4d1d_b031_0e660b971097_png from '/images/ca50f806-35
 import images_497bb42f_f0f7_490a_851a_f91aaee60156_png from '/images/497bb42f-f0f7-490a-851a-f91aaee60156.webp';
 import images_40ef48fe_dac5_4298_a5ea_8db5db4ec597_jpg from '/images/40ef48fe-dac5-4298-a5ea-8db5db4ec597.webp';
 import images_332f7015_b967_42d3_a4e4_3da99e2c2722_png from '/images/332f7015-b967-42d3-a4e4-3da99e2c2722.webp';
+import images_product_hero from '/images/product-hero.webp';
 import images_b37770da_6538_4b5f_ae22_df6d56b2f30a_png from '/images/b37770da-6538-4b5f-ae22-df6d56b2f30a.webp';
 import images_e5c557bf_1da5_4206_9c5a_103868f1b42a_png from '/images/e5c557bf-1da5-4206-9c5a-103868f1b42a.webp';
 import images_2e8465cf_9b83_471b_90d8_3bc7d95f6804_png from '/images/2e8465cf-9b83-471b-90d8-3bc7d95f6804.webp';
@@ -87,9 +88,11 @@ export const Img = ({ id }) => {
         return (
             <img alt={"Urolithin A vs Creatine"} loading={"lazy"} width={"2640"} height={"1760"} decoding={"async"} className={"round"} style={{color:"transparent"}} sizes={""} src={images_40ef48fe_dac5_4298_a5ea_8db5db4ec597_jpg}></img>
         );
+    // Slot 11 is the first frame of the product gallery — the image the page
+    // opens on. Swapped from the captured softgels shot to ACE's own.
     case "11":
         return (
-            <img alt={"Urolithin A Mitopure Softgels"} width={"1600"} height={"2000"} decoding={"async"} style={{color:"transparent", maxWidth:"100%", height:"auto"}} sizes={""} src={images_332f7015_b967_42d3_a4e4_3da99e2c2722_png}></img>
+            <img alt={"ACE MEN Testosterone Support"} width={"1600"} height={"2080"} decoding={"async"} fetchPriority={"high"} style={{color:"transparent", maxWidth:"100%", height:"auto"}} sizes={""} src={images_product_hero}></img>
         );
     case "12":
         return (
