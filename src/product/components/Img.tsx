@@ -92,7 +92,7 @@ export const Img = ({ id }) => {
     // opens on. Swapped from the captured softgels shot to ACE's own.
     case "11":
         return (
-            <img alt={"ACE MEN Testosterone Support"} width={"1600"} height={"2080"} decoding={"async"} fetchPriority={"high"} style={{color:"transparent", maxWidth:"100%", height:"auto"}} sizes={""} src={images_product_hero}></img>
+            <img alt={"ACE MEN Testosterone Support"} width={"2700"} height={"1792"} decoding={"async"} fetchPriority={"high"} style={{color:"transparent", width:"100%", height:"100%", objectFit:"cover"}} sizes={""} src={images_product_hero}></img>
         );
     case "12":
         return (
