@@ -1,7 +1,7 @@
 import React from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
-import EmptyContainer3 from './components/EmptyContainer3.tsx'
+import AnnouncementBar from './components/AnnouncementBar.tsx'
 import EmptyContainer from './components/EmptyContainer.tsx'
 import Footer from './components/Footer.tsx'
 import SiteHeader from './components/SiteHeader.tsx'
@@ -25,7 +25,7 @@ function AppContent() {
         <div className={"css-10aoefm"}>
         <div className={"header css-11kngrn"} id={"header"}>
         <div className={"chakra-collapse"} style={{overflow:"hidden", display:"block", opacity:"1", height:"auto"}}>
-        <EmptyContainer3 />
+        <AnnouncementBar />
         </div>
         <div className={"headroom-wrapper"} style={{height:"132px"}}>
         <div style={{position:"relative", top:"0", left:"0", right:"0", zIndex:"1", WebkitTransform:"translate3D(0,0,0)", MsTransform:"translate3D(0,0,0)", transform:"translate3D(0,0,0)", transition:"transform var(--header-transition)"}} className={"headroom headroom--unfixed"}>

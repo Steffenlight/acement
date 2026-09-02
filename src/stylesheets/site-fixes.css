@@ -156,3 +156,33 @@
      * that came out, but it still claims column 1 and would sit under the nav. */
     .header .css-1het91h { display: none; }
 }
+
+/* --- Announcement bar ------------------------------------------------------
+ *
+ * Global, not page-scoped: it renders above the header, which sits outside the
+ * .product-page and .science-page scopes. */
+
+.ab {
+    background: #292923;
+    color: #FFFFFC;
+    text-align: center;
+    padding: 10px clamp(20px, 4vw, 48px);
+}
+
+.ab-text {
+    margin: 0;
+    font-family: "Suisse Intl", -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 450;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    font-variant-numeric: slashed-zero;
+}
+
+.ab-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.ab-link:hover { text-decoration-thickness: 2px; }
