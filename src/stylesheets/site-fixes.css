@@ -120,3 +120,39 @@
     color: var(--timeline-colors-gray-50, #fffffc) !important;
     border-radius: var(--timeline-radii-base, 4px);
 }
+
+/* --- Header: one row instead of two ---------------------------------------
+ *
+ * The capture puts the logo and the icons on row 1 and drops the nav onto a
+ * second, centred row beneath — which is where the 132px header height comes
+ * from. Timeline's own current header is a single row: nav left, logo centre,
+ * icons right.
+ *
+ * Rebuilt by moving the nav into row 1 column 1 rather than by restructuring
+ * the markup, so the mega-menu panels it contains keep the positioning
+ * context they were captured with.
+ *
+ * Header only, so it applies on every page — the header sits outside the
+ * .product-page and .science-page scopes. */
+
+@media screen and (min-width: 960px) {
+    .header .css-1l8efhj {
+        grid-template-rows: 80px;
+        align-items: center;
+    }
+
+    /* Row 1, first column, left-aligned. place-items:center on the captured
+     * rule is what was centring it across the full width. */
+    .header .css-1be9aw6 {
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: start;
+        place-items: center start;
+        grid-auto-flow: column;
+        grid-template-columns: none;
+    }
+
+    /* The div that used to hold the Supplements / Skincare toggle. Empty since
+     * that came out, but it still claims column 1 and would sit under the nav. */
+    .header .css-1het91h { display: none; }
+}
