@@ -1,7 +1,7 @@
 /* The science page's closing promo band, copied onto the product page.
  *
  * These rules are lifted verbatim from science/stylesheets/ — the only change
- * is the scope, .science-page becoming .product-page-2, because the captured
+ * is the scope, .science-page becoming .product-page, because the captured
  * sheets are namespaced per page and the product page cannot see the science
  * page's copies. Selectors, values and order are otherwise untouched, so the
  * band renders exactly as it does on /science.
@@ -197,32 +197,14 @@
 
 /* --- Product gallery and buy column ----------------------------------------
  *
- * Two changes to the top of the page, both measured off the reference:
- *
- * 1. The first gallery frame spans the full column instead of sitting in a
- *    2-up grid. It is the product shot — the thing the page opens on — and at
- *    half width it read as one thumbnail among eight. The rest stay 2-up
- *    beneath it, which is the arrangement being copied.
- *
- * 2. The gallery narrows from 7 of 12 columns to 6, and the buy column moves
- *    from column 8 span 6 (which overflowed the 12-column grid) to column 8
- *    span 5. Roughly 50/40 with a gutter between, against the reference's
- *    49/41. The buy column was the cramped one.
+ * Measured off timeline.com/products/mitopure-gummies at 1440: the gallery is
+ * a plain 2-up grid of 4:5 tiles spanning 8 of 12 columns (no full-width
+ * first frame), and the buy column sits on columns 9 to the grid's edge.
  */
 @media screen and (min-width: 960px) {
-    .product-page-2 .css-1yk8gk5 { grid-column: span 6; }
+    .product-page-2 .css-1yk8gk5 { grid-column: span 8; }
 
-    .product-page-2 .css-1o6z2gm { grid-area: 1 / 8 / auto / span 5; }
-
-    .product-page-2 .css-on2xdd > .css-d0ukde:first-child {
-        grid-column: 1 / -1;
-    }
-
-    /* Left square. Without this the full-width frame inherits the 4:5 of a
-     * half-width tile and becomes a 1000px-tall slab. */
-    .product-page-2 .css-on2xdd > .css-d0ukde:first-child .chakra-aspect-ratio {
-        aspect-ratio: 1 / 1;
-    }
+    .product-page-2 .css-1o6z2gm { grid-area: 1 / 9 / auto / -1; }
 }
 
 /* --- Top-of-page adjustments ----------------------------------------------
@@ -241,8 +223,6 @@
  *    crop puts the bottle bigger in frame instead of letterboxing it.
  */
 @media screen and (min-width: 960px) {
-    .product-page-2 .css-1yk8gk5 { grid-column: span 7; }
-
     .product-page-2 .section--product.css-b0x5q5 {
         padding-top: var(--timeline-space-sm);
     }
