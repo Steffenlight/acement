@@ -1,0 +1,29 @@
+.product-page-2 { line-height: 1.5; text-size-adjust: 100%; font-family: system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; touch-action: manipulation; }
+.product-page-2 { position: relative; min-height: 100%; margin: 0px; font-feature-settings: "kern"; }
+.product-page-2 :where(*) { border-width: 0px; border-style: solid; box-sizing: border-box; overflow-wrap: break-word; }
+.product-page-2 main { display: block; }
+.product-page-2 :where(pre, .product-page-2 code, .product-page-2 kbd, .product-page-2 samp) { font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 1em; }
+.product-page-2 a { background-color: transparent; color: inherit; text-decoration: inherit; }
+.product-page-2 :where(b, .product-page-2 strong) { font-weight: bold; }
+.product-page-2 :where(sub, .product-page-2 sup) { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+.product-page-2 img { border-style: none; }
+.product-page-2 :where(button, .product-page-2 input, .product-page-2 optgroup, .product-page-2 select, .product-page-2 textarea) { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0px; }
+.product-page-2 :where(button, .product-page-2 input) { overflow: visible; }
+.product-page-2 :where(button, .product-page-2 select) { text-transform: none; }
+.product-page-2 :where() { border-style: none; padding: 0px; }
+.product-page-2 :where([type="checkbox"], .product-page-2 [type="radio"]) { box-sizing: border-box; padding: 0px; }
+.product-page-2 ::-webkit-file-upload-button { appearance: button; font: inherit; }
+.product-page-2 :where(blockquote, .product-page-2 dl, .product-page-2 dd, .product-page-2 h1, .product-page-2 h2, .product-page-2 h3, .product-page-2 h4, .product-page-2 h5, .product-page-2 h6, .product-page-2 hr, .product-page-2 figure, .product-page-2 p, .product-page-2 pre) { margin: 0px; }
+.product-page-2 button { background: transparent; padding: 0px; }
+.product-page-2 :where(ol, .product-page-2 ul) { margin: 0px; padding: 0px; }
+.product-page-2 :where(button, .product-page-2 [role="button"]) { cursor: pointer; }
+.product-page-2 table { border-collapse: collapse; }
+.product-page-2 :where(h1, .product-page-2 h2, .product-page-2 h3, .product-page-2 h4, .product-page-2 h5, .product-page-2 h6) { font-size: inherit; font-weight: inherit; }
+.product-page-2 :where(button, .product-page-2 input, .product-page-2 optgroup, .product-page-2 select, .product-page-2 textarea) { padding: 0px; line-height: inherit; color: inherit; }
+.product-page-2 :where(img, .product-page-2 svg, .product-page-2 video, .product-page-2 canvas, .product-page-2 audio, .product-page-2 iframe, .product-page-2 embed, .product-page-2 object) { display: block; }
+.product-page-2 :where(img, .product-page-2 video) { max-width: 100%; height: auto; }
+.product-page-2 [data-js-focus-visible] :focus:not([data-focus-visible-added]):not([data-focus-visible-disabled]) { outline: none; box-shadow: none; }
+:root, :host { --chakra-vh: 100vh; }
+@supports (height:-webkit-fill-available) {:root, :host { --chakra-vh: -webkit-fill-available; }}
+@supports (height:-moz-fill-available) {:root, :host { --chakra-vh: -moz-fill-available; }}
+@supports (height:100dvh) {:root, :host { --chakra-vh: 100dvh; }}

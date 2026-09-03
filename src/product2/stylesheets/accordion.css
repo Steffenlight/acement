@@ -1,0 +1,106 @@
+/* Accordion panels.
+ *
+ * The capture kept the accordion's buttons and its separators but shipped no
+ * panels at all, so none of this could be recovered from the original
+ * stylesheets — the panel classes (css-18tewcn and friends) are not in the
+ * captured CSS. Type follows the page's existing body copy so the panels read
+ * as part of the buy column rather than as a bolted-on drawer.
+ *
+ * The open/close animation uses a 0fr → 1fr grid row rather than an animated
+ * pixel height. That means no measuring, no ResizeObserver, and no layout read
+ * on every frame, and it works on content of any height — which matters here
+ * because the ingredient list is several times taller than the FAQ answers. */
+
+.product-page-2 .ac-collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--timeline-transition-duration-normal, 0.2s)
+        var(--timeline-transition-easing-ease-out, ease-out);
+}
+
+.product-page-2 .ac-collapse[data-expanded="true"] {
+    grid-template-rows: 1fr;
+}
+
+/* The 0fr row only collapses if the child cannot force its own height, so the
+ * inner element needs min-height: 0 as well as the overflow clip. */
+.product-page-2 .ac-collapse__inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.product-page-2 .ac-panel {
+    padding: 0 0 var(--timeline-space-sm);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-800, rgba(0, 0, 0, 0.8));
+}
+
+.product-page-2 .ac-panel p {
+    margin: 0 0 var(--timeline-space-3xs);
+    max-width: 60ch;
+}
+
+.product-page-2 .ac-panel p:last-child {
+    margin-bottom: 0;
+}
+
+/* Disclaimers and label small print. Set apart by colour and size rather than
+ * by italics, which the rest of the page never uses. */
+.product-page-2 .ac-panel__note {
+    margin-top: var(--timeline-space-2xs) !important;
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 150%;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Formula list --------------------------------------------------------- */
+
+/* Three columns on desktop so dose lines up in its own column and the roster
+ * scans vertically as a spec sheet, which is the whole point of publishing it.
+ * Collapses to two rows per ingredient on narrow columns. */
+.product-page-2 .ac-formula {
+    list-style: none;
+    margin: 0 0 var(--timeline-space-2xs);
+    padding: 0;
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+}
+
+.product-page-2 .ac-formula__row {
+    display: grid;
+    grid-template-columns: minmax(9ch, auto) minmax(6ch, max-content) 1fr;
+    gap: 4px var(--timeline-space-3xs);
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--timeline-colors-blackAlpha-250);
+}
+
+.product-page-2 .ac-formula__name {
+    font-weight: var(--timeline-fontWeights-medium, 500);
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page-2 .ac-formula__dose {
+    font-variant-numeric: slashed-zero tabular-nums;
+    color: var(--timeline-colors-gray-600);
+    white-space: nowrap;
+}
+
+.product-page-2 .ac-formula__note {
+    font-size: var(--timeline-fontSizes-2xs);
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+@media screen and (max-width: 600px) {
+    .product-page-2 .ac-formula__row {
+        grid-template-columns: 1fr max-content;
+    }
+    .product-page-2 .ac-formula__note {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-page-2 .ac-collapse { transition-duration: 0.01ms; }
+}

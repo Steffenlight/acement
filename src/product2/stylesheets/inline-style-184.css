@@ -1,0 +1,2 @@
+.product-page-2 .css-u4d2c5 { display: flex; gap: var(--timeline-space-4xs); width: max-content; flex-shrink: 0; padding-inline: clamp(20px, 13.2px + 1.81vw, 48px); padding-top: var(--timeline-space-xs); padding-bottom: var(--timeline-space-xs); flex-wrap: nowrap; }
+@media screen and (min-width: 960px) {.product-page-2 .css-u4d2c5 { gap: var(--timeline-space-3xs); width: var(--timeline-sizes-full); padding-inline: 0px; padding-top: var(--timeline-space-m); padding-bottom: var(--timeline-space-m); flex-wrap: wrap; -webkit-box-pack: start; justify-content: flex-start; }}

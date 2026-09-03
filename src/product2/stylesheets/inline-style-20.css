@@ -1,0 +1,2 @@
+.product-page-2 .css-fcnkvq { display: grid; gap: var(--timeline-space-sm); grid-auto-flow: column; justify-self: end; z-index: 1; padding-right: var(--timeline-space-sm); }
+@media screen and (min-width: 960px) {.product-page-2 .css-fcnkvq { padding-right: 0px; }}

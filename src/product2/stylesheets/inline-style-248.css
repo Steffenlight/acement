@@ -1,0 +1,2 @@
+.product-page-2 .css-qmra4l { display: grid; row-gap: var(--timeline-space-sm); column-gap: var(--timeline-space-sm); grid-template-columns: 1fr; }
+@media screen and (min-width: 960px) {.product-page-2 .css-qmra4l { grid-template-columns: repeat(12, 1fr); }}

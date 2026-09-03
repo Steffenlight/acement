@@ -1,0 +1,7 @@
+.product-page-2 .css-lihgdf { display: flex; -webkit-box-align: center; align-items: center; width: 100%; outline: transparent solid 2px; outline-offset: 2px; transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-normal); font-size: var(--timeline-fontSizes-md); padding-top: var(--timeline-space-2xs); padding-bottom: var(--timeline-space-2xs); padding-inline: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-box-pack: justify; justify-content: space-between; text-align: left; }
+.product-page-2 .css-lihgdf:focus-visible, .product-page-2 .css-lihgdf[data-focus-visible] { box-shadow: var(--timeline-shadows-outline); }
+.product-page-2 .css-lihgdf:hover, .product-page-2 .css-lihgdf[data-hover] { background: var(--timeline-colors-blackAlpha-50); }
+.product-page-2 .css-lihgdf:disabled, .product-page-2 .css-lihgdf[disabled], .product-page-2 .css-lihgdf[aria-disabled="true"], .product-page-2 .css-lihgdf[data-disabled] { opacity: 0.4; cursor: not-allowed; }
+.product-page-2 .css-lihgdf svg { transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-normal); }
+.product-page-2 .css-lihgdf:hover { background-color: initial; }
+.product-page-2 .css-lihgdf:hover svg { transform: rotate(90deg); }

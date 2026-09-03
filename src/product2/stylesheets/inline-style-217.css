@@ -1,0 +1,2 @@
+.product-page-2 .css-ztz1mp { display: flex; -webkit-box-align: center; align-items: center; gap: var(--timeline-space-4xs); flex-direction: column; }
+@media screen and (min-width: 768px) {.product-page-2 .css-ztz1mp { flex-direction: row; }}

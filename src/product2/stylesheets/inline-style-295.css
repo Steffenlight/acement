@@ -1,0 +1,2 @@
+.product-page-2 .css-1bhkm4o { display: contents; flex-direction: column; row-gap: 0px; }
+@media screen and (min-width: 960px) {.product-page-2 .css-1bhkm4o { display: flex; row-gap: var(--timeline-space-2xs); grid-area: 1 / 1 / auto / span 4; align-self: start; padding-right: var(--timeline-space-lg); }}

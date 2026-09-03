@@ -12,6 +12,7 @@ import { BlogPage, DetailedFaqPage, LegalPage, ReviewsPage, TestimonialsPage } f
 import { BlogIndexPage, BlogPostPage } from './components/AcementBlog.tsx'
 import FullSciencePage from './science/FullSciencePage.tsx'
 import FullProductPage from './product/FullProductPage.tsx'
+import FullProductPage2 from './product2/FullProductPage.tsx'
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/" element={<AppContent />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/products/mitopure-softgels-vegan" element={<FullProductPage />} />
+                <Route path="/products/mitopure-softgels-vegan-2" element={<FullProductPage2 />} />
                 <Route path="/science" element={<FullSciencePage />} />
                 <Route path="/benefits" element={<BenefitsPage />} />
                 <Route path="/about" element={<AboutPage />} />

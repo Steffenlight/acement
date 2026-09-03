@@ -1,0 +1,57 @@
+/* The product gallery on phones.
+ *
+ * The captured desktop gallery column (.css-1yk8gk5) ships as display: none
+ * below 960px — the site being copied swaps in a separate mobile carousel
+ * component that the capture never saw, so the clone showed no product
+ * imagery at all on phones.
+ *
+ * Rather than restack the 2-up desktop grid (eight tall cells make the page
+ * endless before the buy button), the same items become a horizontal
+ * swipe carousel: one full-width slide per item, scroll-snap paging, no
+ * visible scrollbar. The DOM is untouched; the desktop layout is untouched.
+ */
+/* The marquee strip renders twice: inside slide 1 for desktop (its captured
+ * position) and after the scroller for phones, where — as on the site being
+ * copied — it stays visible whichever slide is showing. Same markup, one
+ * shown per breakpoint. */
+.product-page-2 .gallery-marquee--mobile { display: none; }
+
+@media screen and (max-width: 959px) {
+    .product-page-2 .css-1yk8gk5 {
+        display: block;
+        grid-column: span 12;
+        padding-right: 0;
+    }
+
+    .product-page-2 .css-1yk8gk5 .css-on2xdd {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--timeline-space-4xs);
+    }
+
+    .product-page-2 .css-1yk8gk5 .css-on2xdd::-webkit-scrollbar { display: none; }
+    .product-page-2 .css-1yk8gk5 .css-on2xdd { scrollbar-width: none; }
+
+    /* 88% + snap at the start edge leaves the next slide peeking in from the
+     * right, which is what tells you the gallery swipes. */
+    .product-page-2 .css-1yk8gk5 .css-on2xdd > .css-d0ukde {
+        flex: 0 0 88%;
+        scroll-snap-align: start;
+    }
+
+    .product-page-2 .gallery-marquee--desktop { display: none; }
+
+    .product-page-2 .gallery-marquee--mobile {
+        display: block;
+        margin-top: var(--timeline-space-3xs);
+    }
+
+    /* The headroom wrapper carries an inline height captured from the desktop
+     * header (logo row + nav row, 132px). The phone header has no nav row and
+     * is ~100px, so the hardcoded height strands ~32px of empty space between
+     * the logo and the gallery. There is no headroom JS in the clone reading
+     * this height, so letting it size to its content is safe. */
+    .headroom-wrapper { height: auto !important; }
+}

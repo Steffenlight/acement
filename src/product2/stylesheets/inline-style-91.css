@@ -1,0 +1,4 @@
+.product-page-2 .css-d0ukde { grid-column: span 1; display: grid; position: relative; }
+.product-page-2 .css-d0ukde::before { z-index: 1; content: ""; display: block; position: absolute; inset: 0px; background-color: var(--timeline-colors-blackAlpha-50); opacity: 0; pointer-events: none; transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-fast); }
+.product-page-2 .css-d0ukde:hover::before, .product-page-2 .css-d0ukde[data-hover]::before { opacity: 1; }
+.product-page-2 .css-d0ukde > * { grid-area: 1 / 1; }

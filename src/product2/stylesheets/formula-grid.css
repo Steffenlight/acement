@@ -1,0 +1,223 @@
+/* Ingredient grid.
+ *
+ * The reference is a black panel with an orange glow behind translucent glass
+ * cards, condensed mono headings, and a photo disc per ingredient. Translated
+ * rather than copied:
+ *
+ *  - Glass cards on a glow become hairline-separated cells on paper. The card
+ *    treatment exists in the reference to lift content off a busy background;
+ *    on our ground there is nothing to lift away from, and eight drop-shadowed
+ *    panels would be the only such elements on the page.
+ *  - Condensed mono becomes Suisse Intl at the 0.09em tracking used by every
+ *    other label here.
+ *  - The dose keeps its pill, because that is the one piece of information
+ *    the section exists to deliver and it should read as a chip, not prose.
+ *    Geometry matches the site's small badge (10px / 500 / 0.09em, 21px tall).
+ *
+ * Sits on paper between two gray-100 bands, which also breaks up a stretch of
+ * the page that was otherwise two grey slabs in a row. */
+
+.product-page-2 .fg {
+    background: var(--timeline-colors-gray-50);
+    padding-block: clamp(56px, calc(43.77px + 3.4vw), 96px);
+    min-width: 0;
+    --fg-gutter: clamp(24px, calc(15.26px + 2.33vw), 60px);
+}
+
+/* Heading --------------------------------------------------------------- */
+
+.product-page-2 .fg-head {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: var(--fg-gutter);
+}
+
+.product-page-2 .fg-eyebrow {
+    margin: 0 0 var(--timeline-space-xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page-2 .fg-title {
+    margin: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-3xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 110%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    font-variant-numeric: slashed-zero;
+    color: var(--timeline-colors-gray-600);
+    max-width: 18ch;
+}
+
+/* Grid ------------------------------------------------------------------ */
+
+.product-page-2 .fg-grid {
+    list-style: none;
+    max-width: 1920px;
+    margin: clamp(32px, calc(25.2px + 1.9vw), 56px) auto 0;
+    padding-inline: var(--fg-gutter);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--timeline-space-m);
+    row-gap: var(--timeline-space-xl);
+}
+
+@media screen and (max-width: 1100px) {
+    .product-page-2 .fg-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* Each cell is a row of a spec sheet, so it gets the rule the rest of the
+ * page uses to separate rows rather than a border box of its own. */
+.product-page-2 .fg-cell {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--timeline-space-2xs);
+    align-items: start;
+    padding-top: var(--timeline-space-2xs);
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+}
+
+/* Media ----------------------------------------------------------------- */
+
+.product-page-2 .fg-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--timeline-space-4xs);
+}
+
+.product-page-2 .fg-disc {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--timeline-radii-full);
+    overflow: hidden;
+    background: var(--timeline-colors-gray-200);
+    flex: none;
+}
+
+.product-page-2 .fg-disc img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-page-2 .fg-dose {
+    display: inline-block;
+    min-height: 21px;
+    line-height: 21px;
+    padding: 0 8px;
+    border-radius: var(--timeline-radii-full);
+    background: var(--timeline-colors-gray-100);
+    font-family: var(--timeline-fonts-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero tabular-nums;
+    white-space: nowrap;
+    color: var(--timeline-colors-gray-600);
+}
+
+/* Copy ------------------------------------------------------------------ */
+
+.product-page-2 .fg-name {
+    margin: 0 0 var(--timeline-space-5xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-sm);
+    font-weight: var(--timeline-fontWeights-medium, 500);
+    line-height: 1.25;
+    letter-spacing: 0;
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page-2 .fg-desc {
+    margin: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-xs);
+    line-height: 150%;
+    color: var(--timeline-colors-blackAlpha-700);
+    max-width: 34ch;
+}
+
+/* Footnote -------------------------------------------------------------- */
+
+.product-page-2 .fg-foot {
+    max-width: 1920px;
+    margin: clamp(32px, calc(25.2px + 1.9vw), 56px) auto 0;
+    padding-inline: var(--fg-gutter);
+}
+
+.product-page-2 .fg-foot p {
+    max-width: 78ch;
+    margin: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+/* Phones -----------------------------------------------------------------
+ *
+ * Must stay at the END of this file. These rules carry the same specificity
+ * as the base ones they override, so if the block sits above them the base
+ * rules win on order and the whole breakpoint silently does nothing.
+ *
+ * Stays 2-up rather than dropping to one column. At 375px that is about
+ * 157px per cell, too narrow for the disc-left layout — the text column
+ * would be roughly 70px. So the cell goes vertical: disc and dose share a
+ * top row, name and description run full width beneath.
+ *
+ * Two-up is worth it. Eight ingredients stacked one per row is a long scroll
+ * for what is a spec list, and the point of the section is taking in the
+ * whole roster at once. */
+@media screen and (max-width: 560px) {
+    .product-page-2 .fg-grid {
+        column-gap: var(--timeline-space-3xs);
+        row-gap: var(--timeline-space-sm);
+    }
+
+    /* align-content is load-bearing. Cells stretch to the tallest in their
+     * row, and without it the surplus height is shared out across both auto
+     * rows — so a cell with a short description pushed its own name down and
+     * the two columns' names stopped lining up. */
+    .product-page-2 .fg-cell {
+        grid-template-columns: 1fr;
+        align-content: start;
+        row-gap: var(--timeline-space-4xs);
+    }
+
+    .product-page-2 .fg-media {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--timeline-space-4xs);
+    }
+
+    .product-page-2 .fg-disc {
+        width: 44px;
+        height: 44px;
+    }
+
+    .product-page-2 .fg-desc {
+        font-size: var(--timeline-fontSizes-2xs);
+        line-height: 155%;
+        max-width: none;
+    }
+}
+
+/* Research link ---------------------------------------------------------
+ * Between the grid and the disclaimer: the grid states the doses, this is
+ * where to go if you want to know what is behind them, and the disclaimer
+ * closes the section. */
+.product-page-2 .fg-cta {
+    max-width: 1920px;
+    margin: clamp(28px, calc(22px + 1.6vw), 44px) auto 0;
+    padding-inline: var(--fg-gutter);
+}

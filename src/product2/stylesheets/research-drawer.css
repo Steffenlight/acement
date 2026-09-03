@@ -1,0 +1,331 @@
+/* Clinical research drawer.
+ *
+ * Shell copied from timeline.com's study drawer in behaviour and proportion,
+ * rebuilt in our tokens. The one detail worth lifting exactly is the *white*
+ * scrim: a black overlay on a paper page reads as a cookie banner and switches
+ * the page off, where a paper scrim keeps it present behind the panel.
+ *
+ * Right-side panel on desktop, bottom sheet on phones — the same split Chakra
+ * gives Timeline, and the right one here: a 720px panel on a 390px screen is
+ * just a page with extra steps. */
+
+.product-page-2 .rd {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+}
+
+.product-page-2 .rd[data-open="true"] {
+    pointer-events: auto;
+}
+
+/* Scrim ----------------------------------------------------------------- */
+
+.product-page-2 .rd-scrim {
+    position: absolute;
+    inset: 0;
+    appearance: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 252, 0.72);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity var(--timeline-transition-duration-normal, 0.2s)
+        var(--timeline-transition-easing-ease-out, ease-out);
+}
+
+.product-page-2 .rd[data-open="true"] .rd-scrim { opacity: 1; }
+
+/* Panel ----------------------------------------------------------------- */
+
+.product-page-2 .rd-panel {
+    position: absolute;
+    inset-block: 0;
+    right: 0;
+    width: min(760px, 92vw);
+    background: var(--timeline-colors-gray-50);
+    border-radius: 16px 0 0 16px;
+    box-shadow: -1px 0 0 var(--timeline-colors-blackAlpha-250);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateX(100%);
+    transition: transform var(--timeline-transition-duration-slow, 0.3s)
+        var(--timeline-transition-easing-ease-out, ease-out);
+}
+
+.product-page-2 .rd[data-open="true"] .rd-panel { transform: translateX(0); }
+
+.product-page-2 .rd-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 1;
+    appearance: none;
+    border: 0;
+    background: none;
+    padding: var(--timeline-space-sm);
+    margin: 0;
+    cursor: pointer;
+    color: var(--timeline-colors-gray-600);
+}
+
+.product-page-2 .rd-close svg { width: 20px; height: 20px; display: block; }
+
+.product-page-2 .rd-inner {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--timeline-space-xl);
+    padding: var(--timeline-space-xl) var(--timeline-space-xl) clamp(56px, 8vw, 96px);
+}
+
+/* Table of contents ----------------------------------------------------- */
+
+.product-page-2 .rd-toc {
+    position: sticky;
+    top: var(--timeline-space-xl);
+    align-self: start;
+}
+
+.product-page-2 .rd-toc__label {
+    margin: 0 0 var(--timeline-space-3xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page-2 .rd-toc ul { list-style: none; margin: 0; padding: 0; }
+
+.product-page-2 .rd-toc__link {
+    appearance: none;
+    border: 0;
+    background: none;
+    padding: 5px 0;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-xs);
+    line-height: 1.4;
+    color: var(--timeline-colors-blackAlpha-500);
+    transition: color var(--timeline-transition-duration-fast, 0.15s);
+}
+
+.product-page-2 .rd-toc__link:hover { color: var(--timeline-colors-gray-600); }
+
+.product-page-2 .rd-toc__link[aria-current="true"] {
+    color: var(--timeline-colors-gray-600);
+    font-weight: var(--timeline-fontWeights-medium, 500);
+}
+
+/* Body ------------------------------------------------------------------ */
+
+.product-page-2 .rd-eyebrow {
+    margin: 0 0 var(--timeline-space-3xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page-2 .rd-title {
+    margin: 0 0 var(--timeline-space-2xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xl);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 110%;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-gray-600);
+    max-width: 22ch;
+}
+
+/* The serif standfirst, used once here as it is elsewhere on the page. */
+.product-page-2 .rd-standfirst {
+    margin: 0 0 var(--timeline-space-xl);
+    font-family: var(--timeline-fonts-serif);
+    font-weight: 360;
+    font-size: clamp(17px, calc(15.5px + 0.4vw), 20px);
+    line-height: 140%;
+    color: var(--timeline-colors-blackAlpha-800, rgba(0, 0, 0, 0.8));
+    max-width: 46ch;
+}
+
+/* Sections -------------------------------------------------------------- */
+
+.product-page-2 .rd-section {
+    padding-top: var(--timeline-space-sm);
+    margin-bottom: var(--timeline-space-m);
+    /* Dotted, matching the separators the rest of the product column uses,
+     * rather than the solid hairline used inside the ingredient grid. */
+    border-top: 1px dotted var(--timeline-colors-blackAlpha-400);
+    scroll-margin-top: var(--timeline-space-sm);
+}
+
+/* The ingredient leads, in red. It is the thing you are scanning for when you
+ * open this drawer — the benefit line matters once you have found the row, not
+ * before it. Red because it is the only place in the drawer that needs to be
+ * findable at a glance while scrolling. */
+.product-page-2 .rd-name {
+    margin: 0 0 2px;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-md);
+    font-weight: var(--timeline-fontWeights-medium, 500);
+    line-height: 1.2;
+    letter-spacing: var(--timeline-letterSpacings-tightest);
+    color: var(--timeline-colors-red-300);
+}
+
+.product-page-2 .rd-headline {
+    margin: 0 0 6px;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-sm);
+    font-weight: var(--timeline-fontWeights-book);
+    line-height: 130%;
+    color: var(--timeline-colors-gray-600);
+    max-width: 40ch;
+}
+
+/* Dose and the two counts. */
+.product-page-2 .rd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px var(--timeline-space-3xs);
+    margin-bottom: var(--timeline-space-3xs);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero tabular-nums;
+    color: var(--timeline-colors-blackAlpha-700);
+}
+
+.product-page-2 .rd-meta__stat b {
+    font-weight: 500;
+    color: var(--timeline-colors-gray-600);
+}
+
+/* One line per paper, unnumbered. Full APA references ran five lines each and
+ * turned the drawer into small print you had to scroll past to reach the next
+ * ingredient — which defeats a table of contents. The paper's title is on the
+ * link's tooltip, and the record itself is one click away. */
+.product-page-2 .rd-cites {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-700);
+    max-width: 68ch;
+}
+
+.product-page-2 .rd-cites li {
+    margin-bottom: 1px;
+    /* Long journal names still have to fold somewhere on a phone. */
+    line-height: 150%;
+}
+
+/* The whole citation is the link — a separate "view" affordance beside a
+ * reference the reader is already scanning is one target too many. */
+.product-page-2 .rd-cite {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--timeline-colors-blackAlpha-250);
+    text-underline-offset: 2px;
+    transition: text-decoration-color var(--timeline-transition-duration-fast, 0.15s),
+        color var(--timeline-transition-duration-fast, 0.15s);
+}
+
+.product-page-2 .rd-cite:hover {
+    color: var(--timeline-colors-gray-600);
+    text-decoration-color: var(--timeline-colors-gray-600);
+}
+
+.product-page-2 .rd-foot {
+    margin: var(--timeline-space-xl) 0 0;
+    padding-top: var(--timeline-space-2xs);
+    border-top: 1px solid var(--timeline-colors-blackAlpha-250);
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    line-height: 160%;
+    color: var(--timeline-colors-blackAlpha-700);
+    max-width: 68ch;
+}
+
+/* Trigger --------------------------------------------------------------- */
+
+.product-page-2 .rd-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    appearance: none;
+    border: 0;
+    background: none;
+    margin: 0;
+    padding: 0 0 2px;
+    cursor: pointer;
+    font-family: var(--timeline-fonts-sans);
+    font-size: var(--timeline-fontSizes-2xs);
+    font-weight: var(--timeline-fontWeights-book);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--timeline-colors-gray-600);
+    border-bottom: 1px solid var(--timeline-colors-blackAlpha-250);
+    transition: border-color var(--timeline-transition-duration-fast, 0.15s);
+}
+
+.product-page-2 .rd-trigger:hover { border-bottom-color: var(--timeline-colors-gray-600); }
+
+.product-page-2 .rd-trigger svg { width: 14px; height: 14px; flex: none; }
+
+/* Phones ---------------------------------------------------------------- */
+
+/* Must stay at the END of this file — same specificity as the rules above,
+ * so it only wins on order. */
+@media screen and (max-width: 760px) {
+    .product-page-2 .rd-panel {
+        inset: auto 0 0 0;
+        width: 100%;
+        height: 92vh;
+        border-radius: 16px 16px 0 0;
+        box-shadow: 0 -1px 0 var(--timeline-colors-blackAlpha-250);
+        transform: translateY(100%);
+    }
+
+    .product-page-2 .rd[data-open="true"] .rd-panel { transform: translateY(0); }
+
+    .product-page-2 .rd-inner {
+        grid-template-columns: 1fr;
+        gap: var(--timeline-space-sm);
+        padding: var(--timeline-space-sm) var(--timeline-space-sm) var(--timeline-space-xl);
+    }
+
+    /* Horizontal, scrollable, and no longer sticky: a vertical rail above the
+     * content would push the first section off the screen on open. */
+    .product-page-2 .rd-toc {
+        position: static;
+        margin-inline: calc(var(--timeline-space-sm) * -1);
+        padding-inline: var(--timeline-space-sm);
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .product-page-2 .rd-toc::-webkit-scrollbar { display: none; }
+
+    .product-page-2 .rd-toc ul {
+        display: flex;
+        gap: var(--timeline-space-3xs);
+    }
+
+    .product-page-2 .rd-toc__link { white-space: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-page-2 .rd-scrim,
+    .product-page-2 .rd-panel { transition-duration: 0.01ms; }
+}

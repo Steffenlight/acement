@@ -1,0 +1,3 @@
+.product-page-2 .css-1a1befc { grid-area: 1 / 1; z-index: 1; place-self: end center; margin-bottom: var(--timeline-space-sm); transition-property: var(--timeline-transition-property-common); transition-duration: var(--timeline-transition-duration-slow); display: none; }
+@media screen and (min-width: 480px) {.product-page-2 .css-1a1befc { display: block; }}
+@media (hover: hover) and (pointer: fine) {.product-page-2 [role="group"]:hover .css-1a1befc, .product-page-2 [role="group"][data-hover] .css-1a1befc, .product-page-2 [data-group]:hover .css-1a1befc, .product-page-2 [data-group][data-hover] .css-1a1befc, .product-page-2 .group:hover .css-1a1befc, .product-page-2 .group[data-hover] .css-1a1befc { opacity: 0; }}

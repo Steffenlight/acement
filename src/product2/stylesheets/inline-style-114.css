@@ -1,0 +1,5 @@
+.product-page-2 .css-1jdlkwt > p.chakra-text { font-family: var(--timeline-fonts-serif); font-size: var(--timeline-fontSizes-md-serif); font-weight: var(--timeline-fontWeights-book-serif); font-variation-settings: "wght" 360, "STYL" 700; line-height: 135%; letter-spacing: var(--timeline-letterSpacings-wider); margin-bottom: var(--timeline-space-2xs); text-wrap: pretty; }
+.product-page-2 .css-1jdlkwt a:not(.chakra-link):not(.chakra-button):not(sup a) { text-decoration: underline 1px; text-underline-offset: 0.2em; }
+.product-page-2 .css-1jdlkwt > :last-child { margin-bottom: 0px !important; }
+.product-page-2 .css-1jdlkwt sup { position: relative; vertical-align: baseline; }
+.product-page-2 .css-1jdlkwt sup { font-size: calc(0.5em + 4px); top: calc(-0.6em + 2.5px); }

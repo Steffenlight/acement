@@ -1,0 +1,3 @@
+.product-page-2 .css-90o0nh > ul.chakra-list { list-style-type: none; margin-inline-start: 0px; margin-top: 0px; margin-bottom: 0px; }
+.product-page-2 .css-90o0nh > ul.chakra-list .chakra-list-item { font-family: var(--timeline-fonts-sans); font-size: var(--timeline-fontSizes-sm); font-weight: var(--timeline-fontWeights-medium); line-height: 125%; letter-spacing: var(--timeline-letterSpacings-wide); position: relative; padding-left: var(--timeline-space-2xs); }
+.product-page-2 .css-90o0nh > ul.chakra-list .chakra-list-item::before { content: ""; display: inline-block; position: absolute; top: 0.1em; left: 0px; width: var(--timeline-sizes-5xs); height: var(--timeline-sizes-2xs); border-radius: 4px; background-color: var(--timeline-colors-gray-600); }

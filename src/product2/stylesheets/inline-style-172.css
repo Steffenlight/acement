@@ -1,0 +1,2 @@
+.product-page-2 .css-d6zq8 { display: grid; grid-template-columns: [full-start]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[main-start]minmax(0,var(--grid-width))[main-end]minmax(clamp(20px,calc(13.20px + 1.81vw),48px),1fr)[full-end]; grid-column: bordered; border-radius: var(--timeline-radii-lg); overflow: hidden; background-color: var(--timeline-colors-gray-100); --grid-width: 1440px; }
+@media screen and (min-width: 768px) {.product-page-2 .css-d6zq8 { border-radius: var(--timeline-radii-xl); }}
