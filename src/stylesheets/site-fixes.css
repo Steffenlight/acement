@@ -206,6 +206,15 @@
         -webkit-mask-image: none !important;
     }
 
+    /* The band also sits inside the page gutters, so its overflow:hidden
+     * clipped the text ~24px before the screen edge. Full-bleed it: 100vw
+     * wide, pulled left by the distance between the column's center and the
+     * viewport's, so the text scrolls all the way off screen. */
+    .gallery-marquee--mobile .rfm-marquee-container {
+        width: 100vw !important;
+        margin-left: calc(50% - 50vw);
+    }
+
     /* Timeline's phone header runs a 62px logo row with no gap above it
      * (17px of air above their taller logo, 21px below). Ours carried an
      * 8px margin plus a 60px row - a 68px band that read as extra space
