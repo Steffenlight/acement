@@ -140,7 +140,7 @@
 }
 
 .product-page .button--add-to-cart.ob-cta:hover {
-    background: var(--timeline-colors-gray-700, #1c1c17);
+    background: #1C1E24;
 }
 
 .product-page .ob-cta .children {

@@ -25,15 +25,15 @@ export const Bar_chart_comparison = () => {
 <rect x={"24"} y={"64"} height={"382"} width={"483"}></rect>
 </clipPath>
 </defs>
-<text fontFamily={"Suisse Intl, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""} fontSize={"12px"} fontWeight={"450"} letterSpacing={"0.09em"} x={"10"} y={"225"} fill={"#292923"} textAnchor={"middle"} dominantBaseline={"middle"} transform={"rotate(-90, 10, 225)"}>
+<text fontFamily={"Suisse Intl, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""} fontSize={"12px"} fontWeight={"450"} letterSpacing={"0.09em"} x={"10"} y={"225"} fill={"#1C1E24"} textAnchor={"middle"} dominantBaseline={"middle"} transform={"rotate(-90, 10, 225)"}>
 INCREASE IN MITOPHAGY
 </text>
 <g>
 <g>
-<text fontFamily={"Suisse Intl, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""} fontSize={"clamp(32px, calc(27.07px + 1.31vw), 46px)"} fontWeight={"450"} letterSpacing={"-0.025em"} x={"265.5"} y={"24"} fill={"#292923"} textAnchor={"middle"} dominantBaseline={"middle"}>
+<text fontFamily={"Suisse Intl, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""} fontSize={"clamp(32px, calc(27.07px + 1.31vw), 46px)"} fontWeight={"450"} letterSpacing={"-0.025em"} x={"265.5"} y={"24"} fill={"#1C1E24"} textAnchor={"middle"} dominantBaseline={"middle"}>
 +39%
 </text>
-<path d={"M 191.05 56 V 48 H 339.95 V 56"} fill={"none"} stroke={"#292923"} strokeWidth={"1"}></path>
+<path d={"M 191.05 56 V 48 H 339.95 V 56"} fill={"none"} stroke={"#1C1E24"} strokeWidth={"1"}></path>
 </g>
 </g>
 <g tabIndex={"-1"} className={"recharts-zIndex-layer_100"}></g>
@@ -44,7 +44,7 @@ INCREASE IN MITOPHAGY
 <g className={"recharts-layer"}>
 <g className={"recharts-layer recharts-bar-rectangle"}>
 <g className={"recharts-layer recharts-inactive-bar"}>
-<path fill={"#FFFFFC"} stroke={"#292923"} strokeWidth={"1"} name={"0"} x={"120.6"} y={"279.4872"} width={"141"} height={"166.5128"} radius={"0"} className={"recharts-rectangle"} d={"M 120.6,279.4872 h 141 v 166.5128 h -141 Z"}></path>
+<path fill={"#FFFFFC"} stroke={"#1C1E24"} strokeWidth={"1"} name={"0"} x={"120.6"} y={"279.4872"} width={"141"} height={"166.5128"} radius={"0"} className={"recharts-rectangle"} d={"M 120.6,279.4872 h 141 v 166.5128 h -141 Z"}></path>
 </g>
 </g>
 </g>
@@ -55,7 +55,7 @@ INCREASE IN MITOPHAGY
 <g className={"recharts-layer"}>
 <g className={"recharts-layer recharts-bar-rectangle"}>
 <g className={"recharts-layer recharts-inactive-bar"}>
-<path fill={"#C2483F"} stroke={"#292923"} strokeWidth={"1"} name={"0"} x={"269.6"} y={"64"} width={"141"} height={"382"} radius={"0"} className={"recharts-rectangle"} d={"M 269.6,64 h 141 v 382 h -141 Z"}></path>
+<path fill={"#C2483F"} stroke={"#1C1E24"} strokeWidth={"1"} name={"0"} x={"269.6"} y={"64"} width={"141"} height={"382"} radius={"0"} className={"recharts-rectangle"} d={"M 269.6,64 h 141 v 382 h -141 Z"}></path>
 </g>
 </g>
 </g>
@@ -64,17 +64,17 @@ INCREASE IN MITOPHAGY
 </g>
 <g tabIndex={"-1"} className={"recharts-zIndex-layer_400"}>
 <g className={"recharts-layer recharts-reference-line"}>
-<line y={"0"} stroke={"#292923"} strokeWidth={"1"} fill={"none"} fillOpacity={"1"} x1={"507"} y1={"446"} x2={"24"} y2={"446"} className={"recharts-reference-line-line"}></line>
+<line y={"0"} stroke={"#1C1E24"} strokeWidth={"1"} fill={"none"} fillOpacity={"1"} x1={"507"} y1={"446"} x2={"24"} y2={"446"} className={"recharts-reference-line-line"}></line>
 </g>
 <g className={"recharts-layer recharts-errorBars"}>
-<g className={"recharts-layer recharts-errorBar"} strokeWidth={"1"} stroke={"#292923"} offset={"0"}>
+<g className={"recharts-layer recharts-errorBar"} strokeWidth={"1"} stroke={"#1C1E24"} offset={"0"}>
 <line x1={"187.1"} y1={"446"} x2={"195.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>
 <line x1={"191.1"} y1={"446"} x2={"191.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>
 <line x1={"187.1"} y1={"446"} x2={"195.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>
 </g>
 </g>
 <g className={"recharts-layer recharts-errorBars"}>
-<g className={"recharts-layer recharts-errorBar"} strokeWidth={"1"} stroke={"#292923"} offset={"0"}>
+<g className={"recharts-layer recharts-errorBar"} strokeWidth={"1"} stroke={"#1C1E24"} offset={"0"}>
 <line x1={"336.1"} y1={"446"} x2={"344.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>
 <line x1={"340.1"} y1={"446"} x2={"340.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>
 <line x1={"336.1"} y1={"446"} x2={"344.1"} y2={"446"} style={{transform:"scaleY(1)"}}></line>

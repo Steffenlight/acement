@@ -86,7 +86,7 @@
     line-height: 1;
     padding: 4px 6px;
     cursor: pointer;
-    color: var(--timeline-colors-gray-600, #292923);
+    color: var(--timeline-colors-gray-600, #1C1E24);
 }
 
 .acement-mobile-menu__panel ul {
@@ -106,7 +106,7 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 13px;
-    color: var(--timeline-colors-gray-600, #292923);
+    color: var(--timeline-colors-gray-600, #1C1E24);
 }
 
 .acement-mobile-menu__panel a[aria-current="page"] {
@@ -116,7 +116,7 @@
 .acement-mobile-menu__cta {
     margin-top: 26px;
     text-align: center;
-    background: var(--timeline-colors-gray-600, #292923);
+    background: var(--timeline-colors-gray-600, #1C1E24);
     color: var(--timeline-colors-gray-50, #fffffc) !important;
     border-radius: var(--timeline-radii-base, 4px);
 }
@@ -160,7 +160,7 @@
  * .product-page and .science-page scopes. */
 
 .ab {
-    background: #292923;
+    background: #1C1E24;
     color: #FFFFFC;
     text-align: center;
     padding: 10px clamp(20px, 4vw, 48px);
