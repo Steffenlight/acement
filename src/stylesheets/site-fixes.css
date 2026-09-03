@@ -197,6 +197,15 @@
  * so all three read off the same margin.
  */
 @media screen and (max-width: 959px) {
+    /* The marquee band ("#1 DOCTOR RECOMMENDED ...") carries a 30px edge
+     * fade via mask-image. On a phone the band is nearly all edge, so the
+     * text reads as constantly dissolving - drop the fade there.
+     * !important outranks the page-scoped .product-page .css-1r9wea copy. */
+    .css-1r9wea {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+
     /* Timeline's phone header runs a 62px logo row with no gap above it
      * (17px of air above their taller logo, 21px below). Ours carried an
      * 8px margin plus a 60px row - a 68px band that read as extra space

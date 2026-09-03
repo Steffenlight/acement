@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import type { JSX } from 'react/jsx-runtime'
 
 import Img from './Img.tsx'
@@ -29,6 +29,7 @@ import ImageButton from './ImageButton.tsx'
                     <GalleryVideoItem
                         poster="/images/e53578c1-60f2-44b8-be6b-81b2fcc1f321.webp"
                         title="Softgels"
+                        src="/videos/gallery-softgels.mp4"
                     />
                     <GalleryImageItem imgId="12" />
                     <GalleryVideoItem
@@ -106,23 +107,61 @@ import ImageButton from './ImageButton.tsx'
         function GalleryVideoItem({
             poster,
             title,
+            src,
         }: {
             poster: string;
             title: string;
+            src?: string;
         }) {
+            const ref = useRef<HTMLVideoElement>(null)
+
+            // Same playback handling as VideoThumbnail: React does not reliably
+            // reflect `muted` onto the DOM property, and a single play() at
+            // mount is refused on mobile while the video is below the fold (and
+            // on iOS before any interaction). Retry on viewport entry, first
+            // touch, and tab visibility change.
+            useEffect(() => {
+                const video = ref.current
+                if (!video || !src) return
+                video.muted = true
+                const tryPlay = () => {
+                    if (video.paused) video.play().catch(() => {})
+                }
+                tryPlay()
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) tryPlay()
+                    })
+                }, { threshold: 0.1 })
+                io.observe(video)
+                const onVisible = () => tryPlay()
+                window.addEventListener('touchstart', onVisible, { passive: true })
+                document.addEventListener('visibilitychange', onVisible)
+                return () => {
+                    io.disconnect()
+                    window.removeEventListener('touchstart', onVisible)
+                    document.removeEventListener('visibilitychange', onVisible)
+                }
+            }, [src])
+
             return (
                 <div className={"css-d0ukde"}>
                     <div className={"chakra-aspect-ratio css-1lule79"}>
                         <div className={"css-qk35ck"}>
+                            {/* The capture wrote loop={""} / playsInline={""} - falsy in
+                                React, so the attributes were never set, and iOS refuses
+                                inline autoplay without playsinline. */}
                             <video
-                                loop={""}
-                                muted={""}
-                                playsInline={""}
+                                ref={ref}
+                                loop
+                                muted
+                                playsInline
                                 poster={poster}
                                 title={title}
                                 className={"css-l2jfft"}
-                                autoPlay={""}
+                                autoPlay
                             >
+                                {src ? <source src={src} type={"video/mp4"} /> : null}
                             </video>
                             <UnmuteButton />
                         </div>
