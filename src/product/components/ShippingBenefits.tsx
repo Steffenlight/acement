@@ -18,7 +18,7 @@ import Black_circle_with_greyscale_background from './icons/Black_circle_with_gr
  * place on the page that says $59 is a recurring price rather than a one-off.
  */
 const BENEFITS = [
-    '$59 Refill Ships in 30 Days',
+    '$59 Refill Ships in 24 Days',
     'Try Risk-Free for 90 Days',
     'Fast & Free Shipping with 1st Order',
 ]
