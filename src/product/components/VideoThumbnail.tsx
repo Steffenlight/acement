@@ -20,11 +20,34 @@ import type { JSX } from 'react/jsx-runtime'
 
             // React does not reliably reflect the `muted` prop onto the DOM
             // property, and an unmuted video is blocked by the autoplay policy.
+            //
+            // A single play() at mount is not enough on mobile: browsers defer
+            // autoplay for videos that are below the fold, and iOS refuses a
+            // programmatic play() made before any interaction (Low Power Mode
+            // always does). Retry when the video scrolls into view, on the
+            // first touch, and when the tab becomes visible again.
             useEffect(() => {
                 const video = ref.current
                 if (!video) return
                 video.muted = true
-                video.play().catch(() => {})
+                const tryPlay = () => {
+                    if (video.paused) video.play().catch(() => {})
+                }
+                tryPlay()
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) tryPlay()
+                    })
+                }, { threshold: 0.1 })
+                io.observe(video)
+                const onVisible = () => tryPlay()
+                window.addEventListener('touchstart', onVisible, { passive: true })
+                document.addEventListener('visibilitychange', onVisible)
+                return () => {
+                    io.disconnect()
+                    window.removeEventListener('touchstart', onVisible)
+                    document.removeEventListener('visibilitychange', onVisible)
+                }
             }, [src])
 
             return (
