@@ -197,9 +197,15 @@
  * so all three read off the same margin.
  */
 @media screen and (max-width: 959px) {
+    /* Timeline's phone header runs a 62px logo row with no gap above it
+     * (17px of air above their taller logo, 21px below). Ours carried an
+     * 8px margin plus a 60px row - a 68px band that read as extra space
+     * between the menu and the gallery. 56px centered on our 18px wordmark
+     * lands on their proportions. */
     .header .css-1l8efhj {
-        grid-template-rows: 60px;
+        grid-template-rows: 56px;
         align-items: center;
+        margin-top: 0;
     }
 
     .header .css-1be9aw6 { display: none; }
