@@ -402,3 +402,6 @@ import "./stylesheets/research-drawer.css"
 // The science page's closing promo band, re-scoped to this page.
 import "./stylesheets/science-banner.css"
 import "./stylesheets/mobile-gallery.css"
+
+// Dark theme for this copy, imported last so its overrides win the cascade.
+import "./dark.css"

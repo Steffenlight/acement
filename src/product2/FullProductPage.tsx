@@ -24,7 +24,7 @@ import ProductPage from './components/ProductPage.tsx'
 
 function FullProductPage() {
     return (
-        <div className={"chakra-ui-light"}>
+        <div className={"chakra-ui-light pp2-dark"}>
             <div id={"__next"}>
                 <div className={"css-10aoefm"}>
 

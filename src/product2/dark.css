@@ -1,0 +1,102 @@
+/* Dark theme for the copied product page only.
+ *
+ * The whole page (shared header and footer included) reads its colors from
+ * the --timeline-colors tokens, so redefining them on the .pp2-dark wrapper
+ * inverts everything inside this route without touching the original page:
+ * custom properties on the wrapper win over the :root definitions for every
+ * descendant. The gray scale is mirrored (near-white ground becomes black,
+ * near-black text becomes white), black/white swap, and each alpha ladder
+ * swaps its base color while keeping the same alpha per level. The red
+ * accent stays as is - it reads fine on black. */
+.pp2-dark {
+  background: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  color-scheme: dark;
+
+  --timeline-colors-black: #FFFFFF;
+  --timeline-colors-white: #000000;
+
+  --timeline-colors-gray-50: #000000;
+  --timeline-colors-gray-100: #161613;
+  --timeline-colors-gray-200: #2B2B25;
+  --timeline-colors-gray-300: #45453D;
+  --timeline-colors-gray-400: #75756D;
+  --timeline-colors-gray-500: #8F8F88;
+  --timeline-colors-gray-600: #FFFFFF;
+  --timeline-colors-gray-700: #E8E8E1;
+  --timeline-colors-gray-800: #EFEFEA;
+  --timeline-colors-gray-900: #F5F5F0;
+
+  --timeline-colors-blackAlpha-50: rgba(255,255,255,0.04);
+  --timeline-colors-blackAlpha-100: rgba(255,255,255,0.06);
+  --timeline-colors-blackAlpha-200: rgba(255,255,255,0.08);
+  --timeline-colors-blackAlpha-250: rgba(255,255,255,0.12);
+  --timeline-colors-blackAlpha-300: rgba(255,255,255,0.16);
+  --timeline-colors-blackAlpha-400: rgba(255,255,255,0.24);
+  --timeline-colors-blackAlpha-500: rgba(255,255,255,0.36);
+  --timeline-colors-blackAlpha-600: rgba(255,255,255,0.48);
+  --timeline-colors-blackAlpha-700: rgba(255,255,255,0.56);
+  --timeline-colors-blackAlpha-800: rgba(255,255,255,0.80);
+  --timeline-colors-blackAlpha-900: rgba(255,255,255,0.92);
+
+  --timeline-colors-whiteAlpha-50: rgba(0,0,0,0.04);
+  --timeline-colors-whiteAlpha-100: rgba(0,0,0,0.06);
+  --timeline-colors-whiteAlpha-200: rgba(0,0,0,0.08);
+  --timeline-colors-whiteAlpha-250: rgba(0,0,0,0.12);
+  --timeline-colors-whiteAlpha-300: rgba(0,0,0,0.16);
+  --timeline-colors-whiteAlpha-400: rgba(0,0,0,0.24);
+  --timeline-colors-whiteAlpha-500: rgba(0,0,0,0.38);
+  --timeline-colors-whiteAlpha-600: rgba(0,0,0,0.48);
+  --timeline-colors-whiteAlpha-700: rgba(0,0,0,0.60);
+  --timeline-colors-whiteAlpha-800: rgba(0,0,0,0.80);
+  --timeline-colors-whiteAlpha-900: rgba(0,0,0,0.92);
+
+  --timeline-colors-chakra-border-color: rgba(255,255,255,0.16);
+  --timeline-colors-chakra-placeholder-color: rgba(255,255,255,0.40);
+}
+
+/* Two section cards carry hardcoded near-black backgrounds
+ * (rgb(39,39,36) and rgb(28,31,43)) instead of tokens, so the swap above
+ * would put near-black text on them. Restore the light-mode token values
+ * inside those cards so they keep their original dark-card styling. */
+.pp2-dark .css-1t993ry,
+.pp2-dark .css-1l9r55b {
+  --timeline-colors-black: #000000;
+  --timeline-colors-white: #FFFFFF;
+
+  --timeline-colors-gray-50: #FFFFFC;
+  --timeline-colors-gray-100: #F3F3EC;
+  --timeline-colors-gray-200: #E2E2DA;
+  --timeline-colors-gray-300: #C7C7BD;
+  --timeline-colors-gray-400: #A5A59E;
+  --timeline-colors-gray-500: #878780;
+  --timeline-colors-gray-600: #292923;
+  --timeline-colors-gray-700: #2D3748;
+  --timeline-colors-gray-800: #1A202C;
+  --timeline-colors-gray-900: #171923;
+
+  --timeline-colors-blackAlpha-50: rgba(0,0,0,0.04);
+  --timeline-colors-blackAlpha-100: rgba(0,0,0,0.06);
+  --timeline-colors-blackAlpha-200: rgba(0,0,0,0.08);
+  --timeline-colors-blackAlpha-250: rgba(0,0,0,0.12);
+  --timeline-colors-blackAlpha-300: rgba(0,0,0,0.16);
+  --timeline-colors-blackAlpha-400: rgba(0,0,0,0.24);
+  --timeline-colors-blackAlpha-500: rgba(0,0,0,0.36);
+  --timeline-colors-blackAlpha-600: rgba(0,0,0,0.48);
+  --timeline-colors-blackAlpha-700: rgba(0,0,0,0.56);
+  --timeline-colors-blackAlpha-800: rgba(0,0,0,0.80);
+  --timeline-colors-blackAlpha-900: rgba(0,0,0,0.92);
+
+  --timeline-colors-whiteAlpha-50: rgba(255,255,255,0.04);
+  --timeline-colors-whiteAlpha-100: rgba(255,255,255,0.06);
+  --timeline-colors-whiteAlpha-200: rgba(255,255,255,0.08);
+  --timeline-colors-whiteAlpha-250: rgba(255,255,255,0.12);
+  --timeline-colors-whiteAlpha-300: rgba(255,255,255,0.16);
+  --timeline-colors-whiteAlpha-400: rgba(255,255,255,0.24);
+  --timeline-colors-whiteAlpha-500: rgba(255,255,255,0.38);
+  --timeline-colors-whiteAlpha-600: rgba(255,255,255,0.48);
+  --timeline-colors-whiteAlpha-700: rgba(255,255,255,0.60);
+  --timeline-colors-whiteAlpha-800: rgba(255,255,255,0.80);
+  --timeline-colors-whiteAlpha-900: rgba(255,255,255,0.92);
+}
