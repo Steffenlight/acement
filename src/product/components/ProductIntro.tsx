@@ -23,7 +23,7 @@ function ProductIntro() {
     		</span>
     	</div>
     	<h1 className={"chakra-text css-ryxp7a"}>
-    		Testosterone Support
+    		Testosterone biomimetic
     	</h1>
     	<div className={"css-pignbj"}>
     		<RatingButton />
